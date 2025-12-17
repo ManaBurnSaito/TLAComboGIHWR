@@ -1,0 +1,1252 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>39592</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.65</td>
+      <td>63.69</td>
+      <td>9.04</td>
+      <td>168</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66006</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.55</td>
+      <td>62.30</td>
+      <td>7.75</td>
+      <td>122</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97516" target="_blank" rel="noopener noreferrer"><img src="img/Ozai,_the_Phoenix_King.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ozai, the Phoenix King.html" target="_blank" rel="noopener noreferrer">Ozai, the Phoenix King</a></td>
+      <td>2.80</td>
+      <td>BR</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>30319</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.55</td>
+      <td>59.81</td>
+      <td>7.26</td>
+      <td>107</td>
+      <td>54.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97383" target="_blank" rel="noopener noreferrer"><img src="img/Lo_and_Li,_Twin_Tutors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lo and Li, Twin Tutors.html" target="_blank" rel="noopener noreferrer">Lo and Li, Twin Tutors</a></td>
+      <td>9.16</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63196</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.95</td>
+      <td>57.41</td>
+      <td>5.46</td>
+      <td>108</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97506" target="_blank" rel="noopener noreferrer"><img src="img/Hei_Bai,_Spirit_of_Balance.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hei Bai, Spirit of Balance.html" target="_blank" rel="noopener noreferrer">Hei Bai, Spirit of Balance</a></td>
+      <td>5.31</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23575</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.65</td>
+      <td>56.91</td>
+      <td>4.26</td>
+      <td>311</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44369</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.00</td>
+      <td>55.87</td>
+      <td>3.87</td>
+      <td>213</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97435" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Artful_Acrobat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Artful Acrobat.html" target="_blank" rel="noopener noreferrer">Ty Lee, Artful Acrobat</a></td>
+      <td>6.29</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.85</td>
+      <td>56.36</td>
+      <td>3.51</td>
+      <td>110</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37344</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.70</td>
+      <td>56.07</td>
+      <td>3.37</td>
+      <td>173</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97409" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Attacks.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Attacks.html" target="_blank" rel="noopener noreferrer">Fire Nation Attacks</a></td>
+      <td>6.55</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35377</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>55.15</td>
+      <td>57.79</td>
+      <td>2.64</td>
+      <td>154</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74998</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.35</td>
+      <td>54.67</td>
+      <td>2.32</td>
+      <td>439</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>29757</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.40</td>
+      <td>54.69</td>
+      <td>2.29</td>
+      <td>192</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97381" target="_blank" rel="noopener noreferrer"><img src="img/June,_Bounty_Hunter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//June, Bounty Hunter.html" target="_blank" rel="noopener noreferrer">June, Bounty Hunter</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>28071</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.60</td>
+      <td>54.66</td>
+      <td>2.06</td>
+      <td>161</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97375" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Navy_Trebuchet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Navy Trebuchet.html" target="_blank" rel="noopener noreferrer">Fire Navy Trebuchet</a></td>
+      <td>5.50</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29476</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.80</td>
+      <td>54.84</td>
+      <td>2.04</td>
+      <td>186</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97380" target="_blank" rel="noopener noreferrer"><img src="img/Joo_Dee,_One_of_Many.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Joo Dee, One of Many.html" target="_blank" rel="noopener noreferrer">Joo Dee, One of Many</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>38749</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.35</td>
+      <td>55.66</td>
+      <td>1.31</td>
+      <td>442</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38187</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.15</td>
+      <td>54.26</td>
+      <td>1.11</td>
+      <td>223</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>38468</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.65</td>
+      <td>52.73</td>
+      <td>1.08</td>
+      <td>110</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97413" target="_blank" rel="noopener noreferrer"><img src="img/Firebender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebender Ascension.html" target="_blank" rel="noopener noreferrer">Firebender Ascension</a></td>
+      <td>3.78</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>37906</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.55</td>
+      <td>51.58</td>
+      <td>1.03</td>
+      <td>190</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97411" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Raider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Raider.html" target="_blank" rel="noopener noreferrer">Fire Nation Raider</a></td>
+      <td>11.35</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71064</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.40</td>
+      <td>51.05</td>
+      <td>0.65</td>
+      <td>1898</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td>7.24</td>
+      <td>BR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>25261</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.75</td>
+      <td>52.88</td>
+      <td>0.13</td>
+      <td>208</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>28914</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.95</td>
+      <td>55.07</td>
+      <td>0.12</td>
+      <td>207</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23856</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.65</td>
+      <td>52.38</td>
+      <td>-0.27</td>
+      <td>210</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66568</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.85</td>
+      <td>52.56</td>
+      <td>-0.29</td>
+      <td>234</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37625</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.45</td>
+      <td>52.96</td>
+      <td>-0.49</td>
+      <td>304</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40997</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.85</td>
+      <td>53.29</td>
+      <td>-0.56</td>
+      <td>456</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69940</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.15</td>
+      <td>51.44</td>
+      <td>-0.71</td>
+      <td>313</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>43807</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.30</td>
+      <td>51.54</td>
+      <td>-0.76</td>
+      <td>293</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>42683</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.70</td>
+      <td>49.58</td>
+      <td>-1.12</td>
+      <td>119</td>
+      <td>51.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97429" target="_blank" rel="noopener noreferrer"><img src="img/Rough_Rhino_Cavalry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rough Rhino Cavalry.html" target="_blank" rel="noopener noreferrer">Rough Rhino Cavalry</a></td>
+      <td>11.52</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35658</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.45</td>
+      <td>50.26</td>
+      <td>-1.19</td>
+      <td>195</td>
+      <td>52.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97403" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Man.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Man.html" target="_blank" rel="noopener noreferrer">Combustion Man</a></td>
+      <td>6.36</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33691</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.40</td>
+      <td>51.10</td>
+      <td>-1.30</td>
+      <td>362</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>29195</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.95</td>
+      <td>49.53</td>
+      <td>-1.42</td>
+      <td>107</td>
+      <td>51.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97379" target="_blank" rel="noopener noreferrer"><img src="img/Hog-Monkey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hog-Monkey.html" target="_blank" rel="noopener noreferrer">Hog-Monkey</a></td>
+      <td>11.64</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45212</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.65</td>
+      <td>51.70</td>
+      <td>-1.95</td>
+      <td>412</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>27790</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.10</td>
+      <td>51.08</td>
+      <td>-2.02</td>
+      <td>186</td>
+      <td>55.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97374" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Engineer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Engineer.html" target="_blank" rel="noopener noreferrer">Fire Nation Engineer</a></td>
+      <td>6.12</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>61791</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.60</td>
+      <td>48.54</td>
+      <td>-2.06</td>
+      <td>103</td>
+      <td>50.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97501" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Azula.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Lord Azula.html" target="_blank" rel="noopener noreferrer">Fire Lord Azula</a></td>
+      <td>4.34</td>
+      <td>UBR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>39311</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.30</td>
+      <td>49.22</td>
+      <td>-2.08</td>
+      <td>128</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97416" target="_blank" rel="noopener noreferrer"><img src="img/How_to_Start_a_Riot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//How to Start a Riot.html" target="_blank" rel="noopener noreferrer">How to Start a Riot</a></td>
+      <td>10.73</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35096</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.30</td>
+      <td>48.83</td>
+      <td>-2.47</td>
+      <td>213</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>31443</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.55</td>
+      <td>52.00</td>
+      <td>-2.55</td>
+      <td>100</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97387" target="_blank" rel="noopener noreferrer"><img src="img/Obsessive_Pursuit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Obsessive Pursuit.html" target="_blank" rel="noopener noreferrer">Obsessive Pursuit</a></td>
+      <td>2.65</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>26947</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.50</td>
+      <td>51.87</td>
+      <td>-2.63</td>
+      <td>187</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97371" target="_blank" rel="noopener noreferrer"><img src="img/Epic_Downfall.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Epic Downfall.html" target="_blank" rel="noopener noreferrer">Epic Downfall</a></td>
+      <td>3.60</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36782</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.00</td>
+      <td>49.35</td>
+      <td>-2.65</td>
+      <td>231</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>32286</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.90</td>
+      <td>48.12</td>
+      <td>-2.78</td>
+      <td>239</td>
+      <td>51.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97390" target="_blank" rel="noopener noreferrer"><img src="img/Pirate_Peddlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pirate Peddlers.html" target="_blank" rel="noopener noreferrer">Pirate Peddlers</a></td>
+      <td>9.85</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33410</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.55</td>
+      <td>50.75</td>
+      <td>-2.80</td>
+      <td>398</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41278</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.75</td>
+      <td>48.60</td>
+      <td>-3.15</td>
+      <td>179</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>59824</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.05</td>
+      <td>47.83</td>
+      <td>-3.22</td>
+      <td>322</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97494" target="_blank" rel="noopener noreferrer"><img src="img/Cruel_Administrator.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cruel Administrator.html" target="_blank" rel="noopener noreferrer">Cruel Administrator</a></td>
+      <td>7.86</td>
+      <td>BR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26385</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>55.35</td>
+      <td>52.00</td>
+      <td>-3.35</td>
+      <td>100</td>
+      <td>60.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97369" target="_blank" rel="noopener noreferrer"><img src="img/Day_of_Black_Sun.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Day of Black Sun.html" target="_blank" rel="noopener noreferrer">Day of Black Sun</a></td>
+      <td>2.73</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>24137</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.00</td>
+      <td>47.62</td>
+      <td>-3.38</td>
+      <td>210</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97361" target="_blank" rel="noopener noreferrer"><img src="img/Beetle-Headed_Merchants.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beetle-Headed Merchants.html" target="_blank" rel="noopener noreferrer">Beetle-Headed Merchants</a></td>
+      <td>10.65</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34815</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.05</td>
+      <td>47.41</td>
+      <td>-3.64</td>
+      <td>135</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97400" target="_blank" rel="noopener noreferrer"><img src="img/Boar-q-pine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boar-q-pine.html" target="_blank" rel="noopener noreferrer">Boar-q-pine</a></td>
+      <td>10.91</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57576</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.85</td>
+      <td>49.04</td>
+      <td>-3.81</td>
+      <td>157</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65725</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.90</td>
+      <td>50.00</td>
+      <td>-3.90</td>
+      <td>206</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44088</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.35</td>
+      <td>49.17</td>
+      <td>-4.18</td>
+      <td>120</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97434" target="_blank" rel="noopener noreferrer"><img src="img/Twin_Blades.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Twin Blades.html" target="_blank" rel="noopener noreferrer">Twin Blades</a></td>
+      <td>7.22</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25823</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.25</td>
+      <td>49.05</td>
+      <td>-4.20</td>
+      <td>367</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41559</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.65</td>
+      <td>47.37</td>
+      <td>-4.28</td>
+      <td>114</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97425" target="_blank" rel="noopener noreferrer"><img src="img/Mongoose_Lizard.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mongoose Lizard.html" target="_blank" rel="noopener noreferrer">Mongoose Lizard</a></td>
+      <td>11.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70783</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>50.55</td>
+      <td>46.20</td>
+      <td>-4.35</td>
+      <td>171</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97533" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_Ruthless_Admiral.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zhao, Ruthless Admiral.html" target="_blank" rel="noopener noreferrer">Zhao, Ruthless Admiral</a></td>
+      <td>8.48</td>
+      <td>BR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36501</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.35</td>
+      <td>47.65</td>
+      <td>-4.70</td>
+      <td>170</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>24980</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.65</td>
+      <td>47.75</td>
+      <td>-4.90</td>
+      <td>356</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26666</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.45</td>
+      <td>48.41</td>
+      <td>-5.04</td>
+      <td>378</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45774</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.40</td>
+      <td>45.92</td>
+      <td>-5.48</td>
+      <td>196</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97440" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Exiled_Prince.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Exiled Prince.html" target="_blank" rel="noopener noreferrer">Zuko, Exiled Prince</a></td>
+      <td>5.82</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>44650</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.95</td>
+      <td>45.99</td>
+      <td>-5.96</td>
+      <td>137</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97436" target="_blank" rel="noopener noreferrer"><img src="img/War_Balloon.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//War Balloon.html" target="_blank" rel="noopener noreferrer">War Balloon</a></td>
+      <td>7.83</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35939</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>54.60</td>
+      <td>48.37</td>
+      <td>-6.23</td>
+      <td>184</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77808</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>53.35</td>
+      <td>46.09</td>
+      <td>-7.26</td>
+      <td>115</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>30881</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>52.40</td>
+      <td>44.25</td>
+      <td>-8.15</td>
+      <td>226</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39873</th>
+      <td>rare</td>
+      <td>BR</td>
+      <td>7.24</td>
+      <td><a href=".//Zuko, Conflicted.html" target="_blank" rel="noopener noreferrer">Zuko, Conflicted</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97534" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Conflicted.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>50.4</td>
+      <td>51.35</td>
+      <td>38.93</td>
+      <td>-12.42</td>
+      <td>149</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+  </tbody>
+</table>

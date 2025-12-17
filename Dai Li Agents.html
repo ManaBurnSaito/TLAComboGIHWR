@@ -1,0 +1,2924 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>46859</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.20</td>
+      <td>69.51</td>
+      <td>9.31</td>
+      <td>328</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97444" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole_Cub.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole Cub.html" target="_blank" rel="noopener noreferrer">Badgermole Cub</a></td>
+      <td>1.85</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>32809</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>62.55</td>
+      <td>71.76</td>
+      <td>9.21</td>
+      <td>255</td>
+      <td>67.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97392" target="_blank" rel="noopener noreferrer"><img src="img/The_Rise_of_Sozin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Rise of Sozin.html" target="_blank" rel="noopener noreferrer">The Rise of Sozin</a></td>
+      <td>1.74</td>
+      <td>B</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>74678</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.50</td>
+      <td>66.97</td>
+      <td>8.47</td>
+      <td>557</td>
+      <td>59.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97547" target="_blank" rel="noopener noreferrer"><img src="img/Ba_Sing_Se.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ba Sing Se.html" target="_blank" rel="noopener noreferrer">Ba Sing Se</a></td>
+      <td>3.01</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>78050</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.75</td>
+      <td>65.53</td>
+      <td>7.78</td>
+      <td>293</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97559" target="_blank" rel="noopener noreferrer"><img src="img/Secret_Tunnel.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Secret Tunnel.html" target="_blank" rel="noopener noreferrer">Secret Tunnel</a></td>
+      <td>3.76</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>29999</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.75</td>
+      <td>67.80</td>
+      <td>7.05</td>
+      <td>236</td>
+      <td>63.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97382" target="_blank" rel="noopener noreferrer"><img src="img/Koh,_the_Face_Stealer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Koh, the Face Stealer.html" target="_blank" rel="noopener noreferrer">Koh, the Face Stealer</a></td>
+      <td>1.88</td>
+      <td>B</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>27470</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>62.10</td>
+      <td>68.64</td>
+      <td>6.54</td>
+      <td>456</td>
+      <td>66.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97373" target="_blank" rel="noopener noreferrer"><img src="img/The_Fire_Nation_Drill.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Fire Nation Drill.html" target="_blank" rel="noopener noreferrer">The Fire Nation Drill</a></td>
+      <td>2.27</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>49107</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.20</td>
+      <td>66.61</td>
+      <td>6.41</td>
+      <td>569</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97452" target="_blank" rel="noopener noreferrer"><img src="img/Earthbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbender Ascension.html" target="_blank" rel="noopener noreferrer">Earthbender Ascension</a></td>
+      <td>2.20</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>28875</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.55</td>
+      <td>64.75</td>
+      <td>6.20</td>
+      <td>976</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58380</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.00</td>
+      <td>65.44</td>
+      <td>5.44</td>
+      <td>272</td>
+      <td>62.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97489" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_Cunning_Usurper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, Cunning Usurper.html" target="_blank" rel="noopener noreferrer">Azula, Cunning Usurper</a></td>
+      <td>2.68</td>
+      <td>UB</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>32528</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.00</td>
+      <td>65.01</td>
+      <td>5.01</td>
+      <td>443</td>
+      <td>62.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97391" target="_blank" rel="noopener noreferrer"><img src="img/Raven_Eagle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raven Eagle.html" target="_blank" rel="noopener noreferrer">Raven Eagle</a></td>
+      <td>2.17</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>52198</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.35</td>
+      <td>63.10</td>
+      <td>4.75</td>
+      <td>290</td>
+      <td>59.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97463" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Kyoshi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Kyoshi.html" target="_blank" rel="noopener noreferrer">The Legend of Kyoshi</a></td>
+      <td>1.96</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>50231</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>61.18</td>
+      <td>4.73</td>
+      <td>832</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97456" target="_blank" rel="noopener noreferrer"><img src="img/Flopsie,_Bumi's_Buddy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Flopsie, Bumi's Buddy.html" target="_blank" rel="noopener noreferrer">Flopsie, Bumi's Buddy</a></td>
+      <td>5.33</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>47983</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.00</td>
+      <td>61.69</td>
+      <td>4.69</td>
+      <td>295</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97448" target="_blank" rel="noopener noreferrer"><img src="img/Diligent_Zookeeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Diligent Zookeeper.html" target="_blank" rel="noopener noreferrer">Diligent Zookeeper</a></td>
+      <td>4.00</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>31966</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>59.55</td>
+      <td>64.22</td>
+      <td>4.67</td>
+      <td>204</td>
+      <td>61.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97389" target="_blank" rel="noopener noreferrer"><img src="img/Phoenix_Fleet_Airship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Phoenix Fleet Airship.html" target="_blank" rel="noopener noreferrer">Phoenix Fleet Airship</a></td>
+      <td>2.25</td>
+      <td>B</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>46016</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.10</td>
+      <td>62.55</td>
+      <td>4.45</td>
+      <td>932</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97441" target="_blank" rel="noopener noreferrer"><img src="img/Allies_at_Last.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Allies at Last.html" target="_blank" rel="noopener noreferrer">Allies at Last</a></td>
+      <td>4.24</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>75802</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.95</td>
+      <td>61.39</td>
+      <td>4.44</td>
+      <td>101</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97551" target="_blank" rel="noopener noreferrer"><img src="img/Jasmine_Dragon_Tea_Shop.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jasmine Dragon Tea Shop.html" target="_blank" rel="noopener noreferrer">Jasmine Dragon Tea Shop</a></td>
+      <td>3.59</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>72711</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.80</td>
+      <td>62.20</td>
+      <td>4.40</td>
+      <td>127</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97540" target="_blank" rel="noopener noreferrer"><img src="img/Planetarium_of_Wan_Shi_Tong.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Planetarium of Wan Shi Tong.html" target="_blank" rel="noopener noreferrer">Planetarium of Wan Shi Tong</a></td>
+      <td>1.72</td>
+      <td></td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>69058</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.85</td>
+      <td>61.65</td>
+      <td>3.80</td>
+      <td>279</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97527" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_Hardheaded_Teacher.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, Hardheaded Teacher.html" target="_blank" rel="noopener noreferrer">Toph, Hardheaded Teacher</a></td>
+      <td>2.81</td>
+      <td>RG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>68215</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>60.24</td>
+      <td>3.79</td>
+      <td>254</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97524" target="_blank" rel="noopener noreferrer"><img src="img/Suki,_Kyoshi_Warrior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Suki, Kyoshi Warrior.html" target="_blank" rel="noopener noreferrer">Suki, Kyoshi Warrior</a></td>
+      <td>3.65</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33371</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.15</td>
+      <td>60.90</td>
+      <td>3.75</td>
+      <td>2100</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55008</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.00</td>
+      <td>59.66</td>
+      <td>3.66</td>
+      <td>699</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97474" target="_blank" rel="noopener noreferrer"><img src="img/Shared_Roots.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Shared Roots.html" target="_blank" rel="noopener noreferrer">Shared Roots</a></td>
+      <td>5.44</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72430</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.40</td>
+      <td>58.06</td>
+      <td>3.66</td>
+      <td>186</td>
+      <td>51.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97539" target="_blank" rel="noopener noreferrer"><img src="img/Meteor_Sword.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meteor Sword.html" target="_blank" rel="noopener noreferrer">Meteor Sword</a></td>
+      <td>9.09</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>50793</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>59.85</td>
+      <td>63.43</td>
+      <td>3.58</td>
+      <td>391</td>
+      <td>62.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97458" target="_blank" rel="noopener noreferrer"><img src="img/Great_Divide_Guide.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Great Divide Guide.html" target="_blank" rel="noopener noreferrer">Great Divide Guide</a></td>
+      <td>2.35</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>54446</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.25</td>
+      <td>58.72</td>
+      <td>3.47</td>
+      <td>1158</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97472" target="_blank" rel="noopener noreferrer"><img src="img/Saber-Tooth_Moose-Lion.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Saber-Tooth Moose-Lion.html" target="_blank" rel="noopener noreferrer">Saber-Tooth Moose-Lion</a></td>
+      <td>9.65</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78331</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.25</td>
+      <td>60.67</td>
+      <td>3.42</td>
+      <td>539</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97560" target="_blank" rel="noopener noreferrer"><img src="img/Serpent's_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent's Pass.html" target="_blank" rel="noopener noreferrer">Serpent's Pass</a></td>
+      <td>8.69</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53322</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.05</td>
+      <td>60.42</td>
+      <td>3.37</td>
+      <td>2125</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65124</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.45</td>
+      <td>60.71</td>
+      <td>3.26</td>
+      <td>112</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97513" target="_blank" rel="noopener noreferrer"><img src="img/The_Lion-Turtle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Lion-Turtle.html" target="_blank" rel="noopener noreferrer">The Lion-Turtle</a></td>
+      <td>4.64</td>
+      <td>UG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>65405</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.75</td>
+      <td>57.99</td>
+      <td>3.24</td>
+      <td>1095</td>
+      <td>51.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97514" target="_blank" rel="noopener noreferrer"><img src="img/Long_Feng,_Grand_Secretariat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Long Feng, Grand Secretariat.html" target="_blank" rel="noopener noreferrer">Long Feng, Grand Secretariat</a></td>
+      <td>6.00</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>59223</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>60.40</td>
+      <td>63.54</td>
+      <td>3.14</td>
+      <td>181</td>
+      <td>63.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97492" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_Unleashed.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, Unleashed.html" target="_blank" rel="noopener noreferrer">Bumi, Unleashed</a></td>
+      <td>1.98</td>
+      <td>RG</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>58661</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.85</td>
+      <td>61.91</td>
+      <td>3.06</td>
+      <td>1016</td>
+      <td>60.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97490" target="_blank" rel="noopener noreferrer"><img src="img/Beifong's_Bounty_Hunters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beifong's Bounty Hunters.html" target="_blank" rel="noopener noreferrer">Beifong's Bounty Hunters</a></td>
+      <td>3.22</td>
+      <td>BG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>76364</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.35</td>
+      <td>59.41</td>
+      <td>3.06</td>
+      <td>579</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97553" target="_blank" rel="noopener noreferrer"><img src="img/Meditation_Pools.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meditation Pools.html" target="_blank" rel="noopener noreferrer">Meditation Pools</a></td>
+      <td>8.34</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48264</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>61.15</td>
+      <td>64.09</td>
+      <td>2.94</td>
+      <td>479</td>
+      <td>64.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97449" target="_blank" rel="noopener noreferrer"><img src="img/The_Earth_King.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Earth King.html" target="_blank" rel="noopener noreferrer">The Earth King</a></td>
+      <td>1.81</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>51917</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.95</td>
+      <td>57.89</td>
+      <td>2.94</td>
+      <td>342</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97462" target="_blank" rel="noopener noreferrer"><img src="img/Leaves_from_the_Vine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Leaves from the Vine.html" target="_blank" rel="noopener noreferrer">Leaves from the Vine</a></td>
+      <td>8.83</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26908</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.10</td>
+      <td>60.97</td>
+      <td>2.87</td>
+      <td>889</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97371" target="_blank" rel="noopener noreferrer"><img src="img/Epic_Downfall.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Epic Downfall.html" target="_blank" rel="noopener noreferrer">Epic Downfall</a></td>
+      <td>3.60</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77769</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.95</td>
+      <td>59.80</td>
+      <td>2.85</td>
+      <td>1398</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48545</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.05</td>
+      <td>59.86</td>
+      <td>2.81</td>
+      <td>1004</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97450" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_General.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom General.html" target="_blank" rel="noopener noreferrer">Earth Kingdom General</a></td>
+      <td>4.98</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16511</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.40</td>
+      <td>59.17</td>
+      <td>2.77</td>
+      <td>120</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97333" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Bending_Prodigy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Bending Prodigy.html" target="_blank" rel="noopener noreferrer">Katara, Bending Prodigy</a></td>
+      <td>3.39</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>24660</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.15</td>
+      <td>56.90</td>
+      <td>2.75</td>
+      <td>464</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97363" target="_blank" rel="noopener noreferrer"><img src="img/Buzzard-Wasp_Colony.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Buzzard-Wasp Colony.html" target="_blank" rel="noopener noreferrer">Buzzard-Wasp Colony</a></td>
+      <td>8.22</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>30561</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.70</td>
+      <td>58.40</td>
+      <td>2.70</td>
+      <td>238</td>
+      <td>53.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97384" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Scornful_Striker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Scornful Striker.html" target="_blank" rel="noopener noreferrer">Mai, Scornful Striker</a></td>
+      <td>4.23</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>24379</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.75</td>
+      <td>59.29</td>
+      <td>2.54</td>
+      <td>339</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97362" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Rioter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Rioter.html" target="_blank" rel="noopener noreferrer">Boiling Rock Rioter</a></td>
+      <td>3.45</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>48826</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.75</td>
+      <td>58.11</td>
+      <td>2.36</td>
+      <td>857</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97451" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble.html" target="_blank" rel="noopener noreferrer">Earth Rumble</a></td>
+      <td>5.95</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>52760</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.20</td>
+      <td>59.53</td>
+      <td>2.33</td>
+      <td>1999</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26065</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.10</td>
+      <td>57.34</td>
+      <td>2.24</td>
+      <td>497</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97368" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Indoctrination.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dai Li Indoctrination.html" target="_blank" rel="noopener noreferrer">Dai Li Indoctrination</a></td>
+      <td>11.05</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47702</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.00</td>
+      <td>56.22</td>
+      <td>2.22</td>
+      <td>1117</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97447" target="_blank" rel="noopener noreferrer"><img src="img/Cycle_of_Renewal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cycle of Renewal.html" target="_blank" rel="noopener noreferrer">Cycle of Renewal</a></td>
+      <td>9.00</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26627</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.05</td>
+      <td>59.22</td>
+      <td>2.17</td>
+      <td>1675</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66529</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>58.55</td>
+      <td>2.10</td>
+      <td>871</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54727</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.50</td>
+      <td>58.58</td>
+      <td>2.08</td>
+      <td>606</td>
+      <td>55.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97473" target="_blank" rel="noopener noreferrer"><img src="img/Seismic_Sense.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Seismic Sense.html" target="_blank" rel="noopener noreferrer">Seismic Sense</a></td>
+      <td>6.99</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55570</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.85</td>
+      <td>59.91</td>
+      <td>2.06</td>
+      <td>1115</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97476" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_Blind_Bandit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the Blind Bandit.html" target="_blank" rel="noopener noreferrer">Toph, the Blind Bandit</a></td>
+      <td>4.05</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56132</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.40</td>
+      <td>57.43</td>
+      <td>2.03</td>
+      <td>491</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97478" target="_blank" rel="noopener noreferrer"><img src="img/Turtle-Duck.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Turtle-Duck.html" target="_blank" rel="noopener noreferrer">Turtle-Duck</a></td>
+      <td>11.42</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50512</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.00</td>
+      <td>57.00</td>
+      <td>2.00</td>
+      <td>500</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97457" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Vinebender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Vinebender.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Vinebender</a></td>
+      <td>10.67</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>56413</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.60</td>
+      <td>57.37</td>
+      <td>1.77</td>
+      <td>936</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97479" target="_blank" rel="noopener noreferrer"><img src="img/Unlucky_Cabbage_Merchant.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Unlucky Cabbage Merchant.html" target="_blank" rel="noopener noreferrer">Unlucky Cabbage Merchant</a></td>
+      <td>5.47</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53603</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.35</td>
+      <td>58.08</td>
+      <td>1.73</td>
+      <td>1875</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97469" target="_blank" rel="noopener noreferrer"><img src="img/Rebellious_Captives.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rebellious Captives.html" target="_blank" rel="noopener noreferrer">Rebellious Captives</a></td>
+      <td>8.20</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>56694</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.30</td>
+      <td>57.97</td>
+      <td>1.67</td>
+      <td>1430</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97480" target="_blank" rel="noopener noreferrer"><img src="img/Walltop_Sentries.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Walltop Sentries.html" target="_blank" rel="noopener noreferrer">Walltop Sentries</a></td>
+      <td>8.01</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>4428</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>59.15</td>
+      <td>60.75</td>
+      <td>1.60</td>
+      <td>107</td>
+      <td>60.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97289" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Jailer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Jailer.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Jailer</a></td>
+      <td>2.70</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>49388</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.65</td>
+      <td>56.24</td>
+      <td>1.59</td>
+      <td>793</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97453" target="_blank" rel="noopener noreferrer"><img src="img/Earthbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbending Lesson.html" target="_blank" rel="noopener noreferrer">Earthbending Lesson</a></td>
+      <td>10.17</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>75521</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.20</td>
+      <td>57.76</td>
+      <td>1.56</td>
+      <td>2294</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97550" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Bottom_Swamp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Bottom Swamp.html" target="_blank" rel="noopener noreferrer">Foggy Bottom Swamp</a></td>
+      <td>9.78</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33090</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.65</td>
+      <td>56.20</td>
+      <td>1.55</td>
+      <td>121</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97394" target="_blank" rel="noopener noreferrer"><img src="img/Ruinous_Waterbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ruinous Waterbending.html" target="_blank" rel="noopener noreferrer">Ruinous Waterbending</a></td>
+      <td>10.00</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7238</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.05</td>
+      <td>58.52</td>
+      <td>1.47</td>
+      <td>135</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52479</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.60</td>
+      <td>57.92</td>
+      <td>1.32</td>
+      <td>1105</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97465" target="_blank" rel="noopener noreferrer"><img src="img/Origin_of_Metalbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Origin of Metalbending.html" target="_blank" rel="noopener noreferrer">Origin of Metalbending</a></td>
+      <td>9.41</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54165</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.95</td>
+      <td>58.24</td>
+      <td>1.29</td>
+      <td>2160</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33652</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.00</td>
+      <td>57.28</td>
+      <td>1.28</td>
+      <td>1470</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>29156</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.55</td>
+      <td>55.76</td>
+      <td>1.21</td>
+      <td>495</td>
+      <td>51.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97379" target="_blank" rel="noopener noreferrer"><img src="img/Hog-Monkey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hog-Monkey.html" target="_blank" rel="noopener noreferrer">Hog-Monkey</a></td>
+      <td>11.64</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62314</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.80</td>
+      <td>60.00</td>
+      <td>1.20</td>
+      <td>220</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97503" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Spirit_Keeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Spirit Keeper.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Spirit Keeper</a></td>
+      <td>5.02</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>34214</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.70</td>
+      <td>56.81</td>
+      <td>1.11</td>
+      <td>213</td>
+      <td>53.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97398" target="_blank" rel="noopener noreferrer"><img src="img/Wolfbat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wolfbat.html" target="_blank" rel="noopener noreferrer">Wolfbat</a></td>
+      <td>8.63</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>31404</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.15</td>
+      <td>59.21</td>
+      <td>1.06</td>
+      <td>353</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97387" target="_blank" rel="noopener noreferrer"><img src="img/Obsessive_Pursuit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Obsessive Pursuit.html" target="_blank" rel="noopener noreferrer">Obsessive Pursuit</a></td>
+      <td>2.65</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>25784</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.85</td>
+      <td>57.88</td>
+      <td>1.03</td>
+      <td>1598</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71868</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.40</td>
+      <td>58.43</td>
+      <td>1.03</td>
+      <td>267</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55851</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.30</td>
+      <td>57.26</td>
+      <td>0.96</td>
+      <td>943</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97477" target="_blank" rel="noopener noreferrer"><img src="img/True_Ancestry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//True Ancestry.html" target="_blank" rel="noopener noreferrer">True Ancestry</a></td>
+      <td>5.81</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>69901</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.75</td>
+      <td>56.67</td>
+      <td>0.92</td>
+      <td>150</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69620</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.10</td>
+      <td>56.00</td>
+      <td>0.90</td>
+      <td>150</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td>6.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>30842</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.00</td>
+      <td>56.90</td>
+      <td>0.90</td>
+      <td>956</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35338</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.75</td>
+      <td>59.63</td>
+      <td>0.88</td>
+      <td>109</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>61190</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.40</td>
+      <td>56.25</td>
+      <td>0.85</td>
+      <td>320</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97499" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble_Wrestlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble Wrestlers.html" target="_blank" rel="noopener noreferrer">Earth Rumble Wrestlers</a></td>
+      <td>11.22</td>
+      <td>RG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53884</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.10</td>
+      <td>56.90</td>
+      <td>0.80</td>
+      <td>580</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td>7.86</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>34495</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.85</td>
+      <td>55.65</td>
+      <td>0.80</td>
+      <td>478</td>
+      <td>52.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97399" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Conviction.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Conviction.html" target="_blank" rel="noopener noreferrer">Zuko's Conviction</a></td>
+      <td>8.09</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63157</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.55</td>
+      <td>56.28</td>
+      <td>0.73</td>
+      <td>366</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97506" target="_blank" rel="noopener noreferrer"><img src="img/Hei_Bai,_Spirit_of_Balance.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hei Bai, Spirit of Balance.html" target="_blank" rel="noopener noreferrer">Hei Bai, Spirit of Balance</a></td>
+      <td>5.31</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25222</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.35</td>
+      <td>57.02</td>
+      <td>0.67</td>
+      <td>947</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47421</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.75</td>
+      <td>56.35</td>
+      <td>0.60</td>
+      <td>449</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97446" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_King_of_Three_Trials.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, King of Three Trials.html" target="_blank" rel="noopener noreferrer">Bumi, King of Three Trials</a></td>
+      <td>5.68</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23536</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.25</td>
+      <td>56.82</td>
+      <td>0.57</td>
+      <td>836</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74959</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.95</td>
+      <td>56.46</td>
+      <td>0.51</td>
+      <td>441</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35900</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.20</td>
+      <td>58.62</td>
+      <td>0.42</td>
+      <td>116</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66248</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.20</td>
+      <td>55.59</td>
+      <td>0.39</td>
+      <td>367</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97517" target="_blank" rel="noopener noreferrer"><img src="img/Platypus-Bear.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Platypus-Bear.html" target="_blank" rel="noopener noreferrer">Platypus-Bear</a></td>
+      <td>10.20</td>
+      <td>UG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47140</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.90</td>
+      <td>57.25</td>
+      <td>0.35</td>
+      <td>938</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97445" target="_blank" rel="noopener noreferrer"><img src="img/The_Boulder,_Ready_to_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Boulder, Ready to Rumble.html" target="_blank" rel="noopener noreferrer">The Boulder, Ready to Rumble</a></td>
+      <td>5.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25503</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.65</td>
+      <td>57.94</td>
+      <td>0.29</td>
+      <td>447</td>
+      <td>57.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97366" target="_blank" rel="noopener noreferrer"><img src="img/Cat-Gator.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cat-Gator.html" target="_blank" rel="noopener noreferrer">Cat-Gator</a></td>
+      <td>7.36</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65686</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.50</td>
+      <td>57.70</td>
+      <td>0.20</td>
+      <td>844</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14263</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.60</td>
+      <td>57.79</td>
+      <td>0.19</td>
+      <td>353</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>17354</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.15</td>
+      <td>58.26</td>
+      <td>0.11</td>
+      <td>345</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>56.55</td>
+      <td>0.10</td>
+      <td>672</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>31685</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.60</td>
+      <td>56.65</td>
+      <td>0.05</td>
+      <td>203</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97388" target="_blank" rel="noopener noreferrer"><img src="img/Ozai's_Cruelty.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ozai's Cruelty.html" target="_blank" rel="noopener noreferrer">Ozai's Cruelty</a></td>
+      <td>8.45</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77207</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.25</td>
+      <td>56.26</td>
+      <td>0.01</td>
+      <td>503</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97556" target="_blank" rel="noopener noreferrer"><img src="img/Omashu_City.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Omashu City.html" target="_blank" rel="noopener noreferrer">Omashu City</a></td>
+      <td>8.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46578</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.05</td>
+      <td>56.97</td>
+      <td>-0.08</td>
+      <td>1871</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63438</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.35</td>
+      <td>57.24</td>
+      <td>-0.11</td>
+      <td>290</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97507" target="_blank" rel="noopener noreferrer"><img src="img/Hermitic_Herbalist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hermitic Herbalist.html" target="_blank" rel="noopener noreferrer">Hermitic Herbalist</a></td>
+      <td>5.65</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55289</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.95</td>
+      <td>54.55</td>
+      <td>-0.40</td>
+      <td>605</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97475" target="_blank" rel="noopener noreferrer"><img src="img/Sparring_Dummy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sparring Dummy.html" target="_blank" rel="noopener noreferrer">Sparring Dummy</a></td>
+      <td>8.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>32247</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.50</td>
+      <td>54.07</td>
+      <td>-0.43</td>
+      <td>553</td>
+      <td>51.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97390" target="_blank" rel="noopener noreferrer"><img src="img/Pirate_Peddlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pirate Peddlers.html" target="_blank" rel="noopener noreferrer">Pirate Peddlers</a></td>
+      <td>9.85</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71306</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.00</td>
+      <td>55.50</td>
+      <td>-0.50</td>
+      <td>600</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>58942</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.80</td>
+      <td>54.24</td>
+      <td>-0.56</td>
+      <td>236</td>
+      <td>52.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97491" target="_blank" rel="noopener noreferrer"><img src="img/Bitter_Work.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bitter Work.html" target="_blank" rel="noopener noreferrer">Bitter Work</a></td>
+      <td>7.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60628</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>55.81</td>
+      <td>-0.64</td>
+      <td>387</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97497" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Soldier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Soldier.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Soldier</a></td>
+      <td>9.36</td>
+      <td>WG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>27751</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.70</td>
+      <td>56.01</td>
+      <td>-0.69</td>
+      <td>557</td>
+      <td>55.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97374" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Engineer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Engineer.html" target="_blank" rel="noopener noreferrer">Fire Nation Engineer</a></td>
+      <td>6.12</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60066</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.60</td>
+      <td>56.83</td>
+      <td>-0.77</td>
+      <td>9169</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td>6.73</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>61471</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.55</td>
+      <td>54.77</td>
+      <td>-0.78</td>
+      <td>1707</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97500" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Village_Ruffians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Village Ruffians.html" target="_blank" rel="noopener noreferrer">Earth Village Ruffians</a></td>
+      <td>9.30</td>
+      <td>BG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>1056</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>59.20</td>
+      <td>58.42</td>
+      <td>-0.78</td>
+      <td>101</td>
+      <td>60.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97277" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_the_Last_Airbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, the Last Airbender.html" target="_blank" rel="noopener noreferrer">Aang, the Last Airbender</a></td>
+      <td>2.63</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77488</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.50</td>
+      <td>56.56</td>
+      <td>-0.94</td>
+      <td>366</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97557" target="_blank" rel="noopener noreferrer"><img src="img/Realm_of_Koh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Realm of Koh.html" target="_blank" rel="noopener noreferrer">Realm of Koh</a></td>
+      <td>4.25</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>62876</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.85</td>
+      <td>54.86</td>
+      <td>-0.99</td>
+      <td>350</td>
+      <td>54.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97505" target="_blank" rel="noopener noreferrer"><img src="img/Hama,_the_Bloodbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hama, the Bloodbender.html" target="_blank" rel="noopener noreferrer">Hama, the Bloodbender</a></td>
+      <td>5.32</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62595</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.45</td>
+      <td>56.36</td>
+      <td>-1.09</td>
+      <td>291</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97504" target="_blank" rel="noopener noreferrer"><img src="img/Guru_Pathik.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Guru Pathik.html" target="_blank" rel="noopener noreferrer">Guru Pathik</a></td>
+      <td>4.87</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12858</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.15</td>
+      <td>56.03</td>
+      <td>-1.12</td>
+      <td>116</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97320" target="_blank" rel="noopener noreferrer"><img src="img/Boomerang_Basics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boomerang Basics.html" target="_blank" rel="noopener noreferrer">Boomerang Basics</a></td>
+      <td>4.92</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16230</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.85</td>
+      <td>56.72</td>
+      <td>-1.13</td>
+      <td>238</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57537</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.45</td>
+      <td>55.29</td>
+      <td>-1.16</td>
+      <td>208</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26346</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.95</td>
+      <td>57.73</td>
+      <td>-1.22</td>
+      <td>414</td>
+      <td>60.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97369" target="_blank" rel="noopener noreferrer"><img src="img/Day_of_Black_Sun.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Day of Black Sun.html" target="_blank" rel="noopener noreferrer">Day of Black Sun</a></td>
+      <td>2.73</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>38710</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.95</td>
+      <td>56.58</td>
+      <td>-1.37</td>
+      <td>357</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46297</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>52.50</td>
+      <td>51.13</td>
+      <td>-1.37</td>
+      <td>133</td>
+      <td>47.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97442" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Destiny.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Destiny.html" target="_blank" rel="noopener noreferrer">Avatar Destiny</a></td>
+      <td>6.88</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>29718</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.00</td>
+      <td>54.63</td>
+      <td>-1.37</td>
+      <td>659</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97381" target="_blank" rel="noopener noreferrer"><img src="img/June,_Bounty_Hunter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//June, Bounty Hunter.html" target="_blank" rel="noopener noreferrer">June, Bounty Hunter</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>24941</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.25</td>
+      <td>54.88</td>
+      <td>-1.37</td>
+      <td>942</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2180</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.30</td>
+      <td>55.83</td>
+      <td>-1.47</td>
+      <td>206</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>24098</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.60</td>
+      <td>53.12</td>
+      <td>-1.48</td>
+      <td>497</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97361" target="_blank" rel="noopener noreferrer"><img src="img/Beetle-Headed_Merchants.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beetle-Headed Merchants.html" target="_blank" rel="noopener noreferrer">Beetle-Headed Merchants</a></td>
+      <td>10.65</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76083</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.25</td>
+      <td>54.57</td>
+      <td>-1.68</td>
+      <td>372</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97552" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Village.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Village.html" target="_blank" rel="noopener noreferrer">Kyoshi Village</a></td>
+      <td>8.30</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76645</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.60</td>
+      <td>54.85</td>
+      <td>-1.75</td>
+      <td>423</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97554" target="_blank" rel="noopener noreferrer"><img src="img/Misty_Palms_Oasis.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Misty Palms Oasis.html" target="_blank" rel="noopener noreferrer">Misty Palms Oasis</a></td>
+      <td>9.41</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23817</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.25</td>
+      <td>54.49</td>
+      <td>-1.76</td>
+      <td>635</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72149</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.60</td>
+      <td>54.47</td>
+      <td>-2.13</td>
+      <td>347</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53041</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.80</td>
+      <td>54.63</td>
+      <td>-2.17</td>
+      <td>454</td>
+      <td>56.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97467" target="_blank" rel="noopener noreferrer"><img src="img/Pillar_Launch.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pillar Launch.html" target="_blank" rel="noopener noreferrer">Pillar Launch</a></td>
+      <td>11.29</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>28032</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.20</td>
+      <td>54.03</td>
+      <td>-2.17</td>
+      <td>409</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97375" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Navy_Trebuchet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Navy Trebuchet.html" target="_blank" rel="noopener noreferrer">Fire Navy Trebuchet</a></td>
+      <td>5.50</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>18478</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.50</td>
+      <td>55.17</td>
+      <td>-2.33</td>
+      <td>174</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51074</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.40</td>
+      <td>52.96</td>
+      <td>-2.44</td>
+      <td>338</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97459" target="_blank" rel="noopener noreferrer"><img src="img/Haru,_Hidden_Talent.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Haru, Hidden Talent.html" target="_blank" rel="noopener noreferrer">Haru, Hidden Talent</a></td>
+      <td>5.19</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74397</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.65</td>
+      <td>54.05</td>
+      <td>-2.60</td>
+      <td>111</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>775</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>53.00</td>
+      <td>50.31</td>
+      <td>-2.69</td>
+      <td>161</td>
+      <td>48.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97276" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Exile.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Exile.html" target="_blank" rel="noopener noreferrer">Zuko's Exile</a></td>
+      <td>10.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33933</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.75</td>
+      <td>53.03</td>
+      <td>-2.72</td>
+      <td>132</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97397" target="_blank" rel="noopener noreferrer"><img src="img/Tundra_Tank.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tundra Tank.html" target="_blank" rel="noopener noreferrer">Tundra Tank</a></td>
+      <td>9.95</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71587</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.65</td>
+      <td>52.84</td>
+      <td>-2.81</td>
+      <td>176</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97536" target="_blank" rel="noopener noreferrer"><img src="img/Bender's_Waterskin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bender's Waterskin.html" target="_blank" rel="noopener noreferrer">Bender's Waterskin</a></td>
+      <td>10.77</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40958</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.45</td>
+      <td>54.58</td>
+      <td>-2.87</td>
+      <td>273</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>29437</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.40</td>
+      <td>52.82</td>
+      <td>-3.58</td>
+      <td>655</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97380" target="_blank" rel="noopener noreferrer"><img src="img/Joo_Dee,_One_of_Many.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Joo Dee, One of Many.html" target="_blank" rel="noopener noreferrer">Joo Dee, One of Many</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15949</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>59.75</td>
+      <td>55.98</td>
+      <td>-3.77</td>
+      <td>209</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>14825</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>55.75</td>
+      <td>51.56</td>
+      <td>-4.19</td>
+      <td>128</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97327" target="_blank" rel="noopener noreferrer"><img src="img/Giant_Koi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Giant Koi.html" target="_blank" rel="noopener noreferrer">Giant Koi</a></td>
+      <td>9.70</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>5833</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.85</td>
+      <td>52.63</td>
+      <td>-4.22</td>
+      <td>114</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97294" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Kids.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Kids.html" target="_blank" rel="noopener noreferrer">Glider Kids</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70463</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.70</td>
+      <td>53.33</td>
+      <td>-4.37</td>
+      <td>120</td>
+      <td>57.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97532" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Reinforcements.html" target="_blank" rel="noopener noreferrer">White Lotus Reinforcements</a></td>
+      <td>4.44</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16792</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.00</td>
+      <td>53.62</td>
+      <td>-4.38</td>
+      <td>138</td>
+      <td>58.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97334" target="_blank" rel="noopener noreferrer"><img src="img/Knowledge_Seeker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Knowledge Seeker.html" target="_blank" rel="noopener noreferrer">Knowledge Seeker</a></td>
+      <td>3.79</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>27189</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>52.00</td>
+      <td>47.20</td>
+      <td>-4.80</td>
+      <td>161</td>
+      <td>46.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97372" target="_blank" rel="noopener noreferrer"><img src="img/Fatal_Fissure.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fatal Fissure.html" target="_blank" rel="noopener noreferrer">Fatal Fissure</a></td>
+      <td>10.99</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22412</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.10</td>
+      <td>51.99</td>
+      <td>-5.11</td>
+      <td>302</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>8643</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.35</td>
+      <td>52.20</td>
+      <td>-5.15</td>
+      <td>159</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78893</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.95</td>
+      <td>49.66</td>
+      <td>-5.29</td>
+      <td>147</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97562" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Hideout.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Hideout.html" target="_blank" rel="noopener noreferrer">White Lotus Hideout</a></td>
+      <td>9.60</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>9205</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.65</td>
+      <td>51.28</td>
+      <td>-5.37</td>
+      <td>156</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13701</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.00</td>
+      <td>51.35</td>
+      <td>-5.65</td>
+      <td>111</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45173</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.25</td>
+      <td>51.48</td>
+      <td>-5.77</td>
+      <td>169</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>30280</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.15</td>
+      <td>50.00</td>
+      <td>-6.15</td>
+      <td>150</td>
+      <td>54.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97383" target="_blank" rel="noopener noreferrer"><img src="img/Lo_and_Li,_Twin_Tutors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lo and Li, Twin Tutors.html" target="_blank" rel="noopener noreferrer">Lo and Li, Twin Tutors</a></td>
+      <td>9.16</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39553</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>58.25</td>
+      <td>51.80</td>
+      <td>-6.45</td>
+      <td>139</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22974</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.80</td>
+      <td>50.00</td>
+      <td>-7.80</td>
+      <td>226</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>6957</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>56.65</td>
+      <td>48.70</td>
+      <td>-7.95</td>
+      <td>115</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3585</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.30</td>
+      <td>48.53</td>
+      <td>-8.77</td>
+      <td>136</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>12296</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.15</td>
+      <td>48.23</td>
+      <td>-8.92</td>
+      <td>141</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>68777</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>57.85</td>
+      <td>48.33</td>
+      <td>-9.52</td>
+      <td>180</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97526" target="_blank" rel="noopener noreferrer"><img src="img/Tolls_of_War.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tolls of War.html" target="_blank" rel="noopener noreferrer">Tolls of War</a></td>
+      <td>6.36</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35057</th>
+      <td>uncommon</td>
+      <td>BG</td>
+      <td>6.73</td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>57.6</td>
+      <td>54.90</td>
+      <td>44.51</td>
+      <td>-10.39</td>
+      <td>164</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>

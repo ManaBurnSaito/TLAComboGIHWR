@@ -1,0 +1,3589 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>52232</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.85</td>
+      <td>64.65</td>
+      <td>8.80</td>
+      <td>198</td>
+      <td>59.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97463" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Kyoshi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Kyoshi.html" target="_blank" rel="noopener noreferrer">The Legend of Kyoshi</a></td>
+      <td>1.96</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>59257</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.90</td>
+      <td>65.95</td>
+      <td>8.05</td>
+      <td>232</td>
+      <td>63.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97492" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_Unleashed.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, Unleashed.html" target="_blank" rel="noopener noreferrer">Bumi, Unleashed</a></td>
+      <td>1.98</td>
+      <td>RG</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>42678</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.80</td>
+      <td>59.43</td>
+      <td>7.63</td>
+      <td>318</td>
+      <td>51.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97429" target="_blank" rel="noopener noreferrer"><img src="img/Rough_Rhino_Cavalry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rough Rhino Cavalry.html" target="_blank" rel="noopener noreferrer">Rough Rhino Cavalry</a></td>
+      <td>11.52</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63753</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.60</td>
+      <td>62.69</td>
+      <td>7.09</td>
+      <td>587</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97508" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Grand_Lotus.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Grand Lotus.html" target="_blank" rel="noopener noreferrer">Iroh, Grand Lotus</a></td>
+      <td>3.13</td>
+      <td>URG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>21603</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.30</td>
+      <td>62.69</td>
+      <td>6.39</td>
+      <td>201</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97352" target="_blank" rel="noopener noreferrer"><img src="img/The_Unagi_of_Kyoshi_Island.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Unagi of Kyoshi Island.html" target="_blank" rel="noopener noreferrer">The Unagi of Kyoshi Island</a></td>
+      <td>2.06</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>48298</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>58.65</td>
+      <td>64.99</td>
+      <td>6.34</td>
+      <td>337</td>
+      <td>64.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97449" target="_blank" rel="noopener noreferrer"><img src="img/The_Earth_King.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Earth King.html" target="_blank" rel="noopener noreferrer">The Earth King</a></td>
+      <td>1.81</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>14859</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.25</td>
+      <td>59.00</td>
+      <td>5.75</td>
+      <td>339</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97327" target="_blank" rel="noopener noreferrer"><img src="img/Giant_Koi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Giant Koi.html" target="_blank" rel="noopener noreferrer">Giant Koi</a></td>
+      <td>9.70</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>19917</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.60</td>
+      <td>59.65</td>
+      <td>5.05</td>
+      <td>228</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97346" target="_blank" rel="noopener noreferrer"><img src="img/Sokka's_Haiku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka's Haiku.html" target="_blank" rel="noopener noreferrer">Sokka's Haiku</a></td>
+      <td>8.28</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23570</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.75</td>
+      <td>58.39</td>
+      <td>4.64</td>
+      <td>161</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>4462</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.65</td>
+      <td>61.11</td>
+      <td>4.46</td>
+      <td>108</td>
+      <td>60.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97289" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Jailer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Jailer.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Jailer</a></td>
+      <td>2.70</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58133</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.20</td>
+      <td>57.66</td>
+      <td>4.46</td>
+      <td>111</td>
+      <td>53.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97487" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Aang.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Aang.html" target="_blank" rel="noopener noreferrer">Avatar Aang</a></td>
+      <td>3.42</td>
+      <td>WURG</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>12330</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.65</td>
+      <td>59.05</td>
+      <td>4.40</td>
+      <td>613</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>43521</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.05</td>
+      <td>58.28</td>
+      <td>4.23</td>
+      <td>465</td>
+      <td>55.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97432" target="_blank" rel="noopener noreferrer"><img src="img/Tiger-Dillo.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tiger-Dillo.html" target="_blank" rel="noopener noreferrer">Tiger-Dillo</a></td>
+      <td>9.59</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74150</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.90</td>
+      <td>58.82</td>
+      <td>3.92</td>
+      <td>136</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97545" target="_blank" rel="noopener noreferrer"><img src="img/Agna_Qel'a.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Agna Qel'a.html" target="_blank" rel="noopener noreferrer">Agna Qel'a</a></td>
+      <td>4.14</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>37058</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.90</td>
+      <td>58.50</td>
+      <td>3.60</td>
+      <td>147</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97408" target="_blank" rel="noopener noreferrer"><img src="img/Fated_Firepower.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fated Firepower.html" target="_blank" rel="noopener noreferrer">Fated Firepower</a></td>
+      <td>4.30</td>
+      <td>R</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>16826</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.50</td>
+      <td>59.08</td>
+      <td>3.58</td>
+      <td>325</td>
+      <td>58.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97334" target="_blank" rel="noopener noreferrer"><img src="img/Knowledge_Seeker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Knowledge Seeker.html" target="_blank" rel="noopener noreferrer">Knowledge Seeker</a></td>
+      <td>3.79</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58976</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.30</td>
+      <td>55.84</td>
+      <td>3.54</td>
+      <td>634</td>
+      <td>52.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97491" target="_blank" rel="noopener noreferrer"><img src="img/Bitter_Work.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bitter Work.html" target="_blank" rel="noopener noreferrer">Bitter Work</a></td>
+      <td>7.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60381</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.30</td>
+      <td>58.70</td>
+      <td>3.40</td>
+      <td>644</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97496" target="_blank" rel="noopener noreferrer"><img src="img/Dragonfly_Swarm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dragonfly Swarm.html" target="_blank" rel="noopener noreferrer">Dragonfly Swarm</a></td>
+      <td>5.43</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35934</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.70</td>
+      <td>59.04</td>
+      <td>3.34</td>
+      <td>1067</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42959</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.75</td>
+      <td>55.03</td>
+      <td>3.28</td>
+      <td>189</td>
+      <td>50.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97430" target="_blank" rel="noopener noreferrer"><img src="img/Solstice_Revelations.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Solstice Revelations.html" target="_blank" rel="noopener noreferrer">Solstice Revelations</a></td>
+      <td>10.27</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42397</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.45</td>
+      <td>54.69</td>
+      <td>3.24</td>
+      <td>192</td>
+      <td>50.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97428" target="_blank" rel="noopener noreferrer"><img src="img/Redirect_Lightning.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Redirect Lightning.html" target="_blank" rel="noopener noreferrer">Redirect Lightning</a></td>
+      <td>5.73</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>17388</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.65</td>
+      <td>58.84</td>
+      <td>3.19</td>
+      <td>1176</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69092</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.35</td>
+      <td>58.32</td>
+      <td>2.97</td>
+      <td>523</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97527" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_Hardheaded_Teacher.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, Hardheaded Teacher.html" target="_blank" rel="noopener noreferrer">Toph, Hardheaded Teacher</a></td>
+      <td>2.81</td>
+      <td>RG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>38463</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.75</td>
+      <td>55.70</td>
+      <td>2.95</td>
+      <td>237</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97413" target="_blank" rel="noopener noreferrer"><img src="img/Firebender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebender Ascension.html" target="_blank" rel="noopener noreferrer">Firebender Ascension</a></td>
+      <td>3.78</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>52513</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.10</td>
+      <td>57.00</td>
+      <td>2.90</td>
+      <td>828</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97465" target="_blank" rel="noopener noreferrer"><img src="img/Origin_of_Metalbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Origin of Metalbending.html" target="_blank" rel="noopener noreferrer">Origin of Metalbending</a></td>
+      <td>9.41</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>19636</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.95</td>
+      <td>55.81</td>
+      <td>2.86</td>
+      <td>439</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97345" target="_blank" rel="noopener noreferrer"><img src="img/Serpent_of_the_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent of the Pass.html" target="_blank" rel="noopener noreferrer">Serpent of the Pass</a></td>
+      <td>6.41</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>49703</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.55</td>
+      <td>56.35</td>
+      <td>2.80</td>
+      <td>126</td>
+      <td>54.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97454" target="_blank" rel="noopener noreferrer"><img src="img/Earthen_Ally.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthen Ally.html" target="_blank" rel="noopener noreferrer">Earthen Ally</a></td>
+      <td>6.56</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>64315</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.95</td>
+      <td>57.69</td>
+      <td>2.74</td>
+      <td>260</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97510" target="_blank" rel="noopener noreferrer"><img src="img/Jet,_Freedom_Fighter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet, Freedom Fighter.html" target="_blank" rel="noopener noreferrer">Jet, Freedom Fighter</a></td>
+      <td>4.00</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>40711</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.75</td>
+      <td>60.27</td>
+      <td>2.52</td>
+      <td>219</td>
+      <td>62.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97421" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Roku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Roku.html" target="_blank" rel="noopener noreferrer">The Legend of Roku</a></td>
+      <td>1.67</td>
+      <td>R</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>69373</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.10</td>
+      <td>56.58</td>
+      <td>2.48</td>
+      <td>228</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97528" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_First_Metalbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the First Metalbender.html" target="_blank" rel="noopener noreferrer">Toph, the First Metalbender</a></td>
+      <td>3.60</td>
+      <td>WRG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>15983</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.25</td>
+      <td>59.68</td>
+      <td>2.43</td>
+      <td>444</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16264</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.35</td>
+      <td>57.78</td>
+      <td>2.43</td>
+      <td>874</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77803</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.45</td>
+      <td>56.74</td>
+      <td>2.29</td>
+      <td>957</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>16545</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.90</td>
+      <td>56.05</td>
+      <td>2.15</td>
+      <td>248</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97333" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Bending_Prodigy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Bending Prodigy.html" target="_blank" rel="noopener noreferrer">Katara, Bending Prodigy</a></td>
+      <td>3.39</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>8677</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.85</td>
+      <td>56.93</td>
+      <td>2.08</td>
+      <td>202</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37339</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.80</td>
+      <td>55.70</td>
+      <td>1.90</td>
+      <td>596</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97409" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Attacks.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Attacks.html" target="_blank" rel="noopener noreferrer">Fire Nation Attacks</a></td>
+      <td>6.55</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66844</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.25</td>
+      <td>56.13</td>
+      <td>1.88</td>
+      <td>481</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97519" target="_blank" rel="noopener noreferrer"><img src="img/Professor_Zei,_Anthropologist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Professor Zei, Anthropologist.html" target="_blank" rel="noopener noreferrer">Professor Zei, Anthropologist</a></td>
+      <td>6.18</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55885</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.80</td>
+      <td>55.68</td>
+      <td>1.88</td>
+      <td>643</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97477" target="_blank" rel="noopener noreferrer"><img src="img/True_Ancestry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//True Ancestry.html" target="_blank" rel="noopener noreferrer">True Ancestry</a></td>
+      <td>5.81</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>18231</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.15</td>
+      <td>55.95</td>
+      <td>1.80</td>
+      <td>227</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97340" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Patrol.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Patrol.html" target="_blank" rel="noopener noreferrer">North Pole Patrol</a></td>
+      <td>6.12</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>49141</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.70</td>
+      <td>59.47</td>
+      <td>1.77</td>
+      <td>301</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97452" target="_blank" rel="noopener noreferrer"><img src="img/Earthbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbender Ascension.html" target="_blank" rel="noopener noreferrer">Earthbender Ascension</a></td>
+      <td>2.20</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>12892</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.65</td>
+      <td>56.35</td>
+      <td>1.70</td>
+      <td>362</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97320" target="_blank" rel="noopener noreferrer"><img src="img/Boomerang_Basics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boomerang Basics.html" target="_blank" rel="noopener noreferrer">Boomerang Basics</a></td>
+      <td>4.92</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65158</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.95</td>
+      <td>56.65</td>
+      <td>1.70</td>
+      <td>316</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97513" target="_blank" rel="noopener noreferrer"><img src="img/The_Lion-Turtle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Lion-Turtle.html" target="_blank" rel="noopener noreferrer">The Lion-Turtle</a></td>
+      <td>4.64</td>
+      <td>UG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>23289</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.70</td>
+      <td>54.29</td>
+      <td>1.59</td>
+      <td>105</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97358" target="_blank" rel="noopener noreferrer"><img src="img/Yue,_the_Moon_Spirit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yue, the Moon Spirit.html" target="_blank" rel="noopener noreferrer">Yue, the Moon Spirit</a></td>
+      <td>3.75</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>42116</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.40</td>
+      <td>56.97</td>
+      <td>1.57</td>
+      <td>402</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97427" target="_blank" rel="noopener noreferrer"><img src="img/Ran_and_Shaw.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ran and Shaw.html" target="_blank" rel="noopener noreferrer">Ran and Shaw</a></td>
+      <td>2.08</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>38744</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.45</td>
+      <td>57.02</td>
+      <td>1.57</td>
+      <td>2229</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39868</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.45</td>
+      <td>53.95</td>
+      <td>1.50</td>
+      <td>608</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>54199</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.45</td>
+      <td>55.90</td>
+      <td>1.45</td>
+      <td>1177</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55604</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.35</td>
+      <td>56.78</td>
+      <td>1.43</td>
+      <td>479</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97476" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_Blind_Bandit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the Blind Bandit.html" target="_blank" rel="noopener noreferrer">Toph, the Blind Bandit</a></td>
+      <td>4.05</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>57571</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>55.19</td>
+      <td>1.24</td>
+      <td>1377</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48860</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.25</td>
+      <td>54.47</td>
+      <td>1.22</td>
+      <td>470</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97451" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble.html" target="_blank" rel="noopener noreferrer">Earth Rumble</a></td>
+      <td>5.95</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78646</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.40</td>
+      <td>54.57</td>
+      <td>1.17</td>
+      <td>405</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97561" target="_blank" rel="noopener noreferrer"><img src="img/Sun-Blessed_Peak.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun-Blessed Peak.html" target="_blank" rel="noopener noreferrer">Sun-Blessed Peak</a></td>
+      <td>8.73</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62629</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.95</td>
+      <td>55.91</td>
+      <td>0.96</td>
+      <td>626</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97504" target="_blank" rel="noopener noreferrer"><img src="img/Guru_Pathik.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Guru Pathik.html" target="_blank" rel="noopener noreferrer">Guru Pathik</a></td>
+      <td>4.87</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>67968</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.60</td>
+      <td>54.55</td>
+      <td>0.95</td>
+      <td>110</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97523" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Tenacious_Tactician.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Tenacious Tactician.html" target="_blank" rel="noopener noreferrer">Sokka, Tenacious Tactician</a></td>
+      <td>3.37</td>
+      <td>WUR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>18512</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.00</td>
+      <td>55.94</td>
+      <td>0.94</td>
+      <td>758</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74712</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.00</td>
+      <td>56.93</td>
+      <td>0.93</td>
+      <td>267</td>
+      <td>59.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97547" target="_blank" rel="noopener noreferrer"><img src="img/Ba_Sing_Se.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ba Sing Se.html" target="_blank" rel="noopener noreferrer">Ba Sing Se</a></td>
+      <td>3.01</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>40992</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.95</td>
+      <td>55.88</td>
+      <td>0.93</td>
+      <td>1752</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>60100</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.10</td>
+      <td>56.00</td>
+      <td>0.90</td>
+      <td>150</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td>6.73</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>49422</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.15</td>
+      <td>53.03</td>
+      <td>0.88</td>
+      <td>1024</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97453" target="_blank" rel="noopener noreferrer"><img src="img/Earthbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbending Lesson.html" target="_blank" rel="noopener noreferrer">Earthbending Lesson</a></td>
+      <td>10.17</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50265</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>54.82</td>
+      <td>0.87</td>
+      <td>436</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97456" target="_blank" rel="noopener noreferrer"><img src="img/Flopsie,_Bumi's_Buddy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Flopsie, Bumi's Buddy.html" target="_blank" rel="noopener noreferrer">Flopsie, Bumi's Buddy</a></td>
+      <td>5.33</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>46893</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.70</td>
+      <td>58.54</td>
+      <td>0.84</td>
+      <td>164</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97444" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole_Cub.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole Cub.html" target="_blank" rel="noopener noreferrer">Badgermole Cub</a></td>
+      <td>1.85</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>66282</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.70</td>
+      <td>53.52</td>
+      <td>0.82</td>
+      <td>710</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97517" target="_blank" rel="noopener noreferrer"><img src="img/Platypus-Bear.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Platypus-Bear.html" target="_blank" rel="noopener noreferrer">Platypus-Bear</a></td>
+      <td>10.20</td>
+      <td>UG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46612</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>55.37</td>
+      <td>0.82</td>
+      <td>950</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>54.76</td>
+      <td>0.81</td>
+      <td>966</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47174</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.40</td>
+      <td>55.19</td>
+      <td>0.79</td>
+      <td>482</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97445" target="_blank" rel="noopener noreferrer"><img src="img/The_Boulder,_Ready_to_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Boulder, Ready to Rumble.html" target="_blank" rel="noopener noreferrer">The Boulder, Ready to Rumble</a></td>
+      <td>5.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74993</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.45</td>
+      <td>54.20</td>
+      <td>0.75</td>
+      <td>286</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>59819</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.15</td>
+      <td>52.89</td>
+      <td>0.74</td>
+      <td>121</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97494" target="_blank" rel="noopener noreferrer"><img src="img/Cruel_Administrator.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cruel Administrator.html" target="_blank" rel="noopener noreferrer">Cruel Administrator</a></td>
+      <td>7.86</td>
+      <td>BR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>45207</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.75</td>
+      <td>55.48</td>
+      <td>0.73</td>
+      <td>1359</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35372</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.25</td>
+      <td>56.94</td>
+      <td>0.69</td>
+      <td>627</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>70497</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.20</td>
+      <td>55.88</td>
+      <td>0.68</td>
+      <td>136</td>
+      <td>57.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97532" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Reinforcements.html" target="_blank" rel="noopener noreferrer">White Lotus Reinforcements</a></td>
+      <td>4.44</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60662</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>54.61</td>
+      <td>0.66</td>
+      <td>304</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97497" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Soldier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Soldier.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Soldier</a></td>
+      <td>9.36</td>
+      <td>WG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>21322</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.40</td>
+      <td>56.97</td>
+      <td>0.57</td>
+      <td>165</td>
+      <td>60.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97351" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Chi_Blocker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Chi Blocker.html" target="_blank" rel="noopener noreferrer">Ty Lee, Chi Blocker</a></td>
+      <td>2.18</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>39587</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.75</td>
+      <td>56.28</td>
+      <td>0.53</td>
+      <td>899</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22446</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.60</td>
+      <td>55.13</td>
+      <td>0.53</td>
+      <td>1034</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14297</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.10</td>
+      <td>55.62</td>
+      <td>0.52</td>
+      <td>721</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41554</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.75</td>
+      <td>53.27</td>
+      <td>0.52</td>
+      <td>520</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97425" target="_blank" rel="noopener noreferrer"><img src="img/Mongoose_Lizard.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mongoose Lizard.html" target="_blank" rel="noopener noreferrer">Mongoose Lizard</a></td>
+      <td>11.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>19074</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.05</td>
+      <td>52.55</td>
+      <td>0.50</td>
+      <td>196</td>
+      <td>51.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97343" target="_blank" rel="noopener noreferrer"><img src="img/Rowdy_Snowballers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rowdy Snowballers.html" target="_blank" rel="noopener noreferrer">Rowdy Snowballers</a></td>
+      <td>9.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46050</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.60</td>
+      <td>56.08</td>
+      <td>0.48</td>
+      <td>510</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97441" target="_blank" rel="noopener noreferrer"><img src="img/Allies_at_Last.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Allies at Last.html" target="_blank" rel="noopener noreferrer">Allies at Last</a></td>
+      <td>4.24</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>528</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.85</td>
+      <td>52.31</td>
+      <td>0.46</td>
+      <td>195</td>
+      <td>51.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97275" target="_blank" rel="noopener noreferrer"><img src="img/Energybending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Energybending.html" target="_blank" rel="noopener noreferrer">Energybending</a></td>
+      <td>10.05</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>41835</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>50.90</td>
+      <td>51.30</td>
+      <td>0.40</td>
+      <td>115</td>
+      <td>49.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td>11.13</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15140</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.95</td>
+      <td>56.32</td>
+      <td>0.37</td>
+      <td>380</td>
+      <td>59.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97328" target="_blank" rel="noopener noreferrer"><img src="img/Gran-Gran.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Gran-Gran.html" target="_blank" rel="noopener noreferrer">Gran-Gran</a></td>
+      <td>4.45</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74431</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.15</td>
+      <td>54.47</td>
+      <td>0.32</td>
+      <td>883</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>56728</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.80</td>
+      <td>54.05</td>
+      <td>0.25</td>
+      <td>901</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97480" target="_blank" rel="noopener noreferrer"><img src="img/Walltop_Sentries.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Walltop Sentries.html" target="_blank" rel="noopener noreferrer">Walltop Sentries</a></td>
+      <td>8.01</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69654</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.60</td>
+      <td>52.74</td>
+      <td>0.14</td>
+      <td>8508</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td>6.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12611</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.90</td>
+      <td>55.03</td>
+      <td>0.13</td>
+      <td>169</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97319" target="_blank" rel="noopener noreferrer"><img src="img/Benevolent_River_Spirit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Benevolent River Spirit.html" target="_blank" rel="noopener noreferrer">Benevolent River Spirit</a></td>
+      <td>4.86</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>13735</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.50</td>
+      <td>54.59</td>
+      <td>0.09</td>
+      <td>654</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52794</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.70</td>
+      <td>54.75</td>
+      <td>0.05</td>
+      <td>1043</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44364</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.10</td>
+      <td>53.14</td>
+      <td>0.04</td>
+      <td>414</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97435" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Artful_Acrobat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Artful Acrobat.html" target="_blank" rel="noopener noreferrer">Ty Lee, Artful Acrobat</a></td>
+      <td>6.29</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72464</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.90</td>
+      <td>51.85</td>
+      <td>-0.05</td>
+      <td>162</td>
+      <td>51.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97539" target="_blank" rel="noopener noreferrer"><img src="img/Meteor_Sword.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meteor Sword.html" target="_blank" rel="noopener noreferrer">Meteor Sword</a></td>
+      <td>9.09</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71340</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.50</td>
+      <td>53.44</td>
+      <td>-0.06</td>
+      <td>494</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>20479</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.10</td>
+      <td>54.01</td>
+      <td>-0.09</td>
+      <td>137</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97348" target="_blank" rel="noopener noreferrer"><img src="img/Spirit_Water_Revival.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Spirit Water Revival.html" target="_blank" rel="noopener noreferrer">Spirit Water Revival</a></td>
+      <td>3.42</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>47455</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.25</td>
+      <td>53.12</td>
+      <td>-0.13</td>
+      <td>593</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97446" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_King_of_Three_Trials.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, King of Three Trials.html" target="_blank" rel="noopener noreferrer">Bumi, King of Three Trials</a></td>
+      <td>5.68</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>37620</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>54.40</td>
+      <td>-0.15</td>
+      <td>1283</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64034</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.05</td>
+      <td>54.87</td>
+      <td>-0.18</td>
+      <td>113</td>
+      <td>57.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97509" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Tea_Master.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Tea Master.html" target="_blank" rel="noopener noreferrer">Iroh, Tea Master</a></td>
+      <td>4.77</td>
+      <td>WR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>37901</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.65</td>
+      <td>51.47</td>
+      <td>-0.18</td>
+      <td>441</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97411" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Raider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Raider.html" target="_blank" rel="noopener noreferrer">Fire Nation Raider</a></td>
+      <td>11.35</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78084</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.25</td>
+      <td>54.95</td>
+      <td>-0.30</td>
+      <td>202</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97559" target="_blank" rel="noopener noreferrer"><img src="img/Secret_Tunnel.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Secret Tunnel.html" target="_blank" rel="noopener noreferrer">Secret Tunnel</a></td>
+      <td>3.76</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>55042</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.50</td>
+      <td>53.15</td>
+      <td>-0.35</td>
+      <td>651</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97474" target="_blank" rel="noopener noreferrer"><img src="img/Shared_Roots.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Shared Roots.html" target="_blank" rel="noopener noreferrer">Shared Roots</a></td>
+      <td>5.44</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>76398</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.85</td>
+      <td>53.44</td>
+      <td>-0.41</td>
+      <td>784</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97553" target="_blank" rel="noopener noreferrer"><img src="img/Meditation_Pools.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meditation Pools.html" target="_blank" rel="noopener noreferrer">Meditation Pools</a></td>
+      <td>8.34</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>56447</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.10</td>
+      <td>52.67</td>
+      <td>-0.43</td>
+      <td>543</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97479" target="_blank" rel="noopener noreferrer"><img src="img/Unlucky_Cabbage_Merchant.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Unlucky Cabbage Merchant.html" target="_blank" rel="noopener noreferrer">Unlucky Cabbage Merchant</a></td>
+      <td>5.47</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62910</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.35</td>
+      <td>52.86</td>
+      <td>-0.49</td>
+      <td>140</td>
+      <td>54.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97505" target="_blank" rel="noopener noreferrer"><img src="img/Hama,_the_Bloodbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hama, the Bloodbender.html" target="_blank" rel="noopener noreferrer">Hama, the Bloodbender</a></td>
+      <td>5.32</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77241</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.75</td>
+      <td>52.98</td>
+      <td>-0.77</td>
+      <td>1223</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97556" target="_blank" rel="noopener noreferrer"><img src="img/Omashu_City.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Omashu City.html" target="_blank" rel="noopener noreferrer">Omashu City</a></td>
+      <td>8.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>36496</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.45</td>
+      <td>52.65</td>
+      <td>-0.80</td>
+      <td>528</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53637</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.85</td>
+      <td>53.04</td>
+      <td>-0.81</td>
+      <td>1103</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97469" target="_blank" rel="noopener noreferrer"><img src="img/Rebellious_Captives.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rebellious Captives.html" target="_blank" rel="noopener noreferrer">Rebellious Captives</a></td>
+      <td>8.20</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76117</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.75</td>
+      <td>52.87</td>
+      <td>-0.88</td>
+      <td>348</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97552" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Village.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Village.html" target="_blank" rel="noopener noreferrer">Kyoshi Village</a></td>
+      <td>8.30</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50546</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.50</td>
+      <td>51.61</td>
+      <td>-0.89</td>
+      <td>403</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97457" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Vinebender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Vinebender.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Vinebender</a></td>
+      <td>10.67</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57009</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.20</td>
+      <td>56.30</td>
+      <td>-0.90</td>
+      <td>119</td>
+      <td>61.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97481" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_at_the_Crossroads.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, at the Crossroads.html" target="_blank" rel="noopener noreferrer">Aang, at the Crossroads</a></td>
+      <td>2.37</td>
+      <td>WUG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>9239</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.15</td>
+      <td>53.22</td>
+      <td>-0.93</td>
+      <td>171</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63472</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.85</td>
+      <td>53.90</td>
+      <td>-0.95</td>
+      <td>564</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97507" target="_blank" rel="noopener noreferrer"><img src="img/Hermitic_Herbalist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hermitic Herbalist.html" target="_blank" rel="noopener noreferrer">Hermitic Herbalist</a></td>
+      <td>5.65</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>45769</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.50</td>
+      <td>51.35</td>
+      <td>-1.15</td>
+      <td>518</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97440" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Exiled_Prince.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Exiled Prince.html" target="_blank" rel="noopener noreferrer">Zuko, Exiled Prince</a></td>
+      <td>5.82</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>2214</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.80</td>
+      <td>53.63</td>
+      <td>-1.17</td>
+      <td>399</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53356</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>53.36</td>
+      <td>-1.19</td>
+      <td>1222</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54761</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.00</td>
+      <td>52.68</td>
+      <td>-1.32</td>
+      <td>560</td>
+      <td>55.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97473" target="_blank" rel="noopener noreferrer"><img src="img/Seismic_Sense.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Seismic Sense.html" target="_blank" rel="noopener noreferrer">Seismic Sense</a></td>
+      <td>6.99</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>69935</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.25</td>
+      <td>51.90</td>
+      <td>-1.35</td>
+      <td>422</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>75274</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.70</td>
+      <td>51.31</td>
+      <td>-1.39</td>
+      <td>191</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97549" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Palace.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Palace.html" target="_blank" rel="noopener noreferrer">Fire Nation Palace</a></td>
+      <td>7.02</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>35653</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.55</td>
+      <td>51.13</td>
+      <td>-1.42</td>
+      <td>399</td>
+      <td>52.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97403" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Man.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Man.html" target="_blank" rel="noopener noreferrer">Combustion Man</a></td>
+      <td>6.36</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>40149</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.90</td>
+      <td>51.46</td>
+      <td>-1.44</td>
+      <td>103</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97419" target="_blank" rel="noopener noreferrer"><img src="img/Jet's_Brainwashing.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet's Brainwashing.html" target="_blank" rel="noopener noreferrer">Jet's Brainwashing</a></td>
+      <td>10.06</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55323</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.45</td>
+      <td>50.97</td>
+      <td>-1.48</td>
+      <td>412</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97475" target="_blank" rel="noopener noreferrer"><img src="img/Sparring_Dummy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sparring Dummy.html" target="_blank" rel="noopener noreferrer">Sparring Dummy</a></td>
+      <td>8.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>47736</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.50</td>
+      <td>49.85</td>
+      <td>-1.65</td>
+      <td>1003</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97447" target="_blank" rel="noopener noreferrer"><img src="img/Cycle_of_Renewal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cycle of Renewal.html" target="_blank" rel="noopener noreferrer">Cycle of Renewal</a></td>
+      <td>9.00</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44645</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.05</td>
+      <td>51.38</td>
+      <td>-1.67</td>
+      <td>362</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97436" target="_blank" rel="noopener noreferrer"><img src="img/War_Balloon.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//War Balloon.html" target="_blank" rel="noopener noreferrer">War Balloon</a></td>
+      <td>7.83</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71621</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.15</td>
+      <td>51.36</td>
+      <td>-1.79</td>
+      <td>220</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97536" target="_blank" rel="noopener noreferrer"><img src="img/Bender's_Waterskin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bender's Waterskin.html" target="_blank" rel="noopener noreferrer">Bender's Waterskin</a></td>
+      <td>10.77</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>36777</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.10</td>
+      <td>51.30</td>
+      <td>-1.80</td>
+      <td>655</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>6148</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.40</td>
+      <td>53.45</td>
+      <td>-1.95</td>
+      <td>116</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97295" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Staff.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Staff.html" target="_blank" rel="noopener noreferrer">Glider Staff</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>75555</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.70</td>
+      <td>51.75</td>
+      <td>-1.95</td>
+      <td>257</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97550" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Bottom_Swamp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Bottom Swamp.html" target="_blank" rel="noopener noreferrer">Foggy Bottom Swamp</a></td>
+      <td>9.78</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>809</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>50.50</td>
+      <td>48.43</td>
+      <td>-2.07</td>
+      <td>351</td>
+      <td>48.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97276" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Exile.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Exile.html" target="_blank" rel="noopener noreferrer">Zuko's Exile</a></td>
+      <td>10.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54480</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.75</td>
+      <td>50.67</td>
+      <td>-2.08</td>
+      <td>742</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97472" target="_blank" rel="noopener noreferrer"><img src="img/Saber-Tooth_Moose-Lion.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Saber-Tooth Moose-Lion.html" target="_blank" rel="noopener noreferrer">Saber-Tooth Moose-Lion</a></td>
+      <td>9.65</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51951</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.45</td>
+      <td>50.24</td>
+      <td>-2.21</td>
+      <td>209</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97462" target="_blank" rel="noopener noreferrer"><img src="img/Leaves_from_the_Vine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Leaves from the Vine.html" target="_blank" rel="noopener noreferrer">Leaves from the Vine</a></td>
+      <td>8.83</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72745</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.30</td>
+      <td>52.76</td>
+      <td>-2.54</td>
+      <td>127</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97540" target="_blank" rel="noopener noreferrer"><img src="img/Planetarium_of_Wan_Shi_Tong.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Planetarium of Wan Shi Tong.html" target="_blank" rel="noopener noreferrer">Planetarium of Wan Shi Tong</a></td>
+      <td>1.72</td>
+      <td></td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>43802</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.40</td>
+      <td>50.74</td>
+      <td>-2.66</td>
+      <td>605</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53918</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.60</td>
+      <td>50.82</td>
+      <td>-2.78</td>
+      <td>364</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td>7.86</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58695</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.35</td>
+      <td>53.51</td>
+      <td>-2.84</td>
+      <td>114</td>
+      <td>60.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97490" target="_blank" rel="noopener noreferrer"><img src="img/Beifong's_Bounty_Hunters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beifong's Bounty Hunters.html" target="_blank" rel="noopener noreferrer">Beifong's Bounty Hunters</a></td>
+      <td>3.22</td>
+      <td>BG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>50827</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>57.35</td>
+      <td>54.49</td>
+      <td>-2.86</td>
+      <td>301</td>
+      <td>62.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97458" target="_blank" rel="noopener noreferrer"><img src="img/Great_Divide_Guide.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Great Divide Guide.html" target="_blank" rel="noopener noreferrer">Great Divide Guide</a></td>
+      <td>2.35</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>20760</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.60</td>
+      <td>51.72</td>
+      <td>-2.88</td>
+      <td>145</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97349" target="_blank" rel="noopener noreferrer"><img src="img/Teo,_Spirited_Glider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Teo, Spirited Glider.html" target="_blank" rel="noopener noreferrer">Teo, Spirited Glider</a></td>
+      <td>4.49</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33405</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.65</td>
+      <td>51.72</td>
+      <td>-2.93</td>
+      <td>261</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76960</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.40</td>
+      <td>51.46</td>
+      <td>-2.94</td>
+      <td>206</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97555" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Gates.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Gates.html" target="_blank" rel="noopener noreferrer">North Pole Gates</a></td>
+      <td>7.90</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>67406</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.40</td>
+      <td>50.43</td>
+      <td>-2.97</td>
+      <td>232</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97521" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Bold_Boomeranger.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Bold Boomeranger.html" target="_blank" rel="noopener noreferrer">Sokka, Bold Boomeranger</a></td>
+      <td>5.11</td>
+      <td>UR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>11487</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.25</td>
+      <td>51.27</td>
+      <td>-2.98</td>
+      <td>197</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97315" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Captain.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Captain.html" target="_blank" rel="noopener noreferrer">Water Tribe Captain</a></td>
+      <td>7.47</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23008</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.30</td>
+      <td>52.29</td>
+      <td>-3.01</td>
+      <td>547</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44083</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.45</td>
+      <td>51.37</td>
+      <td>-3.08</td>
+      <td>329</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97434" target="_blank" rel="noopener noreferrer"><img src="img/Twin_Blades.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Twin Blades.html" target="_blank" rel="noopener noreferrer">Twin Blades</a></td>
+      <td>7.22</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15702</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.30</td>
+      <td>50.16</td>
+      <td>-3.14</td>
+      <td>307</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97330" target="_blank" rel="noopener noreferrer"><img src="img/Iguana_Parrot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iguana Parrot.html" target="_blank" rel="noopener noreferrer">Iguana Parrot</a></td>
+      <td>8.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35091</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.40</td>
+      <td>49.13</td>
+      <td>-3.27</td>
+      <td>867</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11768</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.10</td>
+      <td>52.80</td>
+      <td>-3.30</td>
+      <td>125</td>
+      <td>59.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97316" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Rallier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Rallier.html" target="_blank" rel="noopener noreferrer">Water Tribe Rallier</a></td>
+      <td>3.16</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>38182</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.25</td>
+      <td>50.74</td>
+      <td>-3.51</td>
+      <td>611</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12049</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>50.86</td>
+      <td>-3.69</td>
+      <td>175</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97317" target="_blank" rel="noopener noreferrer"><img src="img/Yip_Yip!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yip Yip!.html" target="_blank" rel="noopener noreferrer">Yip Yip!</a></td>
+      <td>8.85</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>75836</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.45</td>
+      <td>50.71</td>
+      <td>-3.74</td>
+      <td>140</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97551" target="_blank" rel="noopener noreferrer"><img src="img/Jasmine_Dragon_Tea_Shop.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jasmine Dragon Tea Shop.html" target="_blank" rel="noopener noreferrer">Jasmine Dragon Tea Shop</a></td>
+      <td>3.59</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>61224</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.90</td>
+      <td>49.06</td>
+      <td>-3.84</td>
+      <td>426</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97499" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble_Wrestlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble Wrestlers.html" target="_blank" rel="noopener noreferrer">Earth Rumble Wrestlers</a></td>
+      <td>11.22</td>
+      <td>RG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65720</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.00</td>
+      <td>51.16</td>
+      <td>-3.84</td>
+      <td>344</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78927</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.45</td>
+      <td>48.53</td>
+      <td>-3.92</td>
+      <td>307</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97562" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Hideout.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Hideout.html" target="_blank" rel="noopener noreferrer">White Lotus Hideout</a></td>
+      <td>9.60</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>68249</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>50.00</td>
+      <td>-3.95</td>
+      <td>158</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97524" target="_blank" rel="noopener noreferrer"><img src="img/Suki,_Kyoshi_Warrior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Suki, Kyoshi Warrior.html" target="_blank" rel="noopener noreferrer">Suki, Kyoshi Warrior</a></td>
+      <td>3.65</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>1090</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>56.70</td>
+      <td>52.66</td>
+      <td>-4.04</td>
+      <td>188</td>
+      <td>60.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97277" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_the_Last_Airbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, the Last Airbender.html" target="_blank" rel="noopener noreferrer">Aang, the Last Airbender</a></td>
+      <td>2.63</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>44926</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.85</td>
+      <td>51.74</td>
+      <td>-4.11</td>
+      <td>288</td>
+      <td>59.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97437" target="_blank" rel="noopener noreferrer"><img src="img/Wartime_Protestors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wartime Protestors.html" target="_blank" rel="noopener noreferrer">Wartime Protestors</a></td>
+      <td>2.34</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>48579</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>50.42</td>
+      <td>-4.13</td>
+      <td>474</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97450" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_General.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom General.html" target="_blank" rel="noopener noreferrer">Earth Kingdom General</a></td>
+      <td>4.98</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>3619</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.80</td>
+      <td>50.45</td>
+      <td>-4.35</td>
+      <td>222</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41273</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.85</td>
+      <td>48.46</td>
+      <td>-4.39</td>
+      <td>520</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71902</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.90</td>
+      <td>50.50</td>
+      <td>-4.40</td>
+      <td>200</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>14578</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.95</td>
+      <td>47.37</td>
+      <td>-4.58</td>
+      <td>152</td>
+      <td>51.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97326" target="_blank" rel="noopener noreferrer"><img src="img/Geyser_Leaper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Geyser Leaper.html" target="_blank" rel="noopener noreferrer">Geyser Leaper</a></td>
+      <td>10.47</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51108</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.90</td>
+      <td>47.99</td>
+      <td>-4.91</td>
+      <td>373</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97459" target="_blank" rel="noopener noreferrer"><img src="img/Haru,_Hidden_Talent.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Haru, Hidden Talent.html" target="_blank" rel="noopener noreferrer">Haru, Hidden Talent</a></td>
+      <td>5.19</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17950</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.90</td>
+      <td>50.86</td>
+      <td>-5.04</td>
+      <td>175</td>
+      <td>59.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97339" target="_blank" rel="noopener noreferrer"><img src="img/The_Mechanist,_Aerial_Artisan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Mechanist, Aerial Artisan.html" target="_blank" rel="noopener noreferrer">The Mechanist, Aerial Artisan</a></td>
+      <td>2.16</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>6991</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.15</td>
+      <td>48.98</td>
+      <td>-5.17</td>
+      <td>196</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>61505</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.05</td>
+      <td>47.67</td>
+      <td>-5.38</td>
+      <td>365</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97500" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Village_Ruffians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Village Ruffians.html" target="_blank" rel="noopener noreferrer">Earth Village Ruffians</a></td>
+      <td>9.30</td>
+      <td>BG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39025</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.10</td>
+      <td>46.34</td>
+      <td>-5.76</td>
+      <td>205</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97415" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Student.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Student.html" target="_blank" rel="noopener noreferrer">Firebending Student</a></td>
+      <td>4.03</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>45488</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.25</td>
+      <td>46.46</td>
+      <td>-5.79</td>
+      <td>127</td>
+      <td>51.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td>6.68</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>25818</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.35</td>
+      <td>48.51</td>
+      <td>-5.84</td>
+      <td>101</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48017</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.50</td>
+      <td>48.60</td>
+      <td>-5.90</td>
+      <td>179</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97448" target="_blank" rel="noopener noreferrer"><img src="img/Diligent_Zookeeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Diligent Zookeeper.html" target="_blank" rel="noopener noreferrer">Diligent Zookeeper</a></td>
+      <td>4.00</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>56166</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.90</td>
+      <td>46.77</td>
+      <td>-6.13</td>
+      <td>310</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97478" target="_blank" rel="noopener noreferrer"><img src="img/Turtle-Duck.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Turtle-Duck.html" target="_blank" rel="noopener noreferrer">Turtle-Duck</a></td>
+      <td>11.42</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40430</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>50.90</td>
+      <td>44.76</td>
+      <td>-6.14</td>
+      <td>143</td>
+      <td>49.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97420" target="_blank" rel="noopener noreferrer"><img src="img/The_Last_Agni_Kai.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Last Agni Kai.html" target="_blank" rel="noopener noreferrer">The Last Agni Kai</a></td>
+      <td>5.04</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>26661</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>48.33</td>
+      <td>-6.22</td>
+      <td>120</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>68530</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.15</td>
+      <td>46.89</td>
+      <td>-6.26</td>
+      <td>209</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97525" target="_blank" rel="noopener noreferrer"><img src="img/Sun_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun Warriors.html" target="_blank" rel="noopener noreferrer">Sun Warriors</a></td>
+      <td>5.93</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78365</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.75</td>
+      <td>48.48</td>
+      <td>-6.27</td>
+      <td>132</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97560" target="_blank" rel="noopener noreferrer"><img src="img/Serpent's_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent's Pass.html" target="_blank" rel="noopener noreferrer">Serpent's Pass</a></td>
+      <td>8.69</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70216</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.80</td>
+      <td>47.46</td>
+      <td>-6.34</td>
+      <td>276</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97531" target="_blank" rel="noopener noreferrer"><img src="img/Wandering_Musicians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wandering Musicians.html" target="_blank" rel="noopener noreferrer">Wandering Musicians</a></td>
+      <td>8.74</td>
+      <td>WR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33686</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.50</td>
+      <td>47.10</td>
+      <td>-6.40</td>
+      <td>138</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65439</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.25</td>
+      <td>45.74</td>
+      <td>-6.51</td>
+      <td>129</td>
+      <td>51.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97514" target="_blank" rel="noopener noreferrer"><img src="img/Long_Feng,_Grand_Secretariat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Long Feng, Grand Secretariat.html" target="_blank" rel="noopener noreferrer">Long Feng, Grand Secretariat</a></td>
+      <td>6.00</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>1933</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.40</td>
+      <td>46.75</td>
+      <td>-6.65</td>
+      <td>154</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97280" target="_blank" rel="noopener noreferrer"><img src="img/Airbender's_Reversal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbender's Reversal.html" target="_blank" rel="noopener noreferrer">Airbender's Reversal</a></td>
+      <td>3.77</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>18793</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.80</td>
+      <td>47.11</td>
+      <td>-6.69</td>
+      <td>225</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97342" target="_blank" rel="noopener noreferrer"><img src="img/Otter-Penguin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Otter-Penguin.html" target="_blank" rel="noopener noreferrer">Otter-Penguin</a></td>
+      <td>9.15</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53075</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.30</td>
+      <td>47.58</td>
+      <td>-6.72</td>
+      <td>227</td>
+      <td>56.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97467" target="_blank" rel="noopener noreferrer"><img src="img/Pillar_Launch.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pillar Launch.html" target="_blank" rel="noopener noreferrer">Pillar Launch</a></td>
+      <td>11.29</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>72183</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.10</td>
+      <td>46.84</td>
+      <td>-7.26</td>
+      <td>316</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>17669</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.70</td>
+      <td>45.15</td>
+      <td>-7.55</td>
+      <td>237</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97338" target="_blank" rel="noopener noreferrer"><img src="img/Master_Pakku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Master Pakku.html" target="_blank" rel="noopener noreferrer">Master Pakku</a></td>
+      <td>7.74</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>34810</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.15</td>
+      <td>44.44</td>
+      <td>-7.71</td>
+      <td>432</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97400" target="_blank" rel="noopener noreferrer"><img src="img/Boar-q-pine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boar-q-pine.html" target="_blank" rel="noopener noreferrer">Boar-q-pine</a></td>
+      <td>10.91</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39306</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>52.40</td>
+      <td>44.68</td>
+      <td>-7.72</td>
+      <td>479</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97416" target="_blank" rel="noopener noreferrer"><img src="img/How_to_Start_a_Riot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//How to Start a Riot.html" target="_blank" rel="noopener noreferrer">How to Start a Riot</a></td>
+      <td>10.73</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51389</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>51.55</td>
+      <td>42.86</td>
+      <td>-8.69</td>
+      <td>140</td>
+      <td>50.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97460" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Tactics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Tactics.html" target="_blank" rel="noopener noreferrer">Invasion Tactics</a></td>
+      <td>8.60</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7272</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.55</td>
+      <td>45.70</td>
+      <td>-8.85</td>
+      <td>186</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>5867</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>54.35</td>
+      <td>45.29</td>
+      <td>-9.06</td>
+      <td>170</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97294" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Kids.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Kids.html" target="_blank" rel="noopener noreferrer">Glider Kids</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66563</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.95</td>
+      <td>43.75</td>
+      <td>-10.20</td>
+      <td>192</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>67687</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>55.55</td>
+      <td>45.03</td>
+      <td>-10.52</td>
+      <td>151</td>
+      <td>58.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97522" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Lateral_Strategist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Lateral Strategist.html" target="_blank" rel="noopener noreferrer">Sokka, Lateral Strategist</a></td>
+      <td>3.00</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>3057</th>
+      <td>uncommon</td>
+      <td>RG</td>
+      <td>6.62</td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>52.6</td>
+      <td>53.60</td>
+      <td>41.77</td>
+      <td>-11.83</td>
+      <td>158</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97284" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Enthusiasts.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Enthusiasts.html" target="_blank" rel="noopener noreferrer">Avatar Enthusiasts</a></td>
+      <td>6.65</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>

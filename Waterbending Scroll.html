@@ -1,0 +1,3190 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>27337</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>60.30</td>
+      <td>72.65</td>
+      <td>12.35</td>
+      <td>245</td>
+      <td>66.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97373" target="_blank" rel="noopener noreferrer"><img src="img/The_Fire_Nation_Drill.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Fire Nation Drill.html" target="_blank" rel="noopener noreferrer">The Fire Nation Drill</a></td>
+      <td>2.27</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>32676</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>60.75</td>
+      <td>70.00</td>
+      <td>9.25</td>
+      <td>200</td>
+      <td>67.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97392" target="_blank" rel="noopener noreferrer"><img src="img/The_Rise_of_Sozin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Rise of Sozin.html" target="_blank" rel="noopener noreferrer">The Rise of Sozin</a></td>
+      <td>1.74</td>
+      <td>B</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>7386</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>60.00</td>
+      <td>69.16</td>
+      <td>9.16</td>
+      <td>107</td>
+      <td>66.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td>1.74</td>
+      <td>W</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>20874</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.50</td>
+      <td>62.14</td>
+      <td>8.64</td>
+      <td>243</td>
+      <td>53.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97350" target="_blank" rel="noopener noreferrer"><img src="img/Tiger-Seal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tiger-Seal.html" target="_blank" rel="noopener noreferrer">Tiger-Seal</a></td>
+      <td>8.30</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>46445</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>63.11</td>
+      <td>7.86</td>
+      <td>103</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26213</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.15</td>
+      <td>64.64</td>
+      <td>7.49</td>
+      <td>280</td>
+      <td>60.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97369" target="_blank" rel="noopener noreferrer"><img src="img/Day_of_Black_Sun.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Day of Black Sun.html" target="_blank" rel="noopener noreferrer">Day of Black Sun</a></td>
+      <td>2.73</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>28742</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.75</td>
+      <td>64.06</td>
+      <td>7.31</td>
+      <td>498</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25089</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.55</td>
+      <td>61.74</td>
+      <td>7.19</td>
+      <td>379</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62462</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.65</td>
+      <td>62.50</td>
+      <td>6.85</td>
+      <td>640</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97504" target="_blank" rel="noopener noreferrer"><img src="img/Guru_Pathik.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Guru Pathik.html" target="_blank" rel="noopener noreferrer">Guru Pathik</a></td>
+      <td>4.87</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26494</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>61.94</td>
+      <td>6.69</td>
+      <td>762</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>30147</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.35</td>
+      <td>60.71</td>
+      <td>6.36</td>
+      <td>112</td>
+      <td>54.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97383" target="_blank" rel="noopener noreferrer"><img src="img/Lo_and_Li,_Twin_Tutors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lo and Li, Twin Tutors.html" target="_blank" rel="noopener noreferrer">Lo and Li, Twin Tutors</a></td>
+      <td>9.16</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62181</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.00</td>
+      <td>63.35</td>
+      <td>6.35</td>
+      <td>1296</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97503" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Spirit_Keeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Spirit Keeper.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Spirit Keeper</a></td>
+      <td>5.02</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>54032</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.15</td>
+      <td>61.35</td>
+      <td>6.20</td>
+      <td>163</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34081</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.90</td>
+      <td>60.08</td>
+      <td>6.18</td>
+      <td>248</td>
+      <td>53.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97398" target="_blank" rel="noopener noreferrer"><img src="img/Wolfbat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wolfbat.html" target="_blank" rel="noopener noreferrer">Wolfbat</a></td>
+      <td>8.63</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>67520</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.25</td>
+      <td>62.28</td>
+      <td>6.03</td>
+      <td>806</td>
+      <td>58.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97522" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Lateral_Strategist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Lateral Strategist.html" target="_blank" rel="noopener noreferrer">Sokka, Lateral Strategist</a></td>
+      <td>3.00</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>24246</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.95</td>
+      <td>60.96</td>
+      <td>6.01</td>
+      <td>146</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97362" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Rioter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Rioter.html" target="_blank" rel="noopener noreferrer">Boiling Rock Rioter</a></td>
+      <td>3.45</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>15816</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.95</td>
+      <td>63.88</td>
+      <td>5.93</td>
+      <td>1625</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29866</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>58.95</td>
+      <td>64.66</td>
+      <td>5.71</td>
+      <td>133</td>
+      <td>63.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97382" target="_blank" rel="noopener noreferrer"><img src="img/Koh,_the_Face_Stealer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Koh, the Face Stealer.html" target="_blank" rel="noopener noreferrer">Koh, the Face Stealer</a></td>
+      <td>1.88</td>
+      <td>B</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>39420</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.45</td>
+      <td>62.07</td>
+      <td>5.62</td>
+      <td>290</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66677</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.95</td>
+      <td>60.49</td>
+      <td>5.54</td>
+      <td>1063</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97519" target="_blank" rel="noopener noreferrer"><img src="img/Professor_Zei,_Anthropologist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Professor Zei, Anthropologist.html" target="_blank" rel="noopener noreferrer">Professor Zei, Anthropologist</a></td>
+      <td>6.18</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71173</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.20</td>
+      <td>59.59</td>
+      <td>5.39</td>
+      <td>777</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>49255</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.85</td>
+      <td>58.20</td>
+      <td>5.35</td>
+      <td>122</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97453" target="_blank" rel="noopener noreferrer"><img src="img/Earthbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbending Lesson.html" target="_blank" rel="noopener noreferrer">Earthbending Lesson</a></td>
+      <td>10.17</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>22841</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.00</td>
+      <td>61.32</td>
+      <td>5.32</td>
+      <td>2898</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>60495</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.65</td>
+      <td>59.68</td>
+      <td>5.03</td>
+      <td>124</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97497" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Soldier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Soldier.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Soldier</a></td>
+      <td>9.36</td>
+      <td>WG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>16659</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.20</td>
+      <td>61.13</td>
+      <td>4.93</td>
+      <td>1765</td>
+      <td>58.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97334" target="_blank" rel="noopener noreferrer"><img src="img/Knowledge_Seeker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Knowledge Seeker.html" target="_blank" rel="noopener noreferrer">Knowledge Seeker</a></td>
+      <td>3.79</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26775</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.30</td>
+      <td>61.19</td>
+      <td>4.89</td>
+      <td>420</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97371" target="_blank" rel="noopener noreferrer"><img src="img/Epic_Downfall.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Epic Downfall.html" target="_blank" rel="noopener noreferrer">Epic Downfall</a></td>
+      <td>3.60</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25370</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.85</td>
+      <td>60.61</td>
+      <td>4.76</td>
+      <td>165</td>
+      <td>57.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97366" target="_blank" rel="noopener noreferrer"><img src="img/Cat-Gator.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cat-Gator.html" target="_blank" rel="noopener noreferrer">Cat-Gator</a></td>
+      <td>7.36</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16097</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.05</td>
+      <td>60.70</td>
+      <td>4.65</td>
+      <td>2728</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34924</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.10</td>
+      <td>57.72</td>
+      <td>4.62</td>
+      <td>246</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18064</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.85</td>
+      <td>59.30</td>
+      <td>4.45</td>
+      <td>1108</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97340" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Patrol.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Patrol.html" target="_blank" rel="noopener noreferrer">North Pole Patrol</a></td>
+      <td>6.12</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12725</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.35</td>
+      <td>59.70</td>
+      <td>4.35</td>
+      <td>1129</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97320" target="_blank" rel="noopener noreferrer"><img src="img/Boomerang_Basics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boomerang Basics.html" target="_blank" rel="noopener noreferrer">Boomerang Basics</a></td>
+      <td>4.92</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55718</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>58.82</td>
+      <td>4.32</td>
+      <td>102</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97477" target="_blank" rel="noopener noreferrer"><img src="img/True_Ancestry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//True Ancestry.html" target="_blank" rel="noopener noreferrer">True Ancestry</a></td>
+      <td>5.81</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66396</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.65</td>
+      <td>58.96</td>
+      <td>4.31</td>
+      <td>402</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>17783</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.60</td>
+      <td>60.87</td>
+      <td>4.27</td>
+      <td>644</td>
+      <td>59.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97339" target="_blank" rel="noopener noreferrer"><img src="img/The_Mechanist,_Aerial_Artisan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Mechanist, Aerial Artisan.html" target="_blank" rel="noopener noreferrer">The Mechanist, Aerial Artisan</a></td>
+      <td>2.16</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>21717</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>59.70</td>
+      <td>63.84</td>
+      <td>4.14</td>
+      <td>318</td>
+      <td>65.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97353" target="_blank" rel="noopener noreferrer"><img src="img/Wan_Shi_Tong,_Librarian.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wan Shi Tong, Librarian.html" target="_blank" rel="noopener noreferrer">Wan Shi Tong, Librarian</a></td>
+      <td>1.47</td>
+      <td>U</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>38577</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.15</td>
+      <td>60.22</td>
+      <td>4.07</td>
+      <td>714</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33519</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.20</td>
+      <td>58.19</td>
+      <td>3.99</td>
+      <td>763</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>21155</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.10</td>
+      <td>60.85</td>
+      <td>3.75</td>
+      <td>567</td>
+      <td>60.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97351" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Chi_Blocker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Chi Blocker.html" target="_blank" rel="noopener noreferrer">Ty Lee, Chi Blocker</a></td>
+      <td>2.18</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>14973</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.65</td>
+      <td>60.34</td>
+      <td>3.69</td>
+      <td>1422</td>
+      <td>59.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97328" target="_blank" rel="noopener noreferrer"><img src="img/Gran-Gran.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Gran-Gran.html" target="_blank" rel="noopener noreferrer">Gran-Gran</a></td>
+      <td>4.45</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>20312</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.80</td>
+      <td>58.46</td>
+      <td>3.66</td>
+      <td>573</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97348" target="_blank" rel="noopener noreferrer"><img src="img/Spirit_Water_Revival.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Spirit Water Revival.html" target="_blank" rel="noopener noreferrer">Spirit Water Revival</a></td>
+      <td>3.42</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>60214</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.00</td>
+      <td>59.64</td>
+      <td>3.64</td>
+      <td>612</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97496" target="_blank" rel="noopener noreferrer"><img src="img/Dragonfly_Swarm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dragonfly Swarm.html" target="_blank" rel="noopener noreferrer">Dragonfly Swarm</a></td>
+      <td>5.43</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62743</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.05</td>
+      <td>57.62</td>
+      <td>3.57</td>
+      <td>1109</td>
+      <td>54.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97505" target="_blank" rel="noopener noreferrer"><img src="img/Hama,_the_Bloodbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hama, the Bloodbender.html" target="_blank" rel="noopener noreferrer">Hama, the Bloodbender</a></td>
+      <td>5.32</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33238</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.35</td>
+      <td>58.91</td>
+      <td>3.56</td>
+      <td>971</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>72016</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.80</td>
+      <td>58.31</td>
+      <td>3.51</td>
+      <td>806</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>12444</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.60</td>
+      <td>59.06</td>
+      <td>3.46</td>
+      <td>1517</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97319" target="_blank" rel="noopener noreferrer"><img src="img/Benevolent_River_Spirit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Benevolent River Spirit.html" target="_blank" rel="noopener noreferrer">Benevolent River Spirit</a></td>
+      <td>4.86</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>20593</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.30</td>
+      <td>58.72</td>
+      <td>3.42</td>
+      <td>1090</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97349" target="_blank" rel="noopener noreferrer"><img src="img/Teo,_Spirited_Glider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Teo, Spirited Glider.html" target="_blank" rel="noopener noreferrer">Teo, Spirited Glider</a></td>
+      <td>4.49</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63586</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.30</td>
+      <td>59.66</td>
+      <td>3.36</td>
+      <td>119</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97508" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Grand_Lotus.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Grand Lotus.html" target="_blank" rel="noopener noreferrer">Iroh, Grand Lotus</a></td>
+      <td>3.13</td>
+      <td>URG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>1766</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.10</td>
+      <td>57.43</td>
+      <td>3.33</td>
+      <td>148</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97280" target="_blank" rel="noopener noreferrer"><img src="img/Airbender's_Reversal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbender's Reversal.html" target="_blank" rel="noopener noreferrer">Airbender's Reversal</a></td>
+      <td>3.77</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58247</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>58.20</td>
+      <td>61.50</td>
+      <td>3.30</td>
+      <td>400</td>
+      <td>62.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97489" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_Cunning_Usurper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, Cunning Usurper.html" target="_blank" rel="noopener noreferrer">Azula, Cunning Usurper</a></td>
+      <td>2.68</td>
+      <td>UB</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>77355</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.70</td>
+      <td>58.99</td>
+      <td>3.29</td>
+      <td>217</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97557" target="_blank" rel="noopener noreferrer"><img src="img/Realm_of_Koh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Realm of Koh.html" target="_blank" rel="noopener noreferrer">Realm of Koh</a></td>
+      <td>4.25</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>27618</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.90</td>
+      <td>58.12</td>
+      <td>3.22</td>
+      <td>191</td>
+      <td>55.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97374" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Engineer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Engineer.html" target="_blank" rel="noopener noreferrer">Fire Nation Engineer</a></td>
+      <td>6.12</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>40825</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.65</td>
+      <td>58.81</td>
+      <td>3.16</td>
+      <td>539</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>4857</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.05</td>
+      <td>58.11</td>
+      <td>3.06</td>
+      <td>148</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97291" target="_blank" rel="noopener noreferrer"><img src="img/Enter_the_Avatar_State.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Enter the Avatar State.html" target="_blank" rel="noopener noreferrer">Enter the Avatar State</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>57123</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>59.50</td>
+      <td>62.50</td>
+      <td>3.00</td>
+      <td>296</td>
+      <td>65.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97483" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_Swift_Savior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, Swift Savior.html" target="_blank" rel="noopener noreferrer">Aang, Swift Savior</a></td>
+      <td>1.87</td>
+      <td>WU</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>14130</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.80</td>
+      <td>58.80</td>
+      <td>3.00</td>
+      <td>3306</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>29304</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.60</td>
+      <td>57.55</td>
+      <td>2.95</td>
+      <td>245</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97380" target="_blank" rel="noopener noreferrer"><img src="img/Joo_Dee,_One_of_Many.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Joo Dee, One of Many.html" target="_blank" rel="noopener noreferrer">Joo Dee, One of Many</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35205</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.95</td>
+      <td>59.89</td>
+      <td>2.94</td>
+      <td>182</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17221</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.35</td>
+      <td>59.29</td>
+      <td>2.94</td>
+      <td>3058</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>31552</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.80</td>
+      <td>57.73</td>
+      <td>2.93</td>
+      <td>194</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97388" target="_blank" rel="noopener noreferrer"><img src="img/Ozai's_Cruelty.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ozai's Cruelty.html" target="_blank" rel="noopener noreferrer">Ozai's Cruelty</a></td>
+      <td>8.45</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78198</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.45</td>
+      <td>58.37</td>
+      <td>2.92</td>
+      <td>1004</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97560" target="_blank" rel="noopener noreferrer"><img src="img/Serpent's_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent's Pass.html" target="_blank" rel="noopener noreferrer">Serpent's Pass</a></td>
+      <td>8.69</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>19750</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.30</td>
+      <td>58.14</td>
+      <td>2.84</td>
+      <td>860</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97346" target="_blank" rel="noopener noreferrer"><img src="img/Sokka's_Haiku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka's Haiku.html" target="_blank" rel="noopener noreferrer">Sokka's Haiku</a></td>
+      <td>8.28</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29585</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.20</td>
+      <td>57.04</td>
+      <td>2.84</td>
+      <td>277</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97381" target="_blank" rel="noopener noreferrer"><img src="img/June,_Bounty_Hunter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//June, Bounty Hunter.html" target="_blank" rel="noopener noreferrer">June, Bounty Hunter</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>18345</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.70</td>
+      <td>58.47</td>
+      <td>2.77</td>
+      <td>2338</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18626</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>57.23</td>
+      <td>2.73</td>
+      <td>2392</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97342" target="_blank" rel="noopener noreferrer"><img src="img/Otter-Penguin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Otter-Penguin.html" target="_blank" rel="noopener noreferrer">Otter-Penguin</a></td>
+      <td>9.15</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>15535</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.00</td>
+      <td>56.68</td>
+      <td>2.68</td>
+      <td>1332</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97330" target="_blank" rel="noopener noreferrer"><img src="img/Iguana_Parrot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iguana Parrot.html" target="_blank" rel="noopener noreferrer">Iguana Parrot</a></td>
+      <td>8.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>16940</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>59.95</td>
+      <td>62.54</td>
+      <td>2.59</td>
+      <td>291</td>
+      <td>65.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97335" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Kuruk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Kuruk.html" target="_blank" rel="noopener noreferrer">The Legend of Kuruk</a></td>
+      <td>1.68</td>
+      <td>U</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>25932</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.30</td>
+      <td>55.88</td>
+      <td>2.58</td>
+      <td>204</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97368" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Indoctrination.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dai Li Indoctrination.html" target="_blank" rel="noopener noreferrer">Dai Li Indoctrination</a></td>
+      <td>11.05</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23403</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.45</td>
+      <td>57.02</td>
+      <td>2.57</td>
+      <td>356</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71735</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.60</td>
+      <td>58.09</td>
+      <td>2.49</td>
+      <td>346</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72297</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.60</td>
+      <td>55.08</td>
+      <td>2.48</td>
+      <td>236</td>
+      <td>51.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97539" target="_blank" rel="noopener noreferrer"><img src="img/Meteor_Sword.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meteor Sword.html" target="_blank" rel="noopener noreferrer">Meteor Sword</a></td>
+      <td>9.09</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17502</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.40</td>
+      <td>55.83</td>
+      <td>2.43</td>
+      <td>643</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97338" target="_blank" rel="noopener noreferrer"><img src="img/Master_Pakku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Master Pakku.html" target="_blank" rel="noopener noreferrer">Master Pakku</a></td>
+      <td>7.74</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65553</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.70</td>
+      <td>58.12</td>
+      <td>2.42</td>
+      <td>2598</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35767</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.40</td>
+      <td>58.81</td>
+      <td>2.41</td>
+      <td>335</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>28180</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.40</td>
+      <td>55.61</td>
+      <td>2.21</td>
+      <td>205</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97376" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Hunters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Hunters.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Hunters</a></td>
+      <td>11.95</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74264</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.85</td>
+      <td>57.01</td>
+      <td>2.16</td>
+      <td>549</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>30709</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.20</td>
+      <td>56.35</td>
+      <td>2.15</td>
+      <td>362</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77917</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.95</td>
+      <td>58.04</td>
+      <td>2.09</td>
+      <td>112</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97559" target="_blank" rel="noopener noreferrer"><img src="img/Secret_Tunnel.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Secret Tunnel.html" target="_blank" rel="noopener noreferrer">Secret Tunnel</a></td>
+      <td>3.76</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>16378</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.60</td>
+      <td>56.39</td>
+      <td>1.79</td>
+      <td>1096</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97333" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Bending_Prodigy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Bending Prodigy.html" target="_blank" rel="noopener noreferrer">Katara, Bending Prodigy</a></td>
+      <td>3.39</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>19469</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.65</td>
+      <td>55.42</td>
+      <td>1.77</td>
+      <td>812</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97345" target="_blank" rel="noopener noreferrer"><img src="img/Serpent_of_the_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent of the Pass.html" target="_blank" rel="noopener noreferrer">Serpent of the Pass</a></td>
+      <td>6.41</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>24808</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.45</td>
+      <td>56.21</td>
+      <td>1.76</td>
+      <td>427</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45040</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.45</td>
+      <td>57.10</td>
+      <td>1.65</td>
+      <td>303</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74826</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.15</td>
+      <td>55.70</td>
+      <td>1.55</td>
+      <td>158</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>4576</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.65</td>
+      <td>57.14</td>
+      <td>1.49</td>
+      <td>133</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97290" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Protectors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Protectors.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Protectors</a></td>
+      <td>4.89</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>18907</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.75</td>
+      <td>54.23</td>
+      <td>1.48</td>
+      <td>1075</td>
+      <td>51.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97343" target="_blank" rel="noopener noreferrer"><img src="img/Rowdy_Snowballers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rowdy Snowballers.html" target="_blank" rel="noopener noreferrer">Rowdy Snowballers</a></td>
+      <td>9.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>21436</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.00</td>
+      <td>58.44</td>
+      <td>1.44</td>
+      <td>616</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97352" target="_blank" rel="noopener noreferrer"><img src="img/The_Unagi_of_Kyoshi_Island.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Unagi of Kyoshi Island.html" target="_blank" rel="noopener noreferrer">The Unagi of Kyoshi Island</a></td>
+      <td>2.06</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>66115</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.40</td>
+      <td>54.82</td>
+      <td>1.42</td>
+      <td>664</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97517" target="_blank" rel="noopener noreferrer"><img src="img/Platypus-Bear.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Platypus-Bear.html" target="_blank" rel="noopener noreferrer">Platypus-Bear</a></td>
+      <td>10.20</td>
+      <td>UG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13568</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.20</td>
+      <td>56.61</td>
+      <td>1.41</td>
+      <td>2157</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37453</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>56.61</td>
+      <td>1.36</td>
+      <td>295</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23684</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.45</td>
+      <td>55.69</td>
+      <td>1.24</td>
+      <td>325</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>37172</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>55.73</td>
+      <td>1.23</td>
+      <td>131</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97409" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Attacks.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Attacks.html" target="_blank" rel="noopener noreferrer">Fire Nation Attacks</a></td>
+      <td>6.55</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>47569</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.20</td>
+      <td>53.42</td>
+      <td>1.22</td>
+      <td>146</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97447" target="_blank" rel="noopener noreferrer"><img src="img/Cycle_of_Renewal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cycle of Renewal.html" target="_blank" rel="noopener noreferrer">Cycle of Renewal</a></td>
+      <td>9.00</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>22279</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.30</td>
+      <td>56.46</td>
+      <td>1.16</td>
+      <td>2506</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54875</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.20</td>
+      <td>55.34</td>
+      <td>1.14</td>
+      <td>103</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97474" target="_blank" rel="noopener noreferrer"><img src="img/Shared_Roots.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Shared Roots.html" target="_blank" rel="noopener noreferrer">Shared Roots</a></td>
+      <td>5.44</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25651</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.05</td>
+      <td>56.17</td>
+      <td>1.12</td>
+      <td>664</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14692</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.95</td>
+      <td>55.05</td>
+      <td>1.10</td>
+      <td>1642</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97327" target="_blank" rel="noopener noreferrer"><img src="img/Giant_Koi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Giant Koi.html" target="_blank" rel="noopener noreferrer">Giant Koi</a></td>
+      <td>9.70</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64991</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.65</td>
+      <td>56.73</td>
+      <td>1.08</td>
+      <td>104</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97513" target="_blank" rel="noopener noreferrer"><img src="img/The_Lion-Turtle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Lion-Turtle.html" target="_blank" rel="noopener noreferrer">The Lion-Turtle</a></td>
+      <td>4.64</td>
+      <td>UG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>78760</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.15</td>
+      <td>54.14</td>
+      <td>0.99</td>
+      <td>133</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97562" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Hideout.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Hideout.html" target="_blank" rel="noopener noreferrer">White Lotus Hideout</a></td>
+      <td>9.60</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>27899</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.40</td>
+      <td>55.33</td>
+      <td>0.93</td>
+      <td>150</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97375" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Navy_Trebuchet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Navy Trebuchet.html" target="_blank" rel="noopener noreferrer">Fire Navy Trebuchet</a></td>
+      <td>5.50</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63305</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.55</td>
+      <td>56.37</td>
+      <td>0.82</td>
+      <td>204</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97507" target="_blank" rel="noopener noreferrer"><img src="img/Hermitic_Herbalist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hermitic Herbalist.html" target="_blank" rel="noopener noreferrer">Hermitic Herbalist</a></td>
+      <td>5.65</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>5700</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.05</td>
+      <td>55.82</td>
+      <td>0.77</td>
+      <td>455</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97294" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Kids.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Kids.html" target="_blank" rel="noopener noreferrer">Glider Kids</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52627</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.40</td>
+      <td>56.15</td>
+      <td>0.75</td>
+      <td>130</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41949</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.10</td>
+      <td>56.59</td>
+      <td>0.49</td>
+      <td>129</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97427" target="_blank" rel="noopener noreferrer"><img src="img/Ran_and_Shaw.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ran and Shaw.html" target="_blank" rel="noopener noreferrer">Ran and Shaw</a></td>
+      <td>2.08</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>22560</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.00</td>
+      <td>54.48</td>
+      <td>0.48</td>
+      <td>9102</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td>7.53</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71454</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.85</td>
+      <td>54.32</td>
+      <td>0.47</td>
+      <td>324</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97536" target="_blank" rel="noopener noreferrer"><img src="img/Bender's_Waterskin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bender's Waterskin.html" target="_blank" rel="noopener noreferrer">Bender's Waterskin</a></td>
+      <td>10.77</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13006</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.15</td>
+      <td>53.57</td>
+      <td>0.42</td>
+      <td>448</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97321" target="_blank" rel="noopener noreferrer"><img src="img/Crashing_Wave.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Crashing Wave.html" target="_blank" rel="noopener noreferrer">Crashing Wave</a></td>
+      <td>9.05</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>61338</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.75</td>
+      <td>54.14</td>
+      <td>0.39</td>
+      <td>157</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97500" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Village_Ruffians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Village Ruffians.html" target="_blank" rel="noopener noreferrer">Earth Village Ruffians</a></td>
+      <td>9.30</td>
+      <td>BG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.65</td>
+      <td>54.80</td>
+      <td>0.15</td>
+      <td>646</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57404</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.65</td>
+      <td>54.71</td>
+      <td>0.06</td>
+      <td>1687</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>31271</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.35</td>
+      <td>56.32</td>
+      <td>-0.03</td>
+      <td>190</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97387" target="_blank" rel="noopener noreferrer"><img src="img/Obsessive_Pursuit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Obsessive Pursuit.html" target="_blank" rel="noopener noreferrer">Obsessive Pursuit</a></td>
+      <td>2.65</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>8229</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.05</td>
+      <td>55.93</td>
+      <td>-0.12</td>
+      <td>177</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97304" target="_blank" rel="noopener noreferrer"><img src="img/Momo,_Playful_Pet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Momo, Playful Pet.html" target="_blank" rel="noopener noreferrer">Momo, Playful Pet</a></td>
+      <td>3.81</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>11601</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.80</td>
+      <td>56.50</td>
+      <td>-0.30</td>
+      <td>246</td>
+      <td>59.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97316" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Rallier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Rallier.html" target="_blank" rel="noopener noreferrer">Water Tribe Rallier</a></td>
+      <td>3.16</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23122</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.40</td>
+      <td>52.75</td>
+      <td>-0.65</td>
+      <td>364</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97358" target="_blank" rel="noopener noreferrer"><img src="img/Yue,_the_Moon_Spirit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yue, the Moon Spirit.html" target="_blank" rel="noopener noreferrer">Yue, the Moon Spirit</a></td>
+      <td>3.75</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>59371</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.60</td>
+      <td>52.94</td>
+      <td>-0.66</td>
+      <td>799</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97493" target="_blank" rel="noopener noreferrer"><img src="img/Cat-Owl.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cat-Owl.html" target="_blank" rel="noopener noreferrer">Cat-Owl</a></td>
+      <td>9.46</td>
+      <td>WU</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>923</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.40</td>
+      <td>56.65</td>
+      <td>-0.75</td>
+      <td>233</td>
+      <td>60.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97277" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_the_Last_Airbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, the Last Airbender.html" target="_blank" rel="noopener noreferrer">Aang, the Last Airbender</a></td>
+      <td>2.63</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12163</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.35</td>
+      <td>54.58</td>
+      <td>-0.77</td>
+      <td>1059</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7105</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>54.45</td>
+      <td>-0.80</td>
+      <td>292</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>5981</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.10</td>
+      <td>55.28</td>
+      <td>-0.82</td>
+      <td>199</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97295" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Staff.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Staff.html" target="_blank" rel="noopener noreferrer">Glider Staff</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>76793</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.10</td>
+      <td>54.23</td>
+      <td>-0.87</td>
+      <td>568</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97555" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Gates.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Gates.html" target="_blank" rel="noopener noreferrer">North Pole Gates</a></td>
+      <td>7.90</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>72578</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>56.00</td>
+      <td>55.10</td>
+      <td>-0.90</td>
+      <td>147</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97540" target="_blank" rel="noopener noreferrer"><img src="img/Planetarium_of_Wan_Shi_Tong.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Planetarium of Wan Shi Tong.html" target="_blank" rel="noopener noreferrer">Planetarium of Wan Shi Tong</a></td>
+      <td>1.72</td>
+      <td></td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>32395</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>58.20</td>
+      <td>57.24</td>
+      <td>-0.96</td>
+      <td>283</td>
+      <td>62.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97391" target="_blank" rel="noopener noreferrer"><img src="img/Raven_Eagle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raven Eagle.html" target="_blank" rel="noopener noreferrer">Raven Eagle</a></td>
+      <td>2.17</td>
+      <td>B</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>77636</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.15</td>
+      <td>54.09</td>
+      <td>-1.06</td>
+      <td>514</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64710</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>58.00</td>
+      <td>56.91</td>
+      <td>-1.09</td>
+      <td>362</td>
+      <td>62.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97512" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Water_Tribe's_Hope.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Water Tribe's Hope.html" target="_blank" rel="noopener noreferrer">Katara, Water Tribe's Hope</a></td>
+      <td>2.17</td>
+      <td>WU</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>13287</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.20</td>
+      <td>52.10</td>
+      <td>-1.10</td>
+      <td>405</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97322" target="_blank" rel="noopener noreferrer"><img src="img/Ember_Island_Production.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ember Island Production.html" target="_blank" rel="noopener noreferrer">Ember Island Production</a></td>
+      <td>9.50</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>4295</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.35</td>
+      <td>56.20</td>
+      <td>-1.15</td>
+      <td>242</td>
+      <td>60.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97289" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Jailer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Jailer.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Jailer</a></td>
+      <td>2.70</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>14411</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.65</td>
+      <td>51.47</td>
+      <td>-1.18</td>
+      <td>919</td>
+      <td>51.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97326" target="_blank" rel="noopener noreferrer"><img src="img/Geyser_Leaper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Geyser Leaper.html" target="_blank" rel="noopener noreferrer">Geyser Leaper</a></td>
+      <td>10.47</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2890</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.30</td>
+      <td>53.06</td>
+      <td>-1.24</td>
+      <td>196</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97284" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Enthusiasts.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Enthusiasts.html" target="_blank" rel="noopener noreferrer">Avatar Enthusiasts</a></td>
+      <td>6.65</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13849</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.65</td>
+      <td>52.40</td>
+      <td>-1.25</td>
+      <td>479</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97324" target="_blank" rel="noopener noreferrer"><img src="img/Flexible_Waterbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Flexible Waterbender.html" target="_blank" rel="noopener noreferrer">Flexible Waterbender</a></td>
+      <td>11.50</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63024</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.75</td>
+      <td>52.43</td>
+      <td>-1.32</td>
+      <td>103</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97506" target="_blank" rel="noopener noreferrer"><img src="img/Hei_Bai,_Spirit_of_Balance.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hei Bai, Spirit of Balance.html" target="_blank" rel="noopener noreferrer">Hei Bai, Spirit of Balance</a></td>
+      <td>5.31</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>9072</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.85</td>
+      <td>53.41</td>
+      <td>-1.44</td>
+      <td>410</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52346</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.80</td>
+      <td>53.23</td>
+      <td>-1.57</td>
+      <td>124</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97465" target="_blank" rel="noopener noreferrer"><img src="img/Origin_of_Metalbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Origin of Metalbending.html" target="_blank" rel="noopener noreferrer">Origin of Metalbending</a></td>
+      <td>9.41</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34643</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.85</td>
+      <td>51.24</td>
+      <td>-1.61</td>
+      <td>242</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97400" target="_blank" rel="noopener noreferrer"><img src="img/Boar-q-pine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boar-q-pine.html" target="_blank" rel="noopener noreferrer">Boar-q-pine</a></td>
+      <td>10.91</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34362</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.05</td>
+      <td>51.40</td>
+      <td>-1.65</td>
+      <td>179</td>
+      <td>52.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97399" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Conviction.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Conviction.html" target="_blank" rel="noopener noreferrer">Zuko's Conviction</a></td>
+      <td>8.09</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>11882</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>53.18</td>
+      <td>-2.07</td>
+      <td>220</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97317" target="_blank" rel="noopener noreferrer"><img src="img/Yip_Yip!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yip Yip!.html" target="_blank" rel="noopener noreferrer">Yip Yip!</a></td>
+      <td>8.85</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>73983</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.60</td>
+      <td>53.47</td>
+      <td>-2.13</td>
+      <td>548</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97545" target="_blank" rel="noopener noreferrer"><img src="img/Agna_Qel'a.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Agna Qel'a.html" target="_blank" rel="noopener noreferrer">Agna Qel'a</a></td>
+      <td>4.14</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>76512</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.80</td>
+      <td>52.51</td>
+      <td>-2.29</td>
+      <td>179</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97554" target="_blank" rel="noopener noreferrer"><img src="img/Misty_Palms_Oasis.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Misty Palms Oasis.html" target="_blank" rel="noopener noreferrer">Misty Palms Oasis</a></td>
+      <td>9.41</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>642</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>51.20</td>
+      <td>48.88</td>
+      <td>-2.32</td>
+      <td>268</td>
+      <td>48.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97276" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Exile.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Exile.html" target="_blank" rel="noopener noreferrer">Zuko's Exile</a></td>
+      <td>10.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>21998</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>49.75</td>
+      <td>47.42</td>
+      <td>-2.33</td>
+      <td>194</td>
+      <td>45.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97354" target="_blank" rel="noopener noreferrer"><img src="img/Waterbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbender Ascension.html" target="_blank" rel="noopener noreferrer">Waterbender Ascension</a></td>
+      <td>5.16</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>8510</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.55</td>
+      <td>53.22</td>
+      <td>-2.33</td>
+      <td>481</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>32114</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.70</td>
+      <td>50.23</td>
+      <td>-2.47</td>
+      <td>217</td>
+      <td>51.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97390" target="_blank" rel="noopener noreferrer"><img src="img/Pirate_Peddlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pirate Peddlers.html" target="_blank" rel="noopener noreferrer">Pirate Peddlers</a></td>
+      <td>9.85</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.55</td>
+      <td>50.00</td>
+      <td>-2.55</td>
+      <td>142</td>
+      <td>51.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97275" target="_blank" rel="noopener noreferrer"><img src="img/Energybending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Energybending.html" target="_blank" rel="noopener noreferrer">Energybending</a></td>
+      <td>10.05</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56561</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>51.80</td>
+      <td>-2.70</td>
+      <td>139</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97480" target="_blank" rel="noopener noreferrer"><img src="img/Walltop_Sentries.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Walltop Sentries.html" target="_blank" rel="noopener noreferrer">Walltop Sentries</a></td>
+      <td>8.01</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>15254</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.45</td>
+      <td>49.66</td>
+      <td>-2.79</td>
+      <td>292</td>
+      <td>50.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97329" target="_blank" rel="noopener noreferrer"><img src="img/Honest_Work.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Honest Work.html" target="_blank" rel="noopener noreferrer">Honest Work</a></td>
+      <td>9.34</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23965</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>52.80</td>
+      <td>50.00</td>
+      <td>-2.80</td>
+      <td>176</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97361" target="_blank" rel="noopener noreferrer"><img src="img/Beetle-Headed_Merchants.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beetle-Headed Merchants.html" target="_blank" rel="noopener noreferrer">Beetle-Headed Merchants</a></td>
+      <td>10.65</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76231</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.55</td>
+      <td>51.48</td>
+      <td>-3.07</td>
+      <td>305</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97553" target="_blank" rel="noopener noreferrer"><img src="img/Meditation_Pools.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meditation Pools.html" target="_blank" rel="noopener noreferrer">Meditation Pools</a></td>
+      <td>8.34</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>67239</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.10</td>
+      <td>50.99</td>
+      <td>-3.11</td>
+      <td>202</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97521" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Bold_Boomeranger.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Bold Boomeranger.html" target="_blank" rel="noopener noreferrer">Sokka, Bold Boomeranger</a></td>
+      <td>5.11</td>
+      <td>UR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>38015</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.95</td>
+      <td>51.47</td>
+      <td>-3.48</td>
+      <td>136</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>9353</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.45</td>
+      <td>49.76</td>
+      <td>-3.69</td>
+      <td>207</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97308" target="_blank" rel="noopener noreferrer"><img src="img/Sandbenders'_Storm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sandbenders' Storm.html" target="_blank" rel="noopener noreferrer">Sandbenders' Storm</a></td>
+      <td>9.34</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>73702</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>57.85</td>
+      <td>54.05</td>
+      <td>-3.80</td>
+      <td>111</td>
+      <td>61.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97544" target="_blank" rel="noopener noreferrer"><img src="img/Abandoned_Air_Temple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandoned Air Temple.html" target="_blank" rel="noopener noreferrer">Abandoned Air Temple</a></td>
+      <td>2.11</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>2047</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.50</td>
+      <td>51.42</td>
+      <td>-4.08</td>
+      <td>527</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.40</td>
+      <td>50.00</td>
+      <td>-4.40</td>
+      <td>126</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97312" target="_blank" rel="noopener noreferrer"><img src="img/Team_Avatar.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Team Avatar.html" target="_blank" rel="noopener noreferrer">Team Avatar</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39701</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.15</td>
+      <td>47.48</td>
+      <td>-5.67</td>
+      <td>139</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53189</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.25</td>
+      <td>49.58</td>
+      <td>-5.67</td>
+      <td>119</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70049</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>48.54</td>
+      <td>-5.96</td>
+      <td>103</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97531" target="_blank" rel="noopener noreferrer"><img src="img/Wandering_Musicians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wandering Musicians.html" target="_blank" rel="noopener noreferrer">Wandering Musicians</a></td>
+      <td>8.74</td>
+      <td>WR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>6824</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.85</td>
+      <td>48.69</td>
+      <td>-6.16</td>
+      <td>306</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3452</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.50</td>
+      <td>49.18</td>
+      <td>-6.32</td>
+      <td>368</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57685</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.50</td>
+      <td>48.00</td>
+      <td>-6.50</td>
+      <td>275</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97486" target="_blank" rel="noopener noreferrer"><img src="img/Air_Nomad_Legacy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Air Nomad Legacy.html" target="_blank" rel="noopener noreferrer">Air Nomad Legacy</a></td>
+      <td>6.83</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>75950</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.45</td>
+      <td>47.37</td>
+      <td>-7.08</td>
+      <td>114</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97552" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Village.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Village.html" target="_blank" rel="noopener noreferrer">Kyoshi Village</a></td>
+      <td>8.30</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>6543</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.50</td>
+      <td>47.90</td>
+      <td>-7.60</td>
+      <td>119</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97297" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Reinforcements.html" target="_blank" rel="noopener noreferrer">Invasion Reinforcements</a></td>
+      <td>3.76</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>41106</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>53.55</td>
+      <td>44.85</td>
+      <td>-8.70</td>
+      <td>136</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36329</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.15</td>
+      <td>45.00</td>
+      <td>-9.15</td>
+      <td>100</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11320</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>54.95</td>
+      <td>45.71</td>
+      <td>-9.24</td>
+      <td>210</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97315" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Captain.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Captain.html" target="_blank" rel="noopener noreferrer">Water Tribe Captain</a></td>
+      <td>7.47</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>1204</th>
+      <td>uncommon</td>
+      <td>U</td>
+      <td>7.53</td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.0</td>
+      <td>55.40</td>
+      <td>38.68</td>
+      <td>-16.72</td>
+      <td>106</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97278" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Iceberg.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Iceberg.html" target="_blank" rel="noopener noreferrer">Aang's Iceberg</a></td>
+      <td>2.32</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+  </tbody>
+</table>

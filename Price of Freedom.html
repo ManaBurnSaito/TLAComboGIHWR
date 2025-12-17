@@ -1,0 +1,853 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>60282</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.60</td>
+      <td>61.41</td>
+      <td>7.81</td>
+      <td>241</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97496" target="_blank" rel="noopener noreferrer"><img src="img/Dragonfly_Swarm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dragonfly Swarm.html" target="_blank" rel="noopener noreferrer">Dragonfly Swarm</a></td>
+      <td>5.43</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16165</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.65</td>
+      <td>60.54</td>
+      <td>6.89</td>
+      <td>185</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39488</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>54.05</td>
+      <td>60.00</td>
+      <td>5.95</td>
+      <td>140</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74332</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.45</td>
+      <td>58.38</td>
+      <td>5.93</td>
+      <td>197</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18413</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.30</td>
+      <td>59.07</td>
+      <td>5.77</td>
+      <td>215</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>17289</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.95</td>
+      <td>59.66</td>
+      <td>5.71</td>
+      <td>233</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35273</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>54.55</td>
+      <td>59.85</td>
+      <td>5.30</td>
+      <td>137</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>57472</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.25</td>
+      <td>56.67</td>
+      <td>4.42</td>
+      <td>300</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>15884</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>55.55</td>
+      <td>59.80</td>
+      <td>4.25</td>
+      <td>102</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22909</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.60</td>
+      <td>57.82</td>
+      <td>4.22</td>
+      <td>147</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37240</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.10</td>
+      <td>55.93</td>
+      <td>3.83</td>
+      <td>118</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97409" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Attacks.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Attacks.html" target="_blank" rel="noopener noreferrer">Fire Nation Attacks</a></td>
+      <td>6.55</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66745</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.55</td>
+      <td>55.77</td>
+      <td>3.22</td>
+      <td>156</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97519" target="_blank" rel="noopener noreferrer"><img src="img/Professor_Zei,_Anthropologist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Professor Zei, Anthropologist.html" target="_blank" rel="noopener noreferrer">Professor Zei, Anthropologist</a></td>
+      <td>6.18</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>45108</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.05</td>
+      <td>56.25</td>
+      <td>3.20</td>
+      <td>304</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13636</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.80</td>
+      <td>55.39</td>
+      <td>2.59</td>
+      <td>204</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14198</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.40</td>
+      <td>55.62</td>
+      <td>2.22</td>
+      <td>178</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41736</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>49.20</td>
+      <td>50.96</td>
+      <td>1.76</td>
+      <td>1307</td>
+      <td>49.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td>11.13</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15041</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>54.25</td>
+      <td>55.91</td>
+      <td>1.66</td>
+      <td>127</td>
+      <td>59.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97328" target="_blank" rel="noopener noreferrer"><img src="img/Gran-Gran.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Gran-Gran.html" target="_blank" rel="noopener noreferrer">Gran-Gran</a></td>
+      <td>4.45</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65621</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.30</td>
+      <td>54.92</td>
+      <td>1.62</td>
+      <td>122</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>19537</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.25</td>
+      <td>52.68</td>
+      <td>1.43</td>
+      <td>112</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97345" target="_blank" rel="noopener noreferrer"><img src="img/Serpent_of_the_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent of the Pass.html" target="_blank" rel="noopener noreferrer">Serpent of the Pass</a></td>
+      <td>6.41</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42017</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.70</td>
+      <td>55.06</td>
+      <td>1.36</td>
+      <td>158</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97427" target="_blank" rel="noopener noreferrer"><img src="img/Ran_and_Shaw.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ran and Shaw.html" target="_blank" rel="noopener noreferrer">Ran and Shaw</a></td>
+      <td>2.08</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>34992</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.70</td>
+      <td>52.04</td>
+      <td>1.34</td>
+      <td>196</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69836</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.55</td>
+      <td>52.34</td>
+      <td>0.79</td>
+      <td>128</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40893</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.25</td>
+      <td>54.02</td>
+      <td>0.77</td>
+      <td>348</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69555</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.90</td>
+      <td>51.30</td>
+      <td>0.40</td>
+      <td>115</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td>6.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>43703</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.70</td>
+      <td>51.22</td>
+      <td>-0.48</td>
+      <td>164</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35835</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>54.00</td>
+      <td>53.01</td>
+      <td>-0.99</td>
+      <td>183</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12231</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.95</td>
+      <td>51.79</td>
+      <td>-1.16</td>
+      <td>112</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22347</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.90</td>
+      <td>51.35</td>
+      <td>-1.55</td>
+      <td>185</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38645</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>53.75</td>
+      <td>52.13</td>
+      <td>-1.62</td>
+      <td>376</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37521</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.85</td>
+      <td>50.63</td>
+      <td>-2.22</td>
+      <td>318</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35554</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.85</td>
+      <td>48.62</td>
+      <td>-2.23</td>
+      <td>109</td>
+      <td>52.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97403" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Man.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Man.html" target="_blank" rel="noopener noreferrer">Combustion Man</a></td>
+      <td>6.36</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>38083</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.55</td>
+      <td>50.00</td>
+      <td>-2.55</td>
+      <td>118</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39769</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.75</td>
+      <td>47.18</td>
+      <td>-3.57</td>
+      <td>142</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>52.25</td>
+      <td>48.39</td>
+      <td>-3.86</td>
+      <td>155</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41174</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.15</td>
+      <td>47.18</td>
+      <td>-3.97</td>
+      <td>142</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36678</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.40</td>
+      <td>47.26</td>
+      <td>-4.14</td>
+      <td>146</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>36397</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>51.75</td>
+      <td>45.00</td>
+      <td>-6.75</td>
+      <td>120</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39207</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.70</td>
+      <td>43.04</td>
+      <td>-7.66</td>
+      <td>158</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97416" target="_blank" rel="noopener noreferrer"><img src="img/How_to_Start_a_Riot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//How to Start a Riot.html" target="_blank" rel="noopener noreferrer">How to Start a Riot</a></td>
+      <td>10.73</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34711</th>
+      <td>uncommon</td>
+      <td>R</td>
+      <td>11.13</td>
+      <td><a href=".//Price of Freedom.html" target="_blank" rel="noopener noreferrer">Price of Freedom</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97426" target="_blank" rel="noopener noreferrer"><img src="img/Price_of_Freedom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>49.2</td>
+      <td>50.45</td>
+      <td>39.82</td>
+      <td>-10.63</td>
+      <td>113</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97400" target="_blank" rel="noopener noreferrer"><img src="img/Boar-q-pine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boar-q-pine.html" target="_blank" rel="noopener noreferrer">Boar-q-pine</a></td>
+      <td>10.91</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>

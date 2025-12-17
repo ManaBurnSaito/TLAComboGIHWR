@@ -1,0 +1,2335 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>48242</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>59.65</td>
+      <td>69.90</td>
+      <td>10.25</td>
+      <td>382</td>
+      <td>64.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97449" target="_blank" rel="noopener noreferrer"><img src="img/The_Earth_King.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Earth King.html" target="_blank" rel="noopener noreferrer">The Earth King</a></td>
+      <td>1.81</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>47961</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.50</td>
+      <td>63.84</td>
+      <td>8.34</td>
+      <td>318</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97448" target="_blank" rel="noopener noreferrer"><img src="img/Diligent_Zookeeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Diligent Zookeeper.html" target="_blank" rel="noopener noreferrer">Diligent Zookeeper</a></td>
+      <td>4.00</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>12274</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.65</td>
+      <td>61.71</td>
+      <td>6.06</td>
+      <td>175</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65102</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.95</td>
+      <td>61.75</td>
+      <td>5.80</td>
+      <td>183</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97513" target="_blank" rel="noopener noreferrer"><img src="img/The_Lion-Turtle.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Lion-Turtle.html" target="_blank" rel="noopener noreferrer">The Lion-Turtle</a></td>
+      <td>4.64</td>
+      <td>UG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>46837</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>58.70</td>
+      <td>64.21</td>
+      <td>5.51</td>
+      <td>271</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97444" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole_Cub.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole Cub.html" target="_blank" rel="noopener noreferrer">Badgermole Cub</a></td>
+      <td>1.85</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>28853</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>57.05</td>
+      <td>62.50</td>
+      <td>5.45</td>
+      <td>176</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78028</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.25</td>
+      <td>61.57</td>
+      <td>5.32</td>
+      <td>216</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97559" target="_blank" rel="noopener noreferrer"><img src="img/Secret_Tunnel.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Secret Tunnel.html" target="_blank" rel="noopener noreferrer">Secret Tunnel</a></td>
+      <td>3.76</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>49085</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>58.70</td>
+      <td>63.67</td>
+      <td>4.97</td>
+      <td>479</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97452" target="_blank" rel="noopener noreferrer"><img src="img/Earthbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbender Ascension.html" target="_blank" rel="noopener noreferrer">Earthbender Ascension</a></td>
+      <td>2.20</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>16208</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.35</td>
+      <td>61.31</td>
+      <td>4.96</td>
+      <td>199</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>15927</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>58.25</td>
+      <td>63.16</td>
+      <td>4.91</td>
+      <td>133</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35878</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.70</td>
+      <td>61.60</td>
+      <td>4.90</td>
+      <td>237</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>54143</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.45</td>
+      <td>60.09</td>
+      <td>4.64</td>
+      <td>1849</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52738</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.70</td>
+      <td>60.30</td>
+      <td>4.60</td>
+      <td>1645</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63697</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.60</td>
+      <td>61.18</td>
+      <td>4.58</td>
+      <td>170</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97508" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Grand_Lotus.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Grand Lotus.html" target="_blank" rel="noopener noreferrer">Iroh, Grand Lotus</a></td>
+      <td>3.13</td>
+      <td>URG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>17332</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.65</td>
+      <td>61.14</td>
+      <td>4.49</td>
+      <td>332</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>60606</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>59.35</td>
+      <td>4.40</td>
+      <td>460</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97497" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Soldier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Soldier.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Soldier</a></td>
+      <td>9.36</td>
+      <td>WG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51895</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.45</td>
+      <td>57.84</td>
+      <td>4.39</td>
+      <td>306</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97462" target="_blank" rel="noopener noreferrer"><img src="img/Leaves_from_the_Vine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Leaves from the Vine.html" target="_blank" rel="noopener noreferrer">Leaves from the Vine</a></td>
+      <td>8.83</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>19580</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.95</td>
+      <td>58.10</td>
+      <td>4.15</td>
+      <td>105</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97345" target="_blank" rel="noopener noreferrer"><img src="img/Serpent_of_the_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent of the Pass.html" target="_blank" rel="noopener noreferrer">Serpent of the Pass</a></td>
+      <td>6.41</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66226</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.70</td>
+      <td>57.82</td>
+      <td>4.12</td>
+      <td>569</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97517" target="_blank" rel="noopener noreferrer"><img src="img/Platypus-Bear.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Platypus-Bear.html" target="_blank" rel="noopener noreferrer">Platypus-Bear</a></td>
+      <td>10.20</td>
+      <td>UG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50771</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>58.35</td>
+      <td>62.43</td>
+      <td>4.08</td>
+      <td>338</td>
+      <td>62.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97458" target="_blank" rel="noopener noreferrer"><img src="img/Great_Divide_Guide.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Great Divide Guide.html" target="_blank" rel="noopener noreferrer">Great Divide Guide</a></td>
+      <td>2.35</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>23795</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.75</td>
+      <td>58.82</td>
+      <td>4.07</td>
+      <td>102</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>43465</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.05</td>
+      <td>58.96</td>
+      <td>3.91</td>
+      <td>173</td>
+      <td>55.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97432" target="_blank" rel="noopener noreferrer"><img src="img/Tiger-Dillo.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tiger-Dillo.html" target="_blank" rel="noopener noreferrer">Tiger-Dillo</a></td>
+      <td>9.59</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>55548</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.35</td>
+      <td>60.15</td>
+      <td>3.80</td>
+      <td>926</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97476" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_Blind_Bandit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the Blind Bandit.html" target="_blank" rel="noopener noreferrer">Toph, the Blind Bandit</a></td>
+      <td>4.05</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42060</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.40</td>
+      <td>60.00</td>
+      <td>3.60</td>
+      <td>110</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97427" target="_blank" rel="noopener noreferrer"><img src="img/Ran_and_Shaw.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ran and Shaw.html" target="_blank" rel="noopener noreferrer">Ran and Shaw</a></td>
+      <td>2.08</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>48523</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.55</td>
+      <td>59.01</td>
+      <td>3.46</td>
+      <td>805</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97450" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_General.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom General.html" target="_blank" rel="noopener noreferrer">Earth Kingdom General</a></td>
+      <td>4.98</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>47680</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>52.50</td>
+      <td>55.92</td>
+      <td>3.42</td>
+      <td>887</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97447" target="_blank" rel="noopener noreferrer"><img src="img/Cycle_of_Renewal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cycle of Renewal.html" target="_blank" rel="noopener noreferrer">Cycle of Renewal</a></td>
+      <td>9.00</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>52176</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.85</td>
+      <td>60.15</td>
+      <td>3.30</td>
+      <td>266</td>
+      <td>59.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97463" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Kyoshi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Kyoshi.html" target="_blank" rel="noopener noreferrer">The Legend of Kyoshi</a></td>
+      <td>1.96</td>
+      <td>G</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>48804</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.25</td>
+      <td>57.54</td>
+      <td>3.29</td>
+      <td>796</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97451" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble.html" target="_blank" rel="noopener noreferrer">Earth Rumble</a></td>
+      <td>5.95</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53019</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.30</td>
+      <td>58.52</td>
+      <td>3.22</td>
+      <td>540</td>
+      <td>56.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97467" target="_blank" rel="noopener noreferrer"><img src="img/Pillar_Launch.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pillar Launch.html" target="_blank" rel="noopener noreferrer">Pillar Launch</a></td>
+      <td>11.29</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77185</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.75</td>
+      <td>57.96</td>
+      <td>3.21</td>
+      <td>559</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97556" target="_blank" rel="noopener noreferrer"><img src="img/Omashu_City.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Omashu City.html" target="_blank" rel="noopener noreferrer">Omashu City</a></td>
+      <td>8.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54986</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.50</td>
+      <td>57.63</td>
+      <td>3.13</td>
+      <td>668</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97474" target="_blank" rel="noopener noreferrer"><img src="img/Shared_Roots.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Shared Roots.html" target="_blank" rel="noopener noreferrer">Shared Roots</a></td>
+      <td>5.44</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53300</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.55</td>
+      <td>58.65</td>
+      <td>3.10</td>
+      <td>1855</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>56672</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.80</td>
+      <td>57.70</td>
+      <td>2.90</td>
+      <td>1305</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97480" target="_blank" rel="noopener noreferrer"><img src="img/Walltop_Sentries.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Walltop Sentries.html" target="_blank" rel="noopener noreferrer">Walltop Sentries</a></td>
+      <td>8.01</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77747</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.45</td>
+      <td>58.16</td>
+      <td>2.71</td>
+      <td>889</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>22952</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.30</td>
+      <td>58.95</td>
+      <td>2.65</td>
+      <td>229</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>61449</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.05</td>
+      <td>56.61</td>
+      <td>2.56</td>
+      <td>802</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97500" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Village_Ruffians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Village Ruffians.html" target="_blank" rel="noopener noreferrer">Earth Village Ruffians</a></td>
+      <td>9.30</td>
+      <td>BG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54705</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.00</td>
+      <td>57.52</td>
+      <td>2.52</td>
+      <td>685</td>
+      <td>55.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97473" target="_blank" rel="noopener noreferrer"><img src="img/Seismic_Sense.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Seismic Sense.html" target="_blank" rel="noopener noreferrer">Seismic Sense</a></td>
+      <td>6.99</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26886</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.60</td>
+      <td>59.09</td>
+      <td>2.49</td>
+      <td>198</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97371" target="_blank" rel="noopener noreferrer"><img src="img/Epic_Downfall.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Epic Downfall.html" target="_blank" rel="noopener noreferrer">Epic Downfall</a></td>
+      <td>3.60</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78871</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.45</td>
+      <td>55.93</td>
+      <td>2.48</td>
+      <td>118</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97562" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Hideout.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Hideout.html" target="_blank" rel="noopener noreferrer">White Lotus Hideout</a></td>
+      <td>9.60</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>57.38</td>
+      <td>2.43</td>
+      <td>481</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>12836</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.65</td>
+      <td>58.04</td>
+      <td>2.39</td>
+      <td>112</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97320" target="_blank" rel="noopener noreferrer"><img src="img/Boomerang_Basics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boomerang Basics.html" target="_blank" rel="noopener noreferrer">Boomerang Basics</a></td>
+      <td>4.92</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>46556</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.55</td>
+      <td>57.84</td>
+      <td>2.29</td>
+      <td>1696</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41498</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.75</td>
+      <td>56.00</td>
+      <td>2.25</td>
+      <td>150</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97425" target="_blank" rel="noopener noreferrer"><img src="img/Mongoose_Lizard.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mongoose Lizard.html" target="_blank" rel="noopener noreferrer">Mongoose Lizard</a></td>
+      <td>11.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47118</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.40</td>
+      <td>57.62</td>
+      <td>2.22</td>
+      <td>814</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97445" target="_blank" rel="noopener noreferrer"><img src="img/The_Boulder,_Ready_to_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Boulder, Ready to Rumble.html" target="_blank" rel="noopener noreferrer">The Boulder, Ready to Rumble</a></td>
+      <td>5.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>61168</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.90</td>
+      <td>56.07</td>
+      <td>2.17</td>
+      <td>494</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97499" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble_Wrestlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble Wrestlers.html" target="_blank" rel="noopener noreferrer">Earth Rumble Wrestlers</a></td>
+      <td>11.22</td>
+      <td>RG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45994</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.60</td>
+      <td>58.70</td>
+      <td>2.10</td>
+      <td>799</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97441" target="_blank" rel="noopener noreferrer"><img src="img/Allies_at_Last.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Allies at Last.html" target="_blank" rel="noopener noreferrer">Allies at Last</a></td>
+      <td>4.24</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>58639</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>57.35</td>
+      <td>59.37</td>
+      <td>2.02</td>
+      <td>315</td>
+      <td>60.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97490" target="_blank" rel="noopener noreferrer"><img src="img/Beifong's_Bounty_Hunters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beifong's Bounty Hunters.html" target="_blank" rel="noopener noreferrer">Beifong's Bounty Hunters</a></td>
+      <td>3.22</td>
+      <td>BG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>13679</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.50</td>
+      <td>57.34</td>
+      <td>1.84</td>
+      <td>143</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>75499</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.70</td>
+      <td>56.41</td>
+      <td>1.71</td>
+      <td>468</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97550" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Bottom_Swamp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Bottom Swamp.html" target="_blank" rel="noopener noreferrer">Foggy Bottom Swamp</a></td>
+      <td>9.78</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69036</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.35</td>
+      <td>57.89</td>
+      <td>1.54</td>
+      <td>342</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97527" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_Hardheaded_Teacher.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, Hardheaded Teacher.html" target="_blank" rel="noopener noreferrer">Toph, Hardheaded Teacher</a></td>
+      <td>2.81</td>
+      <td>RG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>56391</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.10</td>
+      <td>55.59</td>
+      <td>1.49</td>
+      <td>698</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97479" target="_blank" rel="noopener noreferrer"><img src="img/Unlucky_Cabbage_Merchant.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Unlucky Cabbage Merchant.html" target="_blank" rel="noopener noreferrer">Unlucky Cabbage Merchant</a></td>
+      <td>5.47</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>54424</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.75</td>
+      <td>55.05</td>
+      <td>1.30</td>
+      <td>1168</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97472" target="_blank" rel="noopener noreferrer"><img src="img/Saber-Tooth_Moose-Lion.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Saber-Tooth Moose-Lion.html" target="_blank" rel="noopener noreferrer">Saber-Tooth Moose-Lion</a></td>
+      <td>9.65</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18456</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.00</td>
+      <td>57.07</td>
+      <td>1.07</td>
+      <td>191</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50209</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>56.01</td>
+      <td>1.06</td>
+      <td>707</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97456" target="_blank" rel="noopener noreferrer"><img src="img/Flopsie,_Bumi's_Buddy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Flopsie, Bumi's Buddy.html" target="_blank" rel="noopener noreferrer">Flopsie, Bumi's Buddy</a></td>
+      <td>5.33</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23514</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.75</td>
+      <td>55.77</td>
+      <td>1.02</td>
+      <td>104</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>59201</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>58.90</td>
+      <td>59.80</td>
+      <td>0.90</td>
+      <td>199</td>
+      <td>63.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97492" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_Unleashed.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, Unleashed.html" target="_blank" rel="noopener noreferrer">Bumi, Unleashed</a></td>
+      <td>1.98</td>
+      <td>RG</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>25762</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.35</td>
+      <td>56.25</td>
+      <td>0.90</td>
+      <td>224</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40936</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.95</td>
+      <td>56.83</td>
+      <td>0.88</td>
+      <td>417</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>60044</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.10</td>
+      <td>56.90</td>
+      <td>0.80</td>
+      <td>580</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97495" target="_blank" rel="noopener noreferrer"><img src="img/Dai_Li_Agents.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dai Li Agents.html" target="_blank" rel="noopener noreferrer">Dai Li Agents</a></td>
+      <td>6.73</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>52457</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.10</td>
+      <td>55.72</td>
+      <td>0.62</td>
+      <td>1084</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97465" target="_blank" rel="noopener noreferrer"><img src="img/Origin_of_Metalbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Origin of Metalbending.html" target="_blank" rel="noopener noreferrer">Origin of Metalbending</a></td>
+      <td>9.41</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71846</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.90</td>
+      <td>56.47</td>
+      <td>0.57</td>
+      <td>170</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53862</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.60</td>
+      <td>55.13</td>
+      <td>0.53</td>
+      <td>6350</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td>7.86</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>14803</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.25</td>
+      <td>54.78</td>
+      <td>0.53</td>
+      <td>115</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97327" target="_blank" rel="noopener noreferrer"><img src="img/Giant_Koi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Giant Koi.html" target="_blank" rel="noopener noreferrer">Giant Koi</a></td>
+      <td>9.70</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71284</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.50</td>
+      <td>54.69</td>
+      <td>0.19</td>
+      <td>309</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14241</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.10</td>
+      <td>56.16</td>
+      <td>0.06</td>
+      <td>203</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47399</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.25</td>
+      <td>54.04</td>
+      <td>-0.21</td>
+      <td>607</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97446" target="_blank" rel="noopener noreferrer"><img src="img/Bumi,_King_of_Three_Trials.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi, King of Three Trials.html" target="_blank" rel="noopener noreferrer">Bumi, King of Three Trials</a></td>
+      <td>5.68</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62573</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.95</td>
+      <td>55.63</td>
+      <td>-0.32</td>
+      <td>462</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97504" target="_blank" rel="noopener noreferrer"><img src="img/Guru_Pathik.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Guru Pathik.html" target="_blank" rel="noopener noreferrer">Guru Pathik</a></td>
+      <td>4.87</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53581</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.85</td>
+      <td>54.47</td>
+      <td>-0.38</td>
+      <td>1700</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97469" target="_blank" rel="noopener noreferrer"><img src="img/Rebellious_Captives.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rebellious Captives.html" target="_blank" rel="noopener noreferrer">Rebellious Captives</a></td>
+      <td>8.20</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>49366</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.15</td>
+      <td>52.56</td>
+      <td>-0.59</td>
+      <td>1174</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97453" target="_blank" rel="noopener noreferrer"><img src="img/Earthbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbending Lesson.html" target="_blank" rel="noopener noreferrer">Earthbending Lesson</a></td>
+      <td>10.17</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55267</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.45</td>
+      <td>52.60</td>
+      <td>-0.85</td>
+      <td>538</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97475" target="_blank" rel="noopener noreferrer"><img src="img/Sparring_Dummy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sparring Dummy.html" target="_blank" rel="noopener noreferrer">Sparring Dummy</a></td>
+      <td>8.56</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33349</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.65</td>
+      <td>54.50</td>
+      <td>-1.15</td>
+      <td>400</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>58920</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.30</td>
+      <td>52.07</td>
+      <td>-1.23</td>
+      <td>434</td>
+      <td>52.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97491" target="_blank" rel="noopener noreferrer"><img src="img/Bitter_Work.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bitter Work.html" target="_blank" rel="noopener noreferrer">Bitter Work</a></td>
+      <td>7.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>26605</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.55</td>
+      <td>54.31</td>
+      <td>-1.24</td>
+      <td>267</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55829</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.80</td>
+      <td>53.48</td>
+      <td>-1.32</td>
+      <td>733</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97477" target="_blank" rel="noopener noreferrer"><img src="img/True_Ancestry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//True Ancestry.html" target="_blank" rel="noopener noreferrer">True Ancestry</a></td>
+      <td>5.81</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63416</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.85</td>
+      <td>54.45</td>
+      <td>-1.40</td>
+      <td>292</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97507" target="_blank" rel="noopener noreferrer"><img src="img/Hermitic_Herbalist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hermitic Herbalist.html" target="_blank" rel="noopener noreferrer">Hermitic Herbalist</a></td>
+      <td>5.65</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22390</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.60</td>
+      <td>54.15</td>
+      <td>-1.45</td>
+      <td>253</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2158</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.80</td>
+      <td>54.35</td>
+      <td>-1.45</td>
+      <td>184</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39531</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.75</td>
+      <td>55.30</td>
+      <td>-1.45</td>
+      <td>217</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56110</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.90</td>
+      <td>52.44</td>
+      <td>-1.46</td>
+      <td>595</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97478" target="_blank" rel="noopener noreferrer"><img src="img/Turtle-Duck.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Turtle-Duck.html" target="_blank" rel="noopener noreferrer">Turtle-Duck</a></td>
+      <td>11.42</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57515</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>53.47</td>
+      <td>-1.48</td>
+      <td>245</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>753</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>51.50</td>
+      <td>50.00</td>
+      <td>-1.50</td>
+      <td>192</td>
+      <td>48.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97276" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Exile.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Exile.html" target="_blank" rel="noopener noreferrer">Zuko's Exile</a></td>
+      <td>10.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>72127</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.10</td>
+      <td>53.55</td>
+      <td>-1.55</td>
+      <td>183</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>50490</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.50</td>
+      <td>51.86</td>
+      <td>-1.64</td>
+      <td>565</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97457" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Vinebender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Vinebender.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Vinebender</a></td>
+      <td>10.67</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33630</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.50</td>
+      <td>52.79</td>
+      <td>-1.71</td>
+      <td>269</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65383</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.25</td>
+      <td>51.48</td>
+      <td>-1.77</td>
+      <td>406</td>
+      <td>51.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97514" target="_blank" rel="noopener noreferrer"><img src="img/Long_Feng,_Grand_Secretariat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Long Feng, Grand Secretariat.html" target="_blank" rel="noopener noreferrer">Long Feng, Grand Secretariat</a></td>
+      <td>6.00</td>
+      <td>BG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74375</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.15</td>
+      <td>53.07</td>
+      <td>-2.08</td>
+      <td>179</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35035</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.40</td>
+      <td>51.20</td>
+      <td>-2.20</td>
+      <td>291</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35316</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>57.25</td>
+      <td>54.92</td>
+      <td>-2.33</td>
+      <td>193</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>38688</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.45</td>
+      <td>54.02</td>
+      <td>-2.43</td>
+      <td>485</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46275</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>51.00</td>
+      <td>48.39</td>
+      <td>-2.61</td>
+      <td>124</td>
+      <td>47.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97442" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Destiny.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Destiny.html" target="_blank" rel="noopener noreferrer">Avatar Destiny</a></td>
+      <td>6.88</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>69598</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.60</td>
+      <td>50.82</td>
+      <td>-2.78</td>
+      <td>364</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td>6.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>6935</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.15</td>
+      <td>52.25</td>
+      <td>-2.90</td>
+      <td>111</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45151</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.75</td>
+      <td>52.76</td>
+      <td>-2.99</td>
+      <td>254</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45713</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.50</td>
+      <td>50.50</td>
+      <td>-3.00</td>
+      <td>101</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97440" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Exiled_Prince.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Exiled Prince.html" target="_blank" rel="noopener noreferrer">Zuko, Exiled Prince</a></td>
+      <td>5.82</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74656</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>57.00</td>
+      <td>53.93</td>
+      <td>-3.07</td>
+      <td>382</td>
+      <td>59.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97547" target="_blank" rel="noopener noreferrer"><img src="img/Ba_Sing_Se.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ba Sing Se.html" target="_blank" rel="noopener noreferrer">Ba Sing Se</a></td>
+      <td>3.01</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>7216</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.55</td>
+      <td>52.21</td>
+      <td>-3.34</td>
+      <td>136</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>68193</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>51.56</td>
+      <td>-3.39</td>
+      <td>256</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97524" target="_blank" rel="noopener noreferrer"><img src="img/Suki,_Kyoshi_Warrior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Suki, Kyoshi Warrior.html" target="_blank" rel="noopener noreferrer">Suki, Kyoshi Warrior</a></td>
+      <td>3.65</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>51052</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.90</td>
+      <td>50.44</td>
+      <td>-3.46</td>
+      <td>452</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97459" target="_blank" rel="noopener noreferrer"><img src="img/Haru,_Hidden_Talent.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Haru, Hidden Talent.html" target="_blank" rel="noopener noreferrer">Haru, Hidden Talent</a></td>
+      <td>5.19</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25200</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.85</td>
+      <td>51.27</td>
+      <td>-3.58</td>
+      <td>158</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76342</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.85</td>
+      <td>50.86</td>
+      <td>-3.99</td>
+      <td>407</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97553" target="_blank" rel="noopener noreferrer"><img src="img/Meditation_Pools.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meditation Pools.html" target="_blank" rel="noopener noreferrer">Meditation Pools</a></td>
+      <td>8.34</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>8621</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.85</td>
+      <td>51.59</td>
+      <td>-4.26</td>
+      <td>157</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65664</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.00</td>
+      <td>51.72</td>
+      <td>-4.28</td>
+      <td>116</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>72408</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>52.90</td>
+      <td>48.60</td>
+      <td>-4.30</td>
+      <td>214</td>
+      <td>51.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97539" target="_blank" rel="noopener noreferrer"><img src="img/Meteor_Sword.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meteor Sword.html" target="_blank" rel="noopener noreferrer">Meteor Sword</a></td>
+      <td>9.09</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>34473</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.35</td>
+      <td>48.51</td>
+      <td>-4.84</td>
+      <td>101</td>
+      <td>52.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97399" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Conviction.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Conviction.html" target="_blank" rel="noopener noreferrer">Zuko's Conviction</a></td>
+      <td>8.09</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>30820</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.50</td>
+      <td>49.63</td>
+      <td>-4.87</td>
+      <td>135</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76061</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.75</td>
+      <td>48.93</td>
+      <td>-5.82</td>
+      <td>280</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97552" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Village.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Village.html" target="_blank" rel="noopener noreferrer">Kyoshi Village</a></td>
+      <td>8.30</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>51333</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>52.55</td>
+      <td>46.71</td>
+      <td>-5.84</td>
+      <td>152</td>
+      <td>50.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97460" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Tactics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Tactics.html" target="_blank" rel="noopener noreferrer">Invasion Tactics</a></td>
+      <td>8.60</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29696</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.50</td>
+      <td>48.25</td>
+      <td>-6.25</td>
+      <td>114</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97381" target="_blank" rel="noopener noreferrer"><img src="img/June,_Bounty_Hunter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//June, Bounty Hunter.html" target="_blank" rel="noopener noreferrer">June, Bounty Hunter</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>69317</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.10</td>
+      <td>48.76</td>
+      <td>-6.34</td>
+      <td>121</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97528" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_First_Metalbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the First Metalbender.html" target="_blank" rel="noopener noreferrer">Toph, the First Metalbender</a></td>
+      <td>3.60</td>
+      <td>WRG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>70441</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>56.20</td>
+      <td>49.56</td>
+      <td>-6.64</td>
+      <td>113</td>
+      <td>57.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97532" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Reinforcements.html" target="_blank" rel="noopener noreferrer">White Lotus Reinforcements</a></td>
+      <td>4.44</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29415</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.90</td>
+      <td>48.18</td>
+      <td>-6.72</td>
+      <td>110</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97380" target="_blank" rel="noopener noreferrer"><img src="img/Joo_Dee,_One_of_Many.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Joo Dee, One of Many.html" target="_blank" rel="noopener noreferrer">Joo Dee, One of Many</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>9183</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.15</td>
+      <td>47.06</td>
+      <td>-8.09</td>
+      <td>102</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>24919</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.75</td>
+      <td>45.30</td>
+      <td>-9.45</td>
+      <td>117</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35597</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.55</td>
+      <td>44.04</td>
+      <td>-9.51</td>
+      <td>109</td>
+      <td>52.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97403" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Man.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Man.html" target="_blank" rel="noopener noreferrer">Combustion Man</a></td>
+      <td>6.36</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39812</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>53.45</td>
+      <td>43.93</td>
+      <td>-9.52</td>
+      <td>107</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66507</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>54.95</td>
+      <td>44.14</td>
+      <td>-10.81</td>
+      <td>145</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3563</th>
+      <td>uncommon</td>
+      <td>G</td>
+      <td>7.86</td>
+      <td><a href=".//Rockalanche.html" target="_blank" rel="noopener noreferrer">Rockalanche</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97470" target="_blank" rel="noopener noreferrer"><img src="img/Rockalanche.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>54.6</td>
+      <td>55.80</td>
+      <td>43.31</td>
+      <td>-12.49</td>
+      <td>127</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>

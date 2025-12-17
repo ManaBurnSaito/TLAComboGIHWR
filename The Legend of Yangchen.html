@@ -1,0 +1,3228 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3679</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.65</td>
+      <td>74.07</td>
+      <td>14.42</td>
+      <td>162</td>
+      <td>53.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97287" target="_blank" rel="noopener noreferrer"><img src="img/Curious_Farm_Animals.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Curious Farm Animals.html" target="_blank" rel="noopener noreferrer">Curious Farm Animals</a></td>
+      <td>11.07</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57069</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>65.50</td>
+      <td>79.90</td>
+      <td>14.40</td>
+      <td>194</td>
+      <td>65.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97483" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_Swift_Savior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, Swift Savior.html" target="_blank" rel="noopener noreferrer">Aang, Swift Savior</a></td>
+      <td>1.87</td>
+      <td>WU</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>20258</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.80</td>
+      <td>74.78</td>
+      <td>13.98</td>
+      <td>115</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97348" target="_blank" rel="noopener noreferrer"><img src="img/Spirit_Water_Revival.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Spirit Water Revival.html" target="_blank" rel="noopener noreferrer">Spirit Water Revival</a></td>
+      <td>3.42</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>54540</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.70</td>
+      <td>74.50</td>
+      <td>13.80</td>
+      <td>149</td>
+      <td>55.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97473" target="_blank" rel="noopener noreferrer"><img src="img/Seismic_Sense.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Seismic Sense.html" target="_blank" rel="noopener noreferrer">Seismic Sense</a></td>
+      <td>6.99</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>62970</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.75</td>
+      <td>71.91</td>
+      <td>12.16</td>
+      <td>178</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97506" target="_blank" rel="noopener noreferrer"><img src="img/Hei_Bai,_Spirit_of_Balance.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hei Bai, Spirit of Balance.html" target="_blank" rel="noopener noreferrer">Hei Bai, Spirit of Balance</a></td>
+      <td>5.31</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56226</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.80</td>
+      <td>71.71</td>
+      <td>11.91</td>
+      <td>152</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97479" target="_blank" rel="noopener noreferrer"><img src="img/Unlucky_Cabbage_Merchant.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Unlucky Cabbage Merchant.html" target="_blank" rel="noopener noreferrer">Unlucky Cabbage Merchant</a></td>
+      <td>5.47</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>37399</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>72.96</td>
+      <td>11.71</td>
+      <td>318</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77863</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.95</td>
+      <td>73.04</td>
+      <td>11.09</td>
+      <td>115</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97559" target="_blank" rel="noopener noreferrer"><img src="img/Secret_Tunnel.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Secret Tunnel.html" target="_blank" rel="noopener noreferrer">Secret Tunnel</a></td>
+      <td>3.76</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>54821</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.20</td>
+      <td>71.19</td>
+      <td>10.99</td>
+      <td>118</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97474" target="_blank" rel="noopener noreferrer"><img src="img/Shared_Roots.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Shared Roots.html" target="_blank" rel="noopener noreferrer">Shared Roots</a></td>
+      <td>5.44</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>63813</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.75</td>
+      <td>72.54</td>
+      <td>10.79</td>
+      <td>142</td>
+      <td>57.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97509" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Tea_Master.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Tea Master.html" target="_blank" rel="noopener noreferrer">Iroh, Tea Master</a></td>
+      <td>4.77</td>
+      <td>WR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>18010</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.85</td>
+      <td>71.14</td>
+      <td>10.29</td>
+      <td>201</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97340" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Patrol.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Patrol.html" target="_blank" rel="noopener noreferrer">North Pole Patrol</a></td>
+      <td>6.12</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56507</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>70.75</td>
+      <td>10.25</td>
+      <td>359</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97480" target="_blank" rel="noopener noreferrer"><img src="img/Walltop_Sentries.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Walltop Sentries.html" target="_blank" rel="noopener noreferrer">Walltop Sentries</a></td>
+      <td>8.01</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>68309</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.85</td>
+      <td>69.90</td>
+      <td>10.05</td>
+      <td>196</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97525" target="_blank" rel="noopener noreferrer"><img src="img/Sun_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun Warriors.html" target="_blank" rel="noopener noreferrer">Sun Warriors</a></td>
+      <td>5.93</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>76739</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.10</td>
+      <td>71.14</td>
+      <td>10.04</td>
+      <td>589</td>
+      <td>56.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97555" target="_blank" rel="noopener noreferrer"><img src="img/North_Pole_Gates.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//North Pole Gates.html" target="_blank" rel="noopener noreferrer">North Pole Gates</a></td>
+      <td>7.90</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3117</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.30</td>
+      <td>70.29</td>
+      <td>9.99</td>
+      <td>138</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97285" target="_blank" rel="noopener noreferrer"><img src="img/Avatar's_Wrath.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar's Wrath.html" target="_blank" rel="noopener noreferrer">Avatar's Wrath</a></td>
+      <td>3.02</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>63251</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.55</td>
+      <td>71.29</td>
+      <td>9.74</td>
+      <td>101</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97507" target="_blank" rel="noopener noreferrer"><img src="img/Hermitic_Herbalist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hermitic Herbalist.html" target="_blank" rel="noopener noreferrer">Hermitic Herbalist</a></td>
+      <td>5.65</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>10142</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>64.00</td>
+      <td>73.62</td>
+      <td>9.62</td>
+      <td>235</td>
+      <td>62.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97311" target="_blank" rel="noopener noreferrer"><img src="img/Suki,_Courageous_Rescuer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Suki, Courageous Rescuer.html" target="_blank" rel="noopener noreferrer">Suki, Courageous Rescuer</a></td>
+      <td>1.85</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>8737</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.30</td>
+      <td>68.75</td>
+      <td>9.45</td>
+      <td>240</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97306" target="_blank" rel="noopener noreferrer"><img src="img/Rabaroo_Troop.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rabaroo Troop.html" target="_blank" rel="noopener noreferrer">Rabaroo Troop</a></td>
+      <td>10.75</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2274</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.00</td>
+      <td>68.37</td>
+      <td>9.37</td>
+      <td>215</td>
+      <td>52.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97282" target="_blank" rel="noopener noreferrer"><img src="img/Appa,_Loyal_Sky_Bison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Appa, Loyal Sky Bison.html" target="_blank" rel="noopener noreferrer">Appa, Loyal Sky Bison</a></td>
+      <td>6.39</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>48358</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>70.59</td>
+      <td>9.34</td>
+      <td>153</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97450" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_General.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom General.html" target="_blank" rel="noopener noreferrer">Earth Kingdom General</a></td>
+      <td>4.98</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22506</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.00</td>
+      <td>69.16</td>
+      <td>9.16</td>
+      <td>107</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97356" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Scroll.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Scroll.html" target="_blank" rel="noopener noreferrer">Waterbending Scroll</a></td>
+      <td>7.53</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>5365</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.65</td>
+      <td>70.68</td>
+      <td>9.03</td>
+      <td>324</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97293" target="_blank" rel="noopener noreferrer"><img src="img/Gather_the_White_Lotus.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Gather the White Lotus.html" target="_blank" rel="noopener noreferrer">Gather the White Lotus</a></td>
+      <td>6.05</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>2555</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.70</td>
+      <td>71.67</td>
+      <td>8.97</td>
+      <td>120</td>
+      <td>59.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97283" target="_blank" rel="noopener noreferrer"><img src="img/Appa,_Steadfast_Guardian.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Appa, Steadfast Guardian.html" target="_blank" rel="noopener noreferrer">Appa, Steadfast Guardian</a></td>
+      <td>1.59</td>
+      <td>W</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>6208</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.80</td>
+      <td>70.62</td>
+      <td>8.82</td>
+      <td>211</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97296" target="_blank" rel="noopener noreferrer"><img src="img/Hakoda,_Selfless_Commander.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hakoda, Selfless Commander.html" target="_blank" rel="noopener noreferrer">Hakoda, Selfless Commander</a></td>
+      <td>2.00</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>53416</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.55</td>
+      <td>69.02</td>
+      <td>8.47</td>
+      <td>368</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97469" target="_blank" rel="noopener noreferrer"><img src="img/Rebellious_Captives.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rebellious Captives.html" target="_blank" rel="noopener noreferrer">Rebellious Captives</a></td>
+      <td>8.20</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>47515</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.20</td>
+      <td>66.48</td>
+      <td>8.28</td>
+      <td>179</td>
+      <td>50.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97447" target="_blank" rel="noopener noreferrer"><img src="img/Cycle_of_Renewal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cycle of Renewal.html" target="_blank" rel="noopener noreferrer">Cycle of Renewal</a></td>
+      <td>9.00</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>67466</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.25</td>
+      <td>70.52</td>
+      <td>8.27</td>
+      <td>553</td>
+      <td>58.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97522" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Lateral_Strategist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Lateral Strategist.html" target="_blank" rel="noopener noreferrer">Sokka, Lateral Strategist</a></td>
+      <td>3.00</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>27564</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.90</td>
+      <td>68.93</td>
+      <td>8.03</td>
+      <td>103</td>
+      <td>55.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97374" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Engineer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Engineer.html" target="_blank" rel="noopener noreferrer">Fire Nation Engineer</a></td>
+      <td>6.12</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>4803</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.05</td>
+      <td>69.07</td>
+      <td>8.02</td>
+      <td>388</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97291" target="_blank" rel="noopener noreferrer"><img src="img/Enter_the_Avatar_State.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Enter the Avatar State.html" target="_blank" rel="noopener noreferrer">Enter the Avatar State</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>27845</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.40</td>
+      <td>68.38</td>
+      <td>7.98</td>
+      <td>117</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97375" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Navy_Trebuchet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Navy Trebuchet.html" target="_blank" rel="noopener noreferrer">Fire Navy Trebuchet</a></td>
+      <td>5.50</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>76177</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.55</td>
+      <td>68.49</td>
+      <td>7.94</td>
+      <td>238</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97553" target="_blank" rel="noopener noreferrer"><img src="img/Meditation_Pools.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Meditation Pools.html" target="_blank" rel="noopener noreferrer">Meditation Pools</a></td>
+      <td>8.34</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77582</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.15</td>
+      <td>69.08</td>
+      <td>7.93</td>
+      <td>511</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3398</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.50</td>
+      <td>69.38</td>
+      <td>7.88</td>
+      <td>1277</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78706</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.15</td>
+      <td>66.96</td>
+      <td>7.81</td>
+      <td>115</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97562" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Hideout.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Hideout.html" target="_blank" rel="noopener noreferrer">White Lotus Hideout</a></td>
+      <td>9.60</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33184</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.35</td>
+      <td>69.08</td>
+      <td>7.73</td>
+      <td>304</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66061</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.40</td>
+      <td>67.11</td>
+      <td>7.71</td>
+      <td>152</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97517" target="_blank" rel="noopener noreferrer"><img src="img/Platypus-Bear.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Platypus-Bear.html" target="_blank" rel="noopener noreferrer">Platypus-Bear</a></td>
+      <td>10.20</td>
+      <td>UG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37961</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.95</td>
+      <td>68.60</td>
+      <td>7.65</td>
+      <td>121</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>6489</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.50</td>
+      <td>68.93</td>
+      <td>7.43</td>
+      <td>486</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97297" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Reinforcements.html" target="_blank" rel="noopener noreferrer">Invasion Reinforcements</a></td>
+      <td>3.76</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7051</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>68.63</td>
+      <td>7.38</td>
+      <td>1173</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11828</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>68.59</td>
+      <td>7.34</td>
+      <td>710</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97317" target="_blank" rel="noopener noreferrer"><img src="img/Yip_Yip!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yip Yip!.html" target="_blank" rel="noopener noreferrer">Yip Yip!</a></td>
+      <td>8.85</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53978</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.15</td>
+      <td>68.47</td>
+      <td>7.32</td>
+      <td>352</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66623</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.95</td>
+      <td>68.22</td>
+      <td>7.27</td>
+      <td>129</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97519" target="_blank" rel="noopener noreferrer"><img src="img/Professor_Zei,_Anthropologist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Professor Zei, Anthropologist.html" target="_blank" rel="noopener noreferrer">Professor Zei, Anthropologist</a></td>
+      <td>6.18</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.50</td>
+      <td>68.77</td>
+      <td>7.27</td>
+      <td>1492</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>22787</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.00</td>
+      <td>69.18</td>
+      <td>7.18</td>
+      <td>610</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>12109</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.35</td>
+      <td>68.52</td>
+      <td>7.17</td>
+      <td>216</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97318" target="_blank" rel="noopener noreferrer"><img src="img/Accumulate_Wisdom.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Accumulate Wisdom.html" target="_blank" rel="noopener noreferrer">Accumulate Wisdom</a></td>
+      <td>3.70</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>6770</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.85</td>
+      <td>67.95</td>
+      <td>7.10</td>
+      <td>1198</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44986</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.45</td>
+      <td>68.48</td>
+      <td>7.03</td>
+      <td>387</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35151</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.95</td>
+      <td>69.95</td>
+      <td>7.00</td>
+      <td>193</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17729</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.60</td>
+      <td>69.57</td>
+      <td>6.97</td>
+      <td>115</td>
+      <td>59.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97339" target="_blank" rel="noopener noreferrer"><img src="img/The_Mechanist,_Aerial_Artisan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Mechanist, Aerial Artisan.html" target="_blank" rel="noopener noreferrer">The Mechanist, Aerial Artisan</a></td>
+      <td>2.16</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>76458</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.80</td>
+      <td>67.72</td>
+      <td>6.92</td>
+      <td>381</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97554" target="_blank" rel="noopener noreferrer"><img src="img/Misty_Palms_Oasis.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Misty Palms Oasis.html" target="_blank" rel="noopener noreferrer">Misty Palms Oasis</a></td>
+      <td>9.41</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11547</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.80</td>
+      <td>69.72</td>
+      <td>6.92</td>
+      <td>687</td>
+      <td>59.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97316" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Rallier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Rallier.html" target="_blank" rel="noopener noreferrer">Water Tribe Rallier</a></td>
+      <td>3.16</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>4522</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.65</td>
+      <td>68.52</td>
+      <td>6.87</td>
+      <td>486</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97290" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Protectors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Protectors.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Protectors</a></td>
+      <td>4.89</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>52573</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.40</td>
+      <td>68.08</td>
+      <td>6.68</td>
+      <td>260</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>5646</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.05</td>
+      <td>67.71</td>
+      <td>6.66</td>
+      <td>1211</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97294" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Kids.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Kids.html" target="_blank" rel="noopener noreferrer">Glider Kids</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>73648</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.85</td>
+      <td>70.48</td>
+      <td>6.63</td>
+      <td>210</td>
+      <td>61.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97544" target="_blank" rel="noopener noreferrer"><img src="img/Abandoned_Air_Temple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandoned Air Temple.html" target="_blank" rel="noopener noreferrer">Abandoned Air Temple</a></td>
+      <td>2.11</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>28688</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.75</td>
+      <td>69.36</td>
+      <td>6.61</td>
+      <td>173</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71962</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.80</td>
+      <td>67.39</td>
+      <td>6.59</td>
+      <td>742</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69995</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>67.08</td>
+      <td>6.58</td>
+      <td>568</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97531" target="_blank" rel="noopener noreferrer"><img src="img/Wandering_Musicians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wandering Musicians.html" target="_blank" rel="noopener noreferrer">Wandering Musicians</a></td>
+      <td>8.74</td>
+      <td>WR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>61284</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.75</td>
+      <td>66.20</td>
+      <td>6.45</td>
+      <td>142</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97500" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Village_Ruffians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Village Ruffians.html" target="_blank" rel="noopener noreferrer">Earth Village Ruffians</a></td>
+      <td>9.30</td>
+      <td>BG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14638</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.95</td>
+      <td>66.31</td>
+      <td>6.36</td>
+      <td>279</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97327" target="_blank" rel="noopener noreferrer"><img src="img/Giant_Koi.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Giant Koi.html" target="_blank" rel="noopener noreferrer">Giant Koi</a></td>
+      <td>9.70</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46391</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>67.58</td>
+      <td>6.33</td>
+      <td>219</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62127</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.00</td>
+      <td>69.31</td>
+      <td>6.31</td>
+      <td>101</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97503" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Spirit_Keeper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Spirit Keeper.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Spirit Keeper</a></td>
+      <td>5.02</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>75896</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.45</td>
+      <td>66.75</td>
+      <td>6.30</td>
+      <td>406</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97552" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Village.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Village.html" target="_blank" rel="noopener noreferrer">Kyoshi Village</a></td>
+      <td>8.30</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>1150</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.40</td>
+      <td>67.69</td>
+      <td>6.29</td>
+      <td>229</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97278" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Iceberg.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Iceberg.html" target="_blank" rel="noopener noreferrer">Aang's Iceberg</a></td>
+      <td>2.32</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>68590</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.05</td>
+      <td>68.31</td>
+      <td>6.26</td>
+      <td>284</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97526" target="_blank" rel="noopener noreferrer"><img src="img/Tolls_of_War.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Tolls of War.html" target="_blank" rel="noopener noreferrer">Tolls of War</a></td>
+      <td>6.36</td>
+      <td>WB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>14919</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.65</td>
+      <td>68.82</td>
+      <td>6.17</td>
+      <td>279</td>
+      <td>59.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97328" target="_blank" rel="noopener noreferrer"><img src="img/Gran-Gran.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Gran-Gran.html" target="_blank" rel="noopener noreferrer">Gran-Gran</a></td>
+      <td>4.45</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17167</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.35</td>
+      <td>68.50</td>
+      <td>6.15</td>
+      <td>762</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>10423</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.40</td>
+      <td>66.47</td>
+      <td>6.07</td>
+      <td>334</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97312" target="_blank" rel="noopener noreferrer"><img src="img/Team_Avatar.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Team Avatar.html" target="_blank" rel="noopener noreferrer">Team Avatar</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>49201</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.85</td>
+      <td>64.86</td>
+      <td>6.01</td>
+      <td>111</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97453" target="_blank" rel="noopener noreferrer"><img src="img/Earthbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbending Lesson.html" target="_blank" rel="noopener noreferrer">Earthbending Lesson</a></td>
+      <td>10.17</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18291</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.70</td>
+      <td>67.71</td>
+      <td>6.01</td>
+      <td>545</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>9580</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.60</td>
+      <td>69.52</td>
+      <td>5.92</td>
+      <td>187</td>
+      <td>61.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97309" target="_blank" rel="noopener noreferrer"><img src="img/South_Pole_Voyager.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//South Pole Voyager.html" target="_blank" rel="noopener noreferrer">South Pole Voyager</a></td>
+      <td>1.99</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>69714</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.95</td>
+      <td>65.83</td>
+      <td>5.88</td>
+      <td>120</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>9018</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.85</td>
+      <td>66.70</td>
+      <td>5.85</td>
+      <td>1054</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74210</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.85</td>
+      <td>66.67</td>
+      <td>5.82</td>
+      <td>126</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38523</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.15</td>
+      <td>67.97</td>
+      <td>5.82</td>
+      <td>459</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78425</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.10</td>
+      <td>65.88</td>
+      <td>5.78</td>
+      <td>422</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97561" target="_blank" rel="noopener noreferrer"><img src="img/Sun-Blessed_Peak.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun-Blessed Peak.html" target="_blank" rel="noopener noreferrer">Sun-Blessed Peak</a></td>
+      <td>8.73</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45829</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.30</td>
+      <td>68.02</td>
+      <td>5.72</td>
+      <td>222</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97441" target="_blank" rel="noopener noreferrer"><img src="img/Allies_at_Last.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Allies at Last.html" target="_blank" rel="noopener noreferrer">Allies at Last</a></td>
+      <td>4.24</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>50044</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>66.34</td>
+      <td>5.69</td>
+      <td>101</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97456" target="_blank" rel="noopener noreferrer"><img src="img/Flopsie,_Bumi's_Buddy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Flopsie, Bumi's Buddy.html" target="_blank" rel="noopener noreferrer">Flopsie, Bumi's Buddy</a></td>
+      <td>5.33</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>19696</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.30</td>
+      <td>66.93</td>
+      <td>5.63</td>
+      <td>127</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97346" target="_blank" rel="noopener noreferrer"><img src="img/Sokka's_Haiku.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka's Haiku.html" target="_blank" rel="noopener noreferrer">Sokka's Haiku</a></td>
+      <td>8.28</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35713</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.40</td>
+      <td>68.02</td>
+      <td>5.62</td>
+      <td>172</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>56788</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.90</td>
+      <td>69.48</td>
+      <td>5.58</td>
+      <td>154</td>
+      <td>61.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97481" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_at_the_Crossroads.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, at the Crossroads.html" target="_blank" rel="noopener noreferrer">Aang, at the Crossroads</a></td>
+      <td>2.37</td>
+      <td>WUG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>4241</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.35</td>
+      <td>68.91</td>
+      <td>5.56</td>
+      <td>521</td>
+      <td>60.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97289" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Jailer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Jailer.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Jailer</a></td>
+      <td>2.70</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>12390</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.60</td>
+      <td>67.13</td>
+      <td>5.53</td>
+      <td>286</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97319" target="_blank" rel="noopener noreferrer"><img src="img/Benevolent_River_Spirit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Benevolent River Spirit.html" target="_blank" rel="noopener noreferrer">Benevolent River Spirit</a></td>
+      <td>4.86</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>24754</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.45</td>
+      <td>65.86</td>
+      <td>5.41</td>
+      <td>249</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11266</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.95</td>
+      <td>66.31</td>
+      <td>5.36</td>
+      <td>929</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97315" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Captain.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Captain.html" target="_blank" rel="noopener noreferrer">Water Tribe Captain</a></td>
+      <td>7.47</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>43581</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.10</td>
+      <td>65.45</td>
+      <td>5.35</td>
+      <td>301</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>5084</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.80</td>
+      <td>65.13</td>
+      <td>5.33</td>
+      <td>238</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97292" target="_blank" rel="noopener noreferrer"><img src="img/Fancy_Footwork.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fancy Footwork.html" target="_blank" rel="noopener noreferrer">Fancy Footwork</a></td>
+      <td>7.49</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>10704</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>65.70</td>
+      <td>70.91</td>
+      <td>5.21</td>
+      <td>110</td>
+      <td>65.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97313" target="_blank" rel="noopener noreferrer"><img src="img/United_Front.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//United Front.html" target="_blank" rel="noopener noreferrer">United Front</a></td>
+      <td>1.54</td>
+      <td>W</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>8456</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.55</td>
+      <td>66.75</td>
+      <td>5.20</td>
+      <td>1260</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>1431</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.30</td>
+      <td>64.49</td>
+      <td>5.19</td>
+      <td>138</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97279" target="_blank" rel="noopener noreferrer"><img src="img/Airbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbender Ascension.html" target="_blank" rel="noopener noreferrer">Airbender Ascension</a></td>
+      <td>2.84</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>14357</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.65</td>
+      <td>63.80</td>
+      <td>5.15</td>
+      <td>163</td>
+      <td>51.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97326" target="_blank" rel="noopener noreferrer"><img src="img/Geyser_Leaper.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Geyser Leaper.html" target="_blank" rel="noopener noreferrer">Geyser Leaper</a></td>
+      <td>10.47</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>53135</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>66.36</td>
+      <td>5.11</td>
+      <td>321</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>7894</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.95</td>
+      <td>67.03</td>
+      <td>5.08</td>
+      <td>185</td>
+      <td>57.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97303" target="_blank" rel="noopener noreferrer"><img src="img/Momo,_Friendly_Flier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Momo, Friendly Flier.html" target="_blank" rel="noopener noreferrer">Momo, Friendly Flier</a></td>
+      <td>3.44</td>
+      <td>W</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>65.71</td>
+      <td>5.06</td>
+      <td>385</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18572</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>65.46</td>
+      <td>4.96</td>
+      <td>304</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97342" target="_blank" rel="noopener noreferrer"><img src="img/Otter-Penguin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Otter-Penguin.html" target="_blank" rel="noopener noreferrer">Otter-Penguin</a></td>
+      <td>9.15</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>68028</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>65.61</td>
+      <td>4.96</td>
+      <td>221</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97524" target="_blank" rel="noopener noreferrer"><img src="img/Suki,_Kyoshi_Warrior.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Suki, Kyoshi Warrior.html" target="_blank" rel="noopener noreferrer">Suki, Kyoshi Warrior</a></td>
+      <td>3.65</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>52292</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.80</td>
+      <td>65.64</td>
+      <td>4.84</td>
+      <td>195</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97465" target="_blank" rel="noopener noreferrer"><img src="img/Origin_of_Metalbending.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Origin of Metalbending.html" target="_blank" rel="noopener noreferrer">Origin of Metalbending</a></td>
+      <td>9.41</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41052</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.55</td>
+      <td>64.35</td>
+      <td>4.80</td>
+      <td>115</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>64656</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>64.00</td>
+      <td>68.78</td>
+      <td>4.78</td>
+      <td>189</td>
+      <td>62.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97512" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Water_Tribe's_Hope.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Water Tribe's Hope.html" target="_blank" rel="noopener noreferrer">Katara, Water Tribe's Hope</a></td>
+      <td>2.17</td>
+      <td>WU</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>8175</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.05</td>
+      <td>66.73</td>
+      <td>4.68</td>
+      <td>502</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97304" target="_blank" rel="noopener noreferrer"><img src="img/Momo,_Playful_Pet.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Momo, Playful Pet.html" target="_blank" rel="noopener noreferrer">Momo, Playful Pet</a></td>
+      <td>3.81</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16043</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.05</td>
+      <td>66.72</td>
+      <td>4.67</td>
+      <td>592</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48639</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.95</td>
+      <td>64.52</td>
+      <td>4.57</td>
+      <td>124</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97451" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Rumble.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Rumble.html" target="_blank" rel="noopener noreferrer">Earth Rumble</a></td>
+      <td>5.95</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>1712</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.10</td>
+      <td>64.65</td>
+      <td>4.55</td>
+      <td>396</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97280" target="_blank" rel="noopener noreferrer"><img src="img/Airbender's_Reversal.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbender's Reversal.html" target="_blank" rel="noopener noreferrer">Airbender's Reversal</a></td>
+      <td>3.77</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39085</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.10</td>
+      <td>63.64</td>
+      <td>4.54</td>
+      <td>132</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97416" target="_blank" rel="noopener noreferrer"><img src="img/How_to_Start_a_Riot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//How to Start a Riot.html" target="_blank" rel="noopener noreferrer">How to Start a Riot</a></td>
+      <td>10.73</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>20539</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.30</td>
+      <td>65.80</td>
+      <td>4.50</td>
+      <td>231</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97349" target="_blank" rel="noopener noreferrer"><img src="img/Teo,_Spirited_Glider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Teo, Spirited Glider.html" target="_blank" rel="noopener noreferrer">Teo, Spirited Glider</a></td>
+      <td>4.49</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78144</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.45</td>
+      <td>65.93</td>
+      <td>4.48</td>
+      <td>135</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97560" target="_blank" rel="noopener noreferrer"><img src="img/Serpent's_Pass.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Serpent's Pass.html" target="_blank" rel="noopener noreferrer">Serpent's Pass</a></td>
+      <td>8.69</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40771</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.65</td>
+      <td>66.06</td>
+      <td>4.41</td>
+      <td>383</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>60441</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>65.03</td>
+      <td>4.38</td>
+      <td>326</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97497" target="_blank" rel="noopener noreferrer"><img src="img/Earth_Kingdom_Soldier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth Kingdom Soldier.html" target="_blank" rel="noopener noreferrer">Earth Kingdom Soldier</a></td>
+      <td>9.36</td>
+      <td>WG</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>54259</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.45</td>
+      <td>63.58</td>
+      <td>4.13</td>
+      <td>173</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97472" target="_blank" rel="noopener noreferrer"><img src="img/Saber-Tooth_Moose-Lion.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Saber-Tooth Moose-Lion.html" target="_blank" rel="noopener noreferrer">Saber-Tooth Moose-Lion</a></td>
+      <td>9.65</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14076</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.80</td>
+      <td>65.90</td>
+      <td>4.10</td>
+      <td>783</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66342</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>64.64</td>
+      <td>3.99</td>
+      <td>837</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13514</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.20</td>
+      <td>65.17</td>
+      <td>3.97</td>
+      <td>557</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57350</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.65</td>
+      <td>64.61</td>
+      <td>3.96</td>
+      <td>373</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>36556</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.80</td>
+      <td>63.72</td>
+      <td>3.92</td>
+      <td>215</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23349</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.45</td>
+      <td>64.34</td>
+      <td>3.89</td>
+      <td>129</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71119</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.20</td>
+      <td>63.99</td>
+      <td>3.79</td>
+      <td>461</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>9299</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.45</td>
+      <td>63.24</td>
+      <td>3.79</td>
+      <td>370</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97308" target="_blank" rel="noopener noreferrer"><img src="img/Sandbenders'_Storm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sandbenders' Storm.html" target="_blank" rel="noopener noreferrer">Sandbenders' Storm</a></td>
+      <td>9.34</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>869</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.40</td>
+      <td>67.17</td>
+      <td>3.77</td>
+      <td>591</td>
+      <td>60.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97277" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_the_Last_Airbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, the Last Airbender.html" target="_blank" rel="noopener noreferrer">Aang, the Last Airbender</a></td>
+      <td>2.63</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15762</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.95</td>
+      <td>67.68</td>
+      <td>3.73</td>
+      <td>362</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>39366</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.45</td>
+      <td>66.10</td>
+      <td>3.65</td>
+      <td>177</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60722</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.10</td>
+      <td>66.39</td>
+      <td>3.29</td>
+      <td>119</td>
+      <td>60.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97498" target="_blank" rel="noopener noreferrer"><img src="img/Earth_King's_Lieutenant.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earth King's Lieutenant.html" target="_blank" rel="noopener noreferrer">Earth King's Lieutenant</a></td>
+      <td>3.03</td>
+      <td>WG</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>70276</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.90</td>
+      <td>65.09</td>
+      <td>3.19</td>
+      <td>275</td>
+      <td>57.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97532" target="_blank" rel="noopener noreferrer"><img src="img/White_Lotus_Reinforcements.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//White Lotus Reinforcements.html" target="_blank" rel="noopener noreferrer">White Lotus Reinforcements</a></td>
+      <td>4.44</td>
+      <td>WG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>57631</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>63.68</td>
+      <td>3.18</td>
+      <td>234</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97486" target="_blank" rel="noopener noreferrer"><img src="img/Air_Nomad_Legacy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Air Nomad Legacy.html" target="_blank" rel="noopener noreferrer">Air Nomad Legacy</a></td>
+      <td>6.83</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>33465</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.20</td>
+      <td>63.36</td>
+      <td>3.16</td>
+      <td>232</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34870</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.10</td>
+      <td>62.16</td>
+      <td>3.06</td>
+      <td>111</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64094</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.65</td>
+      <td>64.69</td>
+      <td>3.04</td>
+      <td>354</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97510" target="_blank" rel="noopener noreferrer"><img src="img/Jet,_Freedom_Fighter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet, Freedom Fighter.html" target="_blank" rel="noopener noreferrer">Jet, Freedom Fighter</a></td>
+      <td>4.00</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>30655</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.20</td>
+      <td>63.18</td>
+      <td>2.98</td>
+      <td>258</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>65499</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.70</td>
+      <td>64.53</td>
+      <td>2.83</td>
+      <td>716</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55383</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.05</td>
+      <td>64.85</td>
+      <td>2.80</td>
+      <td>165</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97476" target="_blank" rel="noopener noreferrer"><img src="img/Toph,_the_Blind_Bandit.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Toph, the Blind Bandit.html" target="_blank" rel="noopener noreferrer">Toph, the Blind Bandit</a></td>
+      <td>4.05</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>25597</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.05</td>
+      <td>63.74</td>
+      <td>2.69</td>
+      <td>342</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>55664</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>63.16</td>
+      <td>2.66</td>
+      <td>152</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97477" target="_blank" rel="noopener noreferrer"><img src="img/True_Ancestry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//True Ancestry.html" target="_blank" rel="noopener noreferrer">True Ancestry</a></td>
+      <td>5.81</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71400</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.85</td>
+      <td>62.50</td>
+      <td>2.65</td>
+      <td>176</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97536" target="_blank" rel="noopener noreferrer"><img src="img/Bender's_Waterskin.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bender's Waterskin.html" target="_blank" rel="noopener noreferrer">Bender's Waterskin</a></td>
+      <td>10.77</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62408</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.65</td>
+      <td>64.17</td>
+      <td>2.52</td>
+      <td>187</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97504" target="_blank" rel="noopener noreferrer"><img src="img/Guru_Pathik.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Guru Pathik.html" target="_blank" rel="noopener noreferrer">Guru Pathik</a></td>
+      <td>4.87</td>
+      <td>UG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>21382</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.00</td>
+      <td>65.52</td>
+      <td>2.52</td>
+      <td>116</td>
+      <td>60.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97352" target="_blank" rel="noopener noreferrer"><img src="img/The_Unagi_of_Kyoshi_Island.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Unagi of Kyoshi Island.html" target="_blank" rel="noopener noreferrer">The Unagi of Kyoshi Island</a></td>
+      <td>2.06</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>15481</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.00</td>
+      <td>62.46</td>
+      <td>2.46</td>
+      <td>293</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97330" target="_blank" rel="noopener noreferrer"><img src="img/Iguana_Parrot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iguana Parrot.html" target="_blank" rel="noopener noreferrer">Iguana Parrot</a></td>
+      <td>8.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2836</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.30</td>
+      <td>62.70</td>
+      <td>2.40</td>
+      <td>732</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97284" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Enthusiasts.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Enthusiasts.html" target="_blank" rel="noopener noreferrer">Avatar Enthusiasts</a></td>
+      <td>6.65</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>73929</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.60</td>
+      <td>63.95</td>
+      <td>2.35</td>
+      <td>147</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97545" target="_blank" rel="noopener noreferrer"><img src="img/Agna_Qel'a.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Agna Qel'a.html" target="_blank" rel="noopener noreferrer">Agna Qel'a</a></td>
+      <td>4.14</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>7613</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.50</td>
+      <td>62.74</td>
+      <td>2.24</td>
+      <td>263</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97302" target="_blank" rel="noopener noreferrer"><img src="img/Master_Piandao.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Master Piandao.html" target="_blank" rel="noopener noreferrer">Master Piandao</a></td>
+      <td>4.45</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71681</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.60</td>
+      <td>63.78</td>
+      <td>2.18</td>
+      <td>196</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>32060</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.70</td>
+      <td>60.69</td>
+      <td>1.99</td>
+      <td>173</td>
+      <td>51.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97390" target="_blank" rel="noopener noreferrer"><img src="img/Pirate_Peddlers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pirate Peddlers.html" target="_blank" rel="noopener noreferrer">Pirate Peddlers</a></td>
+      <td>9.85</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18853</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.75</td>
+      <td>60.70</td>
+      <td>1.95</td>
+      <td>229</td>
+      <td>51.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97343" target="_blank" rel="noopener noreferrer"><img src="img/Rowdy_Snowballers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rowdy Snowballers.html" target="_blank" rel="noopener noreferrer">Rowdy Snowballers</a></td>
+      <td>9.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23911</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>58.80</td>
+      <td>60.74</td>
+      <td>1.94</td>
+      <td>163</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97361" target="_blank" rel="noopener noreferrer"><img src="img/Beetle-Headed_Merchants.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Beetle-Headed Merchants.html" target="_blank" rel="noopener noreferrer">Beetle-Headed Merchants</a></td>
+      <td>10.65</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>48920</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>64.40</td>
+      <td>66.34</td>
+      <td>1.94</td>
+      <td>101</td>
+      <td>62.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97452" target="_blank" rel="noopener noreferrer"><img src="img/Earthbender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Earthbender Ascension.html" target="_blank" rel="noopener noreferrer">Earthbender Ascension</a></td>
+      <td>2.20</td>
+      <td>G</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>50325</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.20</td>
+      <td>61.11</td>
+      <td>1.91</td>
+      <td>126</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97457" target="_blank" rel="noopener noreferrer"><img src="img/Foggy_Swamp_Vinebender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Foggy Swamp Vinebender.html" target="_blank" rel="noopener noreferrer">Foggy Swamp Vinebender</a></td>
+      <td>10.67</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44143</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.80</td>
+      <td>61.68</td>
+      <td>1.88</td>
+      <td>107</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97435" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Artful_Acrobat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Artful Acrobat.html" target="_blank" rel="noopener noreferrer">Ty Lee, Artful Acrobat</a></td>
+      <td>6.29</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22225</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.30</td>
+      <td>63.09</td>
+      <td>1.79</td>
+      <td>531</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>59317</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.60</td>
+      <td>61.04</td>
+      <td>1.44</td>
+      <td>308</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97493" target="_blank" rel="noopener noreferrer"><img src="img/Cat-Owl.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cat-Owl.html" target="_blank" rel="noopener noreferrer">Cat-Owl</a></td>
+      <td>9.46</td>
+      <td>WU</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>16324</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.60</td>
+      <td>61.88</td>
+      <td>1.28</td>
+      <td>223</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97333" target="_blank" rel="noopener noreferrer"><img src="img/Katara,_Bending_Prodigy.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Katara, Bending Prodigy.html" target="_blank" rel="noopener noreferrer">Katara, Bending Prodigy</a></td>
+      <td>3.39</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36275</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.15</td>
+      <td>61.29</td>
+      <td>1.14</td>
+      <td>124</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>16605</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.20</td>
+      <td>63.24</td>
+      <td>1.04</td>
+      <td>340</td>
+      <td>58.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97334" target="_blank" rel="noopener noreferrer"><img src="img/Knowledge_Seeker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Knowledge Seeker.html" target="_blank" rel="noopener noreferrer">Knowledge Seeker</a></td>
+      <td>3.79</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>77020</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.45</td>
+      <td>61.07</td>
+      <td>0.62</td>
+      <td>131</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97556" target="_blank" rel="noopener noreferrer"><img src="img/Omashu_City.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Omashu City.html" target="_blank" rel="noopener noreferrer">Omashu City</a></td>
+      <td>8.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26721</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.30</td>
+      <td>62.89</td>
+      <td>0.59</td>
+      <td>159</td>
+      <td>58.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97371" target="_blank" rel="noopener noreferrer"><img src="img/Epic_Downfall.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Epic Downfall.html" target="_blank" rel="noopener noreferrer">Epic Downfall</a></td>
+      <td>3.60</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29531</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.20</td>
+      <td>60.71</td>
+      <td>0.51</td>
+      <td>140</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97381" target="_blank" rel="noopener noreferrer"><img src="img/June,_Bounty_Hunter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//June, Bounty Hunter.html" target="_blank" rel="noopener noreferrer">June, Bounty Hunter</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7332</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>66.00</td>
+      <td>66.39</td>
+      <td>0.39</td>
+      <td>5894</td>
+      <td>66.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td>1.74</td>
+      <td>W</td>
+      <td>mythic</td>
+    </tr>
+    <tr>
+      <th>12671</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.35</td>
+      <td>61.60</td>
+      <td>0.25</td>
+      <td>250</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97320" target="_blank" rel="noopener noreferrer"><img src="img/Boomerang_Basics.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boomerang Basics.html" target="_blank" rel="noopener noreferrer">Boomerang Basics</a></td>
+      <td>4.92</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>23630</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.45</td>
+      <td>60.63</td>
+      <td>0.18</td>
+      <td>127</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>5927</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>62.10</td>
+      <td>62.18</td>
+      <td>0.08</td>
+      <td>542</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97295" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Staff.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Staff.html" target="_blank" rel="noopener noreferrer">Glider Staff</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>75615</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.15</td>
+      <td>60.91</td>
+      <td>-0.24</td>
+      <td>110</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97551" target="_blank" rel="noopener noreferrer"><img src="img/Jasmine_Dragon_Tea_Shop.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jasmine Dragon Tea Shop.html" target="_blank" rel="noopener noreferrer">Jasmine Dragon Tea Shop</a></td>
+      <td>3.59</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>26440</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>61.25</td>
+      <td>60.77</td>
+      <td>-0.48</td>
+      <td>362</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>21101</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>63.10</td>
+      <td>62.02</td>
+      <td>-1.08</td>
+      <td>129</td>
+      <td>60.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97351" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Chi_Blocker.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Chi Blocker.html" target="_blank" rel="noopener noreferrer">Ty Lee, Chi Blocker</a></td>
+      <td>2.18</td>
+      <td>U</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>25035</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.55</td>
+      <td>58.72</td>
+      <td>-1.83</td>
+      <td>172</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62689</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.05</td>
+      <td>57.14</td>
+      <td>-2.91</td>
+      <td>147</td>
+      <td>54.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97505" target="_blank" rel="noopener noreferrer"><img src="img/Hama,_the_Bloodbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Hama, the Bloodbender.html" target="_blank" rel="noopener noreferrer">Hama, the Bloodbender</a></td>
+      <td>5.32</td>
+      <td>UB</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>29250</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>60.60</td>
+      <td>57.35</td>
+      <td>-3.25</td>
+      <td>136</td>
+      <td>55.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97380" target="_blank" rel="noopener noreferrer"><img src="img/Joo_Dee,_One_of_Many.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Joo Dee, One of Many.html" target="_blank" rel="noopener noreferrer">Joo Dee, One of Many</a></td>
+      <td>5.44</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>50887</th>
+      <td>mythic</td>
+      <td>W</td>
+      <td>1.74</td>
+      <td><a href=".//The Legend of Yangchen.html" target="_blank" rel="noopener noreferrer">The Legend of Yangchen</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97300" target="_blank" rel="noopener noreferrer"><img src="img/The_Legend_of_Yangchen.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>66.0</td>
+      <td>59.60</td>
+      <td>54.43</td>
+      <td>-5.17</td>
+      <td>158</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97459" target="_blank" rel="noopener noreferrer"><img src="img/Haru,_Hidden_Talent.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Haru, Hidden Talent.html" target="_blank" rel="noopener noreferrer">Haru, Hidden Talent</a></td>
+      <td>5.19</td>
+      <td>G</td>
+      <td>uncommon</td>
+    </tr>
+  </tbody>
+</table>

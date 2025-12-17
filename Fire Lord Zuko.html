@@ -1,0 +1,568 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>45180</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.45</td>
+      <td>59.71</td>
+      <td>8.26</td>
+      <td>139</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45742</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>49.20</td>
+      <td>52.76</td>
+      <td>3.56</td>
+      <td>127</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97440" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Exiled_Prince.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Exiled Prince.html" target="_blank" rel="noopener noreferrer">Zuko, Exiled Prince</a></td>
+      <td>5.82</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>74966</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.15</td>
+      <td>53.62</td>
+      <td>3.47</td>
+      <td>207</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64288</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.65</td>
+      <td>54.81</td>
+      <td>3.16</td>
+      <td>104</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97510" target="_blank" rel="noopener noreferrer"><img src="img/Jet,_Freedom_Fighter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet, Freedom Fighter.html" target="_blank" rel="noopener noreferrer">Jet, Freedom Fighter</a></td>
+      <td>4.00</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>2187</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.50</td>
+      <td>54.26</td>
+      <td>2.76</td>
+      <td>188</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37593</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.25</td>
+      <td>53.33</td>
+      <td>2.08</td>
+      <td>105</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>71313</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.20</td>
+      <td>51.00</td>
+      <td>0.80</td>
+      <td>100</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>43775</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.10</td>
+      <td>50.77</td>
+      <td>0.67</td>
+      <td>130</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>62040</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>46.00</td>
+      <td>46.47</td>
+      <td>0.47</td>
+      <td>962</td>
+      <td>46.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td>7.11</td>
+      <td>WBR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>7245</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.25</td>
+      <td>51.00</td>
+      <td>-0.25</td>
+      <td>100</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66536</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.65</td>
+      <td>50.00</td>
+      <td>-0.65</td>
+      <td>130</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33378</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.35</td>
+      <td>50.00</td>
+      <td>-1.35</td>
+      <td>134</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38717</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>52.15</td>
+      <td>50.64</td>
+      <td>-1.51</td>
+      <td>156</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40965</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.65</td>
+      <td>50.00</td>
+      <td>-1.65</td>
+      <td>166</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.65</td>
+      <td>48.84</td>
+      <td>-1.81</td>
+      <td>129</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>78619</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.10</td>
+      <td>46.56</td>
+      <td>-3.54</td>
+      <td>189</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97561" target="_blank" rel="noopener noreferrer"><img src="img/Sun-Blessed_Peak.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun-Blessed Peak.html" target="_blank" rel="noopener noreferrer">Sun-Blessed Peak</a></td>
+      <td>8.73</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77776</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.15</td>
+      <td>46.85</td>
+      <td>-4.30</td>
+      <td>143</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>36750</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>49.80</td>
+      <td>44.86</td>
+      <td>-4.94</td>
+      <td>107</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33659</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.20</td>
+      <td>43.64</td>
+      <td>-6.56</td>
+      <td>110</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>76652</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.80</td>
+      <td>42.56</td>
+      <td>-8.24</td>
+      <td>195</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97554" target="_blank" rel="noopener noreferrer"><img src="img/Misty_Palms_Oasis.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Misty Palms Oasis.html" target="_blank" rel="noopener noreferrer">Misty Palms Oasis</a></td>
+      <td>9.41</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>9212</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>50.85</td>
+      <td>41.23</td>
+      <td>-9.62</td>
+      <td>114</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>25791</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.05</td>
+      <td>41.00</td>
+      <td>-10.05</td>
+      <td>100</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26634</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.25</td>
+      <td>39.85</td>
+      <td>-11.40</td>
+      <td>133</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>8650</th>
+      <td>rare</td>
+      <td>WBR</td>
+      <td>7.11</td>
+      <td><a href=".//Fire Lord Zuko.html" target="_blank" rel="noopener noreferrer">Fire Lord Zuko</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97502" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Lord_Zuko.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>46.0</td>
+      <td>51.55</td>
+      <td>40.00</td>
+      <td>-11.55</td>
+      <td>100</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>

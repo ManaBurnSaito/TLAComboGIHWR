@@ -1,0 +1,1917 @@
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet"/>
+    <link href="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.css" rel="stylesheet"/>
+
+    <style>
+    /* ヘッダー全体 */
+    .header-links {
+        background-color: #f3f3f3;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    /* All / Uncommon の各行 */
+    .row-title-link {
+        font-weight: bold;
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    .row {
+        display: flex;                /* 横並び */
+        justify-content: center;      /* ← 中央寄せ */
+        align-items: center;
+        gap: 16px;                    /* ← 各リンクの間隔 */
+        margin: 6px 0;
+        flex-wrap: wrap;              /* 画面が狭い時に折り返す */
+    }
+
+    /* 行タイトル */
+    .row-title {
+        font-weight: bold;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* リンク */
+    .header-links a {
+        padding: 2px 6px;             /* ← クリックしやすく */
+        color: #0078d4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 現在ページ */
+    .header-links a.active {
+        color: #d40000;
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+
+    .my-table {
+            width: 100%;
+            table-layout: fixed; /* 各列幅を均等に */
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "Arial Narrow", "Helvetica Neue Condensed Bold", sans-serif;
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+        .my-table img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+
+
+    <script src="https://cdn.datatables.net/v/zf/jq-3.6.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/date-1.4.1/fh-3.3.2/sb-1.4.2/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+
+    <script defer>
+        $(document).ready(function() {
+            var table = $('.my-table').DataTable({
+                pageLength: 150,
+                select: true,
+                fixedHeader: true,
+                dom: 'iQfrtBlp',
+            });
+
+            // URLのクエリパラメータから検索文字列を取得
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                table.search(query).draw();
+                $('.dataTables_filter input').val(query);
+            }
+        });
+    </script>
+    <div class="header-links"><div class="row"><a href="ALL.html" class="row-title-link">ALL</a><a href="WU.html">WU</a><a href="WB.html">WB</a><a href="WR.html">WR</a><a href="WG.html">WG</a><a href="UB.html">UB</a><a href="UR.html">UR</a><a href="UG.html">UG</a><a href="BR.html">BR</a><a href="BG.html">BG</a><a href="RG.html">RG</a></div><div class="row"><a href="uncommon.html" class="row-title-link">Uncommon</a><a href="WU_c.html">WU</a><a href="WB_c.html">WB</a><a href="WR_c.html">WR</a><a href="WG_c.html">WG</a><a href="UB_c.html">UB</a><a href="UR_c.html">UR</a><a href="UG_c.html">UG</a><a href="BR_c.html">BR</a><a href="BG_c.html">BG</a><a href="RG_c.html">RG</a></div></div><table border="1" class="dataframe my-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rarity</th>
+      <th>color</th>
+      <th>avg_pick</th>
+      <th>card_A</th>
+      <th>img_A</th>
+      <th>GIHWR_A</th>
+      <th>AB_AveWR</th>
+      <th>comboWR</th>
+      <th>combo+-</th>
+      <th>combo_ct</th>
+      <th>GIHWR_B</th>
+      <th>img_B</th>
+      <th>card_B</th>
+      <th>avg_pick_B</th>
+      <th>color_B</th>
+      <th>rarity_B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40063</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.55</td>
+      <td>65.77</td>
+      <td>13.22</td>
+      <td>111</td>
+      <td>53.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97419" target="_blank" rel="noopener noreferrer"><img src="img/Jet's_Brainwashing.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet's Brainwashing.html" target="_blank" rel="noopener noreferrer">Jet's Brainwashing</a></td>
+      <td>10.06</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>15897</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>56.90</td>
+      <td>64.15</td>
+      <td>7.25</td>
+      <td>106</td>
+      <td>61.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97331" target="_blank" rel="noopener noreferrer"><img src="img/Invasion_Submersible.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Invasion Submersible.html" target="_blank" rel="noopener noreferrer">Invasion Submersible</a></td>
+      <td>3.37</td>
+      <td>U</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>8591</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.50</td>
+      <td>60.29</td>
+      <td>5.79</td>
+      <td>209</td>
+      <td>57.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97305" target="_blank" rel="noopener noreferrer"><img src="img/Path_to_Redemption.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Path to Redemption.html" target="_blank" rel="noopener noreferrer">Path to Redemption</a></td>
+      <td>4.67</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77717</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.10</td>
+      <td>59.72</td>
+      <td>5.62</td>
+      <td>216</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97558" target="_blank" rel="noopener noreferrer"><img src="img/Rumble_Arena.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rumble Arena.html" target="_blank" rel="noopener noreferrer">Rumble Arena</a></td>
+      <td>8.67</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44559</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.70</td>
+      <td>58.27</td>
+      <td>5.57</td>
+      <td>254</td>
+      <td>53.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97436" target="_blank" rel="noopener noreferrer"><img src="img/War_Balloon.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//War Balloon.html" target="_blank" rel="noopener noreferrer">War Balloon</a></td>
+      <td>7.83</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>16178</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.00</td>
+      <td>60.00</td>
+      <td>5.00</td>
+      <td>165</td>
+      <td>58.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97332" target="_blank" rel="noopener noreferrer"><img src="img/It'll_Quench_Ya!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//It'll Quench Ya!.html" target="_blank" rel="noopener noreferrer">It'll Quench Ya!</a></td>
+      <td>6.48</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>23484</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.40</td>
+      <td>58.16</td>
+      <td>4.76</td>
+      <td>141</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97359" target="_blank" rel="noopener noreferrer"><img src="img/Azula_Always_Lies.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula Always Lies.html" target="_blank" rel="noopener noreferrer">Azula Always Lies</a></td>
+      <td>9.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11682</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.75</td>
+      <td>60.18</td>
+      <td>4.43</td>
+      <td>113</td>
+      <td>59.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97316" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Rallier.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Rallier.html" target="_blank" rel="noopener noreferrer">Water Tribe Rallier</a></td>
+      <td>3.16</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>28823</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.70</td>
+      <td>60.00</td>
+      <td>4.30</td>
+      <td>105</td>
+      <td>59.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97378" target="_blank" rel="noopener noreferrer"><img src="img/Heartless_Act.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Heartless Act.html" target="_blank" rel="noopener noreferrer">Heartless Act</a></td>
+      <td>3.37</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42592</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.45</td>
+      <td>55.69</td>
+      <td>4.24</td>
+      <td>167</td>
+      <td>51.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97429" target="_blank" rel="noopener noreferrer"><img src="img/Rough_Rhino_Cavalry.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rough Rhino Cavalry.html" target="_blank" rel="noopener noreferrer">Rough Rhino Cavalry</a></td>
+      <td>11.52</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>24889</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.40</td>
+      <td>57.14</td>
+      <td>3.74</td>
+      <td>175</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97364" target="_blank" rel="noopener noreferrer"><img src="img/Callous_Inspector.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Callous Inspector.html" target="_blank" rel="noopener noreferrer">Callous Inspector</a></td>
+      <td>8.59</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>63948</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.70</td>
+      <td>58.26</td>
+      <td>3.56</td>
+      <td>115</td>
+      <td>57.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97509" target="_blank" rel="noopener noreferrer"><img src="img/Iroh,_Tea_Master.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh, Tea Master.html" target="_blank" rel="noopener noreferrer">Iroh, Tea Master</a></td>
+      <td>4.77</td>
+      <td>WR</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>54113</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.10</td>
+      <td>56.91</td>
+      <td>2.81</td>
+      <td>123</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97471" target="_blank" rel="noopener noreferrer"><img src="img/Rocky_Rebuke.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Rocky Rebuke.html" target="_blank" rel="noopener noreferrer">Rocky Rebuke</a></td>
+      <td>6.46</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11963</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>56.82</td>
+      <td>2.62</td>
+      <td>176</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97317" target="_blank" rel="noopener noreferrer"><img src="img/Yip_Yip!.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yip Yip!.html" target="_blank" rel="noopener noreferrer">Yip Yip!</a></td>
+      <td>8.85</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39782</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.10</td>
+      <td>54.61</td>
+      <td>2.51</td>
+      <td>293</td>
+      <td>52.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97418" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong,_the_Deserter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong, the Deserter.html" target="_blank" rel="noopener noreferrer">Jeong Jeong, the Deserter</a></td>
+      <td>5.64</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>2128</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.45</td>
+      <td>56.41</td>
+      <td>1.96</td>
+      <td>273</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97281" target="_blank" rel="noopener noreferrer"><img src="img/Airbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airbending Lesson.html" target="_blank" rel="noopener noreferrer">Airbending Lesson</a></td>
+      <td>5.35</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>11401</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.90</td>
+      <td>55.70</td>
+      <td>1.80</td>
+      <td>237</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97315" target="_blank" rel="noopener noreferrer"><img src="img/Water_Tribe_Captain.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Water Tribe Captain.html" target="_blank" rel="noopener noreferrer">Water Tribe Captain</a></td>
+      <td>7.47</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35848</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.35</td>
+      <td>57.10</td>
+      <td>1.75</td>
+      <td>345</td>
+      <td>58.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97404" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Technique.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Technique.html" target="_blank" rel="noopener noreferrer">Combustion Technique</a></td>
+      <td>3.76</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>78560</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.05</td>
+      <td>54.71</td>
+      <td>1.66</td>
+      <td>329</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97561" target="_blank" rel="noopener noreferrer"><img src="img/Sun-Blessed_Peak.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun-Blessed Peak.html" target="_blank" rel="noopener noreferrer">Sun-Blessed Peak</a></td>
+      <td>8.73</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70130</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.45</td>
+      <td>54.90</td>
+      <td>1.45</td>
+      <td>286</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97531" target="_blank" rel="noopener noreferrer"><img src="img/Wandering_Musicians.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wandering Musicians.html" target="_blank" rel="noopener noreferrer">Wandering Musicians</a></td>
+      <td>8.74</td>
+      <td>WR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33600</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.15</td>
+      <td>54.55</td>
+      <td>1.40</td>
+      <td>143</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97396" target="_blank" rel="noopener noreferrer"><img src="img/Swampsnare_Trap.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Swampsnare Trap.html" target="_blank" rel="noopener noreferrer">Swampsnare Trap</a></td>
+      <td>7.21</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39501</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.40</td>
+      <td>56.57</td>
+      <td>1.17</td>
+      <td>426</td>
+      <td>58.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97417" target="_blank" rel="noopener noreferrer"><img src="img/Iroh's_Demonstration.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iroh's Demonstration.html" target="_blank" rel="noopener noreferrer">Iroh's Demonstration</a></td>
+      <td>3.25</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>45402</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.90</td>
+      <td>52.94</td>
+      <td>1.04</td>
+      <td>3415</td>
+      <td>51.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td>6.68</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>23765</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.40</td>
+      <td>54.37</td>
+      <td>0.97</td>
+      <td>103</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97360" target="_blank" rel="noopener noreferrer"><img src="img/Azula,_On_the_Hunt.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Azula, On the Hunt.html" target="_blank" rel="noopener noreferrer">Azula, On the Hunt</a></td>
+      <td>4.88</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>5781</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.00</td>
+      <td>54.81</td>
+      <td>0.81</td>
+      <td>208</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97294" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Kids.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Kids.html" target="_blank" rel="noopener noreferrer">Glider Kids</a></td>
+      <td>6.03</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38658</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.10</td>
+      <td>55.45</td>
+      <td>0.35</td>
+      <td>1028</td>
+      <td>58.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97414" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Lesson.html" target="_blank" rel="noopener noreferrer">Firebending Lesson</a></td>
+      <td>3.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37534</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>54.51</td>
+      <td>0.31</td>
+      <td>732</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97410" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Cadets.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Cadets.html" target="_blank" rel="noopener noreferrer">Fire Nation Cadets</a></td>
+      <td>7.80</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74907</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.10</td>
+      <td>53.39</td>
+      <td>0.29</td>
+      <td>236</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97548" target="_blank" rel="noopener noreferrer"><img src="img/Boiling_Rock_Prison.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boiling Rock Prison.html" target="_blank" rel="noopener noreferrer">Boiling Rock Prison</a></td>
+      <td>9.39</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38096</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.90</td>
+      <td>53.94</td>
+      <td>0.04</td>
+      <td>419</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97412" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Sages.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Sages.html" target="_blank" rel="noopener noreferrer">Fire Sages</a></td>
+      <td>4.72</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>36691</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.75</td>
+      <td>52.74</td>
+      <td>-0.01</td>
+      <td>584</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97407" target="_blank" rel="noopener noreferrer"><img src="img/Deserter's_Disciple.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deserter's Disciple.html" target="_blank" rel="noopener noreferrer">Deserter's Disciple</a></td>
+      <td>9.93</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44840</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.50</td>
+      <td>55.48</td>
+      <td>-0.02</td>
+      <td>155</td>
+      <td>59.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97437" target="_blank" rel="noopener noreferrer"><img src="img/Wartime_Protestors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Wartime Protestors.html" target="_blank" rel="noopener noreferrer">Wartime Protestors</a></td>
+      <td>2.34</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>36410</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.10</td>
+      <td>53.04</td>
+      <td>-0.06</td>
+      <td>411</td>
+      <td>54.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97406" target="_blank" rel="noopener noreferrer"><img src="img/Cunning_Maneuver.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cunning Maneuver.html" target="_blank" rel="noopener noreferrer">Cunning Maneuver</a></td>
+      <td>10.43</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40906</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.60</td>
+      <td>54.30</td>
+      <td>-0.30</td>
+      <td>884</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97423" target="_blank" rel="noopener noreferrer"><img src="img/Lightning_Strike.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lightning Strike.html" target="_blank" rel="noopener noreferrer">Lightning Strike</a></td>
+      <td>4.16</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>59733</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.80</td>
+      <td>51.48</td>
+      <td>-0.32</td>
+      <td>169</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97494" target="_blank" rel="noopener noreferrer"><img src="img/Cruel_Administrator.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Cruel Administrator.html" target="_blank" rel="noopener noreferrer">Cruel Administrator</a></td>
+      <td>7.86</td>
+      <td>BR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>42030</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.05</td>
+      <td>54.72</td>
+      <td>-0.33</td>
+      <td>159</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97427" target="_blank" rel="noopener noreferrer"><img src="img/Ran_and_Shaw.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ran and Shaw.html" target="_blank" rel="noopener noreferrer">Ran and Shaw</a></td>
+      <td>2.08</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>38377</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.40</td>
+      <td>52.02</td>
+      <td>-0.38</td>
+      <td>198</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97413" target="_blank" rel="noopener noreferrer"><img src="img/Firebender_Ascension.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebender Ascension.html" target="_blank" rel="noopener noreferrer">Firebender Ascension</a></td>
+      <td>3.78</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>41468</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.40</td>
+      <td>51.98</td>
+      <td>-0.42</td>
+      <td>227</td>
+      <td>52.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97425" target="_blank" rel="noopener noreferrer"><img src="img/Mongoose_Lizard.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mongoose Lizard.html" target="_blank" rel="noopener noreferrer">Mongoose Lizard</a></td>
+      <td>11.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>39220</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.05</td>
+      <td>51.59</td>
+      <td>-0.46</td>
+      <td>347</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97416" target="_blank" rel="noopener noreferrer"><img src="img/How_to_Start_a_Riot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//How to Start a Riot.html" target="_blank" rel="noopener noreferrer">How to Start a Riot</a></td>
+      <td>10.73</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>25170</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.50</td>
+      <td>52.83</td>
+      <td>-0.67</td>
+      <td>106</td>
+      <td>55.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97365" target="_blank" rel="noopener noreferrer"><img src="img/Canyon_Crawler.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Canyon Crawler.html" target="_blank" rel="noopener noreferrer">Canyon Crawler</a></td>
+      <td>9.89</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>9153</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.80</td>
+      <td>53.09</td>
+      <td>-0.71</td>
+      <td>194</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97307" target="_blank" rel="noopener noreferrer"><img src="img/Razor_Rings.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Razor Rings.html" target="_blank" rel="noopener noreferrer">Razor Rings</a></td>
+      <td>6.20</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>46526</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>53.49</td>
+      <td>-0.71</td>
+      <td>129</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97443" target="_blank" rel="noopener noreferrer"><img src="img/Badgermole.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Badgermole.html" target="_blank" rel="noopener noreferrer">Badgermole</a></td>
+      <td>8.37</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>14211</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.75</td>
+      <td>53.95</td>
+      <td>-0.80</td>
+      <td>152</td>
+      <td>57.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97325" target="_blank" rel="noopener noreferrer"><img src="img/Forecasting_Fortune_Teller.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Forecasting Fortune Teller.html" target="_blank" rel="noopener noreferrer">Forecasting Fortune Teller</a></td>
+      <td>5.02</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>64229</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.60</td>
+      <td>53.71</td>
+      <td>-0.89</td>
+      <td>283</td>
+      <td>57.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97510" target="_blank" rel="noopener noreferrer"><img src="img/Jet,_Freedom_Fighter.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jet, Freedom Fighter.html" target="_blank" rel="noopener noreferrer">Jet, Freedom Fighter</a></td>
+      <td>4.00</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71816</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.55</td>
+      <td>53.45</td>
+      <td>-1.10</td>
+      <td>116</td>
+      <td>57.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97537" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Warship.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Warship.html" target="_blank" rel="noopener noreferrer">Fire Nation Warship</a></td>
+      <td>7.65</td>
+      <td></td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>43716</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.05</td>
+      <td>51.94</td>
+      <td>-1.11</td>
+      <td>643</td>
+      <td>54.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97433" target="_blank" rel="noopener noreferrer"><img src="img/Treetop_Freedom_Fighters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Treetop Freedom Fighters.html" target="_blank" rel="noopener noreferrer">Treetop Freedom Fighters</a></td>
+      <td>9.10</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>33319</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.30</td>
+      <td>53.08</td>
+      <td>-1.22</td>
+      <td>211</td>
+      <td>56.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97395" target="_blank" rel="noopener noreferrer"><img src="img/Sold_Out.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sold Out.html" target="_blank" rel="noopener noreferrer">Sold Out</a></td>
+      <td>5.45</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>35286</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.90</td>
+      <td>54.67</td>
+      <td>-1.23</td>
+      <td>353</td>
+      <td>59.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97402" target="_blank" rel="noopener noreferrer"><img src="img/The_Cave_of_Two_Lovers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Cave of Two Lovers.html" target="_blank" rel="noopener noreferrer">The Cave of Two Lovers</a></td>
+      <td>4.78</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>45121</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.40</td>
+      <td>53.05</td>
+      <td>-1.35</td>
+      <td>886</td>
+      <td>56.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97438" target="_blank" rel="noopener noreferrer"><img src="img/Yuyan_Archers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Yuyan Archers.html" target="_blank" rel="noopener noreferrer">Yuyan Archers</a></td>
+      <td>8.06</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>2971</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.25</td>
+      <td>51.82</td>
+      <td>-1.43</td>
+      <td>137</td>
+      <td>54.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97284" target="_blank" rel="noopener noreferrer"><img src="img/Avatar_Enthusiasts.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Avatar Enthusiasts.html" target="_blank" rel="noopener noreferrer">Avatar Enthusiasts</a></td>
+      <td>6.65</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>43997</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.10</td>
+      <td>52.57</td>
+      <td>-1.53</td>
+      <td>272</td>
+      <td>56.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97434" target="_blank" rel="noopener noreferrer"><img src="img/Twin_Blades.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Twin Blades.html" target="_blank" rel="noopener noreferrer">Twin Blades</a></td>
+      <td>7.22</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>53270</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>52.42</td>
+      <td>-1.78</td>
+      <td>124</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97468" target="_blank" rel="noopener noreferrer"><img src="img/Raucous_Audience.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Raucous Audience.html" target="_blank" rel="noopener noreferrer">Raucous Audience</a></td>
+      <td>6.94</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>66477</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.60</td>
+      <td>51.45</td>
+      <td>-2.15</td>
+      <td>241</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97518" target="_blank" rel="noopener noreferrer"><img src="img/Pretending_Poxbearers.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Pretending Poxbearers.html" target="_blank" rel="noopener noreferrer">Pretending Poxbearers</a></td>
+      <td>6.51</td>
+      <td>WB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>70692</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.30</td>
+      <td>49.15</td>
+      <td>-2.15</td>
+      <td>118</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97533" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_Ruthless_Admiral.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zhao, Ruthless Admiral.html" target="_blank" rel="noopener noreferrer">Zhao, Ruthless Admiral</a></td>
+      <td>8.48</td>
+      <td>BR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>7186</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>51.85</td>
+      <td>-2.35</td>
+      <td>216</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97299" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Warriors.html" target="_blank" rel="noopener noreferrer">Kyoshi Warriors</a></td>
+      <td>6.12</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>40344</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>50.55</td>
+      <td>48.18</td>
+      <td>-2.37</td>
+      <td>110</td>
+      <td>49.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97420" target="_blank" rel="noopener noreferrer"><img src="img/The_Last_Agni_Kai.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//The Last Agni Kai.html" target="_blank" rel="noopener noreferrer">The Last Agni Kai</a></td>
+      <td>5.04</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>22360</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.25</td>
+      <td>51.72</td>
+      <td>-2.53</td>
+      <td>174</td>
+      <td>56.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97355" target="_blank" rel="noopener noreferrer"><img src="img/Waterbending_Lesson.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Waterbending Lesson.html" target="_blank" rel="noopener noreferrer">Waterbending Lesson</a></td>
+      <td>7.07</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>57485</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.60</td>
+      <td>51.04</td>
+      <td>-2.56</td>
+      <td>384</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97485" target="_blank" rel="noopener noreferrer"><img src="img/Abandon_Attachments.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Abandon Attachments.html" target="_blank" rel="noopener noreferrer">Abandon Attachments</a></td>
+      <td>7.04</td>
+      <td>UR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>41187</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.50</td>
+      <td>49.86</td>
+      <td>-2.64</td>
+      <td>361</td>
+      <td>53.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97424" target="_blank" rel="noopener noreferrer"><img src="img/Mai,_Jaded_Edge.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Mai, Jaded Edge.html" target="_blank" rel="noopener noreferrer">Mai, Jaded Edge</a></td>
+      <td>5.79</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>17302</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.30</td>
+      <td>52.54</td>
+      <td>-2.76</td>
+      <td>177</td>
+      <td>58.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97337" target="_blank" rel="noopener noreferrer"><img src="img/Lost_Days.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Lost Days.html" target="_blank" rel="noopener noreferrer">Lost Days</a></td>
+      <td>6.27</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.60</td>
+      <td>50.84</td>
+      <td>-2.76</td>
+      <td>179</td>
+      <td>55.3</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97274" target="_blank" rel="noopener noreferrer"><img src="img/Aang's_Journey.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang's Journey.html" target="_blank" rel="noopener noreferrer">Aang's Journey</a></td>
+      <td>8.07</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>18426</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.65</td>
+      <td>51.43</td>
+      <td>-3.22</td>
+      <td>140</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97341" target="_blank" rel="noopener noreferrer"><img src="img/Octopus_Form.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Octopus Form.html" target="_blank" rel="noopener noreferrer">Octopus Form</a></td>
+      <td>7.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>44278</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.75</td>
+      <td>49.43</td>
+      <td>-3.32</td>
+      <td>352</td>
+      <td>53.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97435" target="_blank" rel="noopener noreferrer"><img src="img/Ty_Lee,_Artful_Acrobat.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ty Lee, Artful Acrobat.html" target="_blank" rel="noopener noreferrer">Ty Lee, Artful Acrobat</a></td>
+      <td>6.29</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>22922</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.95</td>
+      <td>51.56</td>
+      <td>-3.39</td>
+      <td>128</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97357" target="_blank" rel="noopener noreferrer"><img src="img/Watery_Grasp.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Watery Grasp.html" target="_blank" rel="noopener noreferrer">Watery Grasp</a></td>
+      <td>6.58</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>77155</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.40</td>
+      <td>50.00</td>
+      <td>-3.40</td>
+      <td>162</td>
+      <td>54.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97556" target="_blank" rel="noopener noreferrer"><img src="img/Omashu_City.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Omashu City.html" target="_blank" rel="noopener noreferrer">Omashu City</a></td>
+      <td>8.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>25732</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.00</td>
+      <td>50.54</td>
+      <td>-3.46</td>
+      <td>184</td>
+      <td>56.1</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97367" target="_blank" rel="noopener noreferrer"><img src="img/Corrupt_Court_Official.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Corrupt Court Official.html" target="_blank" rel="noopener noreferrer">Corrupt Court Official</a></td>
+      <td>7.41</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>34724</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.80</td>
+      <td>48.23</td>
+      <td>-3.57</td>
+      <td>226</td>
+      <td>51.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97400" target="_blank" rel="noopener noreferrer"><img src="img/Boar-q-pine.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Boar-q-pine.html" target="_blank" rel="noopener noreferrer">Boar-q-pine</a></td>
+      <td>10.91</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>3533</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.45</td>
+      <td>50.88</td>
+      <td>-3.57</td>
+      <td>226</td>
+      <td>57.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97286" target="_blank" rel="noopener noreferrer"><img src="img/Compassionate_Healer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Compassionate Healer.html" target="_blank" rel="noopener noreferrer">Compassionate Healer</a></td>
+      <td>6.13</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>26575</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.20</td>
+      <td>50.56</td>
+      <td>-3.64</td>
+      <td>178</td>
+      <td>56.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97370" target="_blank" rel="noopener noreferrer"><img src="img/Deadly_Precision.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Deadly Precision.html" target="_blank" rel="noopener noreferrer">Deadly Precision</a></td>
+      <td>6.53</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>75188</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.35</td>
+      <td>48.70</td>
+      <td>-3.65</td>
+      <td>115</td>
+      <td>52.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97549" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Palace.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Palace.html" target="_blank" rel="noopener noreferrer">Fire Nation Palace</a></td>
+      <td>7.02</td>
+      <td></td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>68444</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.80</td>
+      <td>49.12</td>
+      <td>-3.68</td>
+      <td>228</td>
+      <td>53.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97525" target="_blank" rel="noopener noreferrer"><img src="img/Sun_Warriors.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sun Warriors.html" target="_blank" rel="noopener noreferrer">Sun Warriors</a></td>
+      <td>5.93</td>
+      <td>WR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>67601</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.20</td>
+      <td>51.40</td>
+      <td>-3.80</td>
+      <td>107</td>
+      <td>58.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97522" target="_blank" rel="noopener noreferrer"><img src="img/Sokka,_Lateral_Strategist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Sokka, Lateral Strategist.html" target="_blank" rel="noopener noreferrer">Sokka, Lateral Strategist</a></td>
+      <td>3.00</td>
+      <td>WU</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>35005</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.05</td>
+      <td>48.20</td>
+      <td>-3.85</td>
+      <td>444</td>
+      <td>52.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97401" target="_blank" rel="noopener noreferrer"><img src="img/Bumi_Bash.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Bumi Bash.html" target="_blank" rel="noopener noreferrer">Bumi Bash</a></td>
+      <td>9.00</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>15616</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.95</td>
+      <td>49.06</td>
+      <td>-3.89</td>
+      <td>106</td>
+      <td>54.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97330" target="_blank" rel="noopener noreferrer"><img src="img/Iguana_Parrot.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Iguana Parrot.html" target="_blank" rel="noopener noreferrer">Iguana Parrot</a></td>
+      <td>8.69</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69849</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.90</td>
+      <td>48.83</td>
+      <td>-4.07</td>
+      <td>428</td>
+      <td>53.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97530" target="_blank" rel="noopener noreferrer"><img src="img/Vindictive_Warden.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Vindictive Warden.html" target="_blank" rel="noopener noreferrer">Vindictive Warden</a></td>
+      <td>9.71</td>
+      <td>BR</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>1004</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>56.35</td>
+      <td>52.24</td>
+      <td>-4.11</td>
+      <td>134</td>
+      <td>60.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97277" target="_blank" rel="noopener noreferrer"><img src="img/Aang,_the_Last_Airbender.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Aang, the Last Airbender.html" target="_blank" rel="noopener noreferrer">Aang, the Last Airbender</a></td>
+      <td>2.63</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>37815</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.30</td>
+      <td>47.06</td>
+      <td>-4.24</td>
+      <td>255</td>
+      <td>50.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97411" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Raider.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Raider.html" target="_blank" rel="noopener noreferrer">Fire Nation Raider</a></td>
+      <td>11.35</td>
+      <td>R</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>38939</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>51.75</td>
+      <td>47.30</td>
+      <td>-4.45</td>
+      <td>148</td>
+      <td>51.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97415" target="_blank" rel="noopener noreferrer"><img src="img/Firebending_Student.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Firebending Student.html" target="_blank" rel="noopener noreferrer">Firebending Student</a></td>
+      <td>4.03</td>
+      <td>R</td>
+      <td>rare</td>
+    </tr>
+    <tr>
+      <th>35567</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.20</td>
+      <td>47.64</td>
+      <td>-4.56</td>
+      <td>212</td>
+      <td>52.5</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97403" target="_blank" rel="noopener noreferrer"><img src="img/Combustion_Man.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Combustion Man.html" target="_blank" rel="noopener noreferrer">Combustion Man</a></td>
+      <td>6.36</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>72097</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.75</td>
+      <td>49.10</td>
+      <td>-4.65</td>
+      <td>222</td>
+      <td>55.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97538" target="_blank" rel="noopener noreferrer"><img src="img/Kyoshi_Battle_Fan.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Kyoshi Battle Fan.html" target="_blank" rel="noopener noreferrer">Kyoshi Battle Fan</a></td>
+      <td>8.74</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>37253</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.45</td>
+      <td>48.53</td>
+      <td>-4.92</td>
+      <td>408</td>
+      <td>55.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97409" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Attacks.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Attacks.html" target="_blank" rel="noopener noreferrer">Fire Nation Attacks</a></td>
+      <td>6.55</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>60295</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.95</td>
+      <td>50.00</td>
+      <td>-4.95</td>
+      <td>178</td>
+      <td>58.0</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97496" target="_blank" rel="noopener noreferrer"><img src="img/Dragonfly_Swarm.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Dragonfly Swarm.html" target="_blank" rel="noopener noreferrer">Dragonfly Swarm</a></td>
+      <td>5.43</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>723</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>50.15</td>
+      <td>44.95</td>
+      <td>-5.20</td>
+      <td>109</td>
+      <td>48.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97276" target="_blank" rel="noopener noreferrer"><img src="img/Zuko's_Exile.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko's Exile.html" target="_blank" rel="noopener noreferrer">Zuko's Exile</a></td>
+      <td>10.62</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>6062</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>55.05</td>
+      <td>49.64</td>
+      <td>-5.41</td>
+      <td>139</td>
+      <td>58.2</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97295" target="_blank" rel="noopener noreferrer"><img src="img/Glider_Staff.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Glider Staff.html" target="_blank" rel="noopener noreferrer">Glider Staff</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>65634</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.65</td>
+      <td>48.89</td>
+      <td>-5.76</td>
+      <td>180</td>
+      <td>57.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97515" target="_blank" rel="noopener noreferrer"><img src="img/Messenger_Hawk.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Messenger Hawk.html" target="_blank" rel="noopener noreferrer">Messenger Hawk</a></td>
+      <td>5.66</td>
+      <td>UB</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>69568</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.25</td>
+      <td>46.46</td>
+      <td>-5.79</td>
+      <td>127</td>
+      <td>52.6</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97529" target="_blank" rel="noopener noreferrer"><img src="img/Uncle_Iroh.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Uncle Iroh.html" target="_blank" rel="noopener noreferrer">Uncle Iroh</a></td>
+      <td>6.62</td>
+      <td>RG</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>71254</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.15</td>
+      <td>47.20</td>
+      <td>-5.95</td>
+      <td>125</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97535" target="_blank" rel="noopener noreferrer"><img src="img/Barrels_of_Blasting_Jelly.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Barrels of Blasting Jelly.html" target="_blank" rel="noopener noreferrer">Barrels of Blasting Jelly</a></td>
+      <td>9.26</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>27699</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.85</td>
+      <td>47.79</td>
+      <td>-6.06</td>
+      <td>113</td>
+      <td>55.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97374" target="_blank" rel="noopener noreferrer"><img src="img/Fire_Nation_Engineer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Fire Nation Engineer.html" target="_blank" rel="noopener noreferrer">Fire Nation Engineer</a></td>
+      <td>6.12</td>
+      <td>B</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>66758</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.90</td>
+      <td>47.17</td>
+      <td>-6.73</td>
+      <td>106</td>
+      <td>55.9</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97519" target="_blank" rel="noopener noreferrer"><img src="img/Professor_Zei,_Anthropologist.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Professor Zei, Anthropologist.html" target="_blank" rel="noopener noreferrer">Professor Zei, Anthropologist</a></td>
+      <td>6.18</td>
+      <td>UR</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>6905</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.80</td>
+      <td>46.90</td>
+      <td>-6.90</td>
+      <td>226</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97298" target="_blank" rel="noopener noreferrer"><img src="img/Jeong_Jeong's_Deserters.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Jeong Jeong's Deserters.html" target="_blank" rel="noopener noreferrer">Jeong Jeong's Deserters</a></td>
+      <td>6.57</td>
+      <td>W</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>30790</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.15</td>
+      <td>45.97</td>
+      <td>-7.18</td>
+      <td>124</td>
+      <td>54.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97385" target="_blank" rel="noopener noreferrer"><img src="img/Merchant_of_Many_Hats.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Merchant of Many Hats.html" target="_blank" rel="noopener noreferrer">Merchant of Many Hats</a></td>
+      <td>9.52</td>
+      <td>B</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>45683</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>52.15</td>
+      <td>44.95</td>
+      <td>-7.20</td>
+      <td>307</td>
+      <td>52.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97440" target="_blank" rel="noopener noreferrer"><img src="img/Zuko,_Exiled_Prince.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Zuko, Exiled Prince.html" target="_blank" rel="noopener noreferrer">Zuko, Exiled Prince</a></td>
+      <td>5.82</td>
+      <td>R</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>10558</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.35</td>
+      <td>46.00</td>
+      <td>-7.35</td>
+      <td>100</td>
+      <td>54.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97312" target="_blank" rel="noopener noreferrer"><img src="img/Team_Avatar.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Team Avatar.html" target="_blank" rel="noopener noreferrer">Team Avatar</a></td>
+      <td>3.80</td>
+      <td>W</td>
+      <td>uncommon</td>
+    </tr>
+    <tr>
+      <th>52708</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.35</td>
+      <td>46.79</td>
+      <td>-7.56</td>
+      <td>109</td>
+      <td>56.8</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97466" target="_blank" rel="noopener noreferrer"><img src="img/Ostrich-Horse.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Ostrich-Horse.html" target="_blank" rel="noopener noreferrer">Ostrich-Horse</a></td>
+      <td>8.51</td>
+      <td>G</td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>74345</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>53.80</td>
+      <td>43.39</td>
+      <td>-10.41</td>
+      <td>189</td>
+      <td>55.7</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97546" target="_blank" rel="noopener noreferrer"><img src="img/Airship_Engine_Room.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//Airship Engine Room.html" target="_blank" rel="noopener noreferrer">Airship Engine Room</a></td>
+      <td>8.37</td>
+      <td></td>
+      <td>common</td>
+    </tr>
+    <tr>
+      <th>13649</th>
+      <td>rare</td>
+      <td>R</td>
+      <td>6.68</td>
+      <td><a href=".//Zhao, the Moon Slayer.html" target="_blank" rel="noopener noreferrer">Zhao, the Moon Slayer</a></td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97439" target="_blank" rel="noopener noreferrer"><img src="img/Zhao,_the_Moon_Slayer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td>51.9</td>
+      <td>54.15</td>
+      <td>41.86</td>
+      <td>-12.29</td>
+      <td>129</td>
+      <td>56.4</td>
+      <td><a href="https://www.17lands.com/card_data/details?expansion=TLA&format=PremierDraft&start=2025-07-30&card_id=97323" target="_blank" rel="noopener noreferrer"><img src="img/First-Time_Flyer.png" alt="Image" width="50" height="auto" loading="lazy"></a></td>
+      <td><a href=".//First-Time Flyer.html" target="_blank" rel="noopener noreferrer">First-Time Flyer</a></td>
+      <td>6.52</td>
+      <td>U</td>
+      <td>common</td>
+    </tr>
+  </tbody>
+</table>
